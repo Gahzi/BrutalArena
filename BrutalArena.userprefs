@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TutorialSpriteScript.cs">
+    <Files>
+      <File FileName="../../Desktop/Futile/BananaDemoProject/Assets/Scripts/Banana/BMain.cs" Line="41" Column="59" />
+      <File FileName="../../Desktop/Futile/BananaDemoProject/Assets/Scripts/Banana/Pages/BInGamePage.cs" Line="28" Column="22" />
+      <File FileName="Assets/Scripts/TutorialSpriteScript.cs" Line="25" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
