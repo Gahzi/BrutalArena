@@ -48,6 +48,7 @@ public class tk2dTileMapData : ScriptableObject
 	{
 		Rectangular,
 		Isometric,		// isometric tiles, offset in horizontal axis
+		Hexagon
 	}
 	
 	public Vector3 tileSize;
@@ -125,7 +126,7 @@ public class tk2dTileMapData : ScriptableObject
 		switch (tileType)
 		{
 		case TileType.Isometric: x = 0.5f; y = 0.0f; break;
-//		case TileType.HexHoritonal: x = 0.5f; y = 0.0f; break;
+		case TileType.Hexagon: x = 1.5f; y = 4.0f; break;
 		
 		case TileType.Rectangular: 
 		default:

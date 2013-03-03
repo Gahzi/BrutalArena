@@ -292,6 +292,50 @@ public class tk2dTileMap : MonoBehaviour, tk2dRuntime.ISpriteCollectionForceBuil
 			
 			return (x >= 0 && x <= width && y >= 0 && y <= height);
 		}
+		case tk2dTileMapData.TileType.Hexagon:
+		{
+			if (data.tileSize.x == 0.0f)
+				break;
+
+			float tileAngle = Mathf.Atan2(data.tileSize.y, data.tileSize.x / 2.0f);
+			
+			Vector3 localPosition = transform.worldToLocalMatrix.MultiplyPoint(position);
+			x = (localPosition.x - data.tileOrigin.x) / data.tileSize.x;
+			y = ((localPosition.y - data.tileOrigin.y) / (data.tileSize.y));
+			
+			float fy = y * 0.5f;
+			int iy = (int)fy;
+			
+			float fry = fy - iy;
+			float frx = x % 1.0f;
+			
+			x = (int)x;
+			y = iy * 2;
+			
+			if (frx > 0.5f)
+			{
+				if (fry > 0.5f && Mathf.Atan2(1.0f - fry, (frx - 0.5f) * 2) < tileAngle)
+					y += 1;
+				else if (fry < 0.5f && Mathf.Atan2(fry, (frx - 0.5f) * 2) < tileAngle)
+					y -= 1;
+			}
+			else if (frx < 0.5f)
+			{
+				if (fry > 0.5f && Mathf.Atan2(fry - 0.5f, frx * 2) > tileAngle)
+				{
+					y += 1;
+					x -= 1;
+				}
+				
+				if (fry < 0.5f && Mathf.Atan2(fry, (0.5f - frx) * 2) < tileAngle)
+				{
+					y -= 1;
+					x -= 1;
+				}
+			}
+			
+			return (x >= 0 && x <= width && y >= 0 && y <= height);
+		}
 		}
 		
 		x = 0.0f;

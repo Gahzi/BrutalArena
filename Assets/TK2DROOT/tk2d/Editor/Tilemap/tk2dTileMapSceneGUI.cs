@@ -80,7 +80,27 @@ public class tk2dTileMapSceneGUI
 				Handles.DrawSolidRectangleWithOutline(v, tileSelectionFillColor, tileSelectionOutlineColor);
 			}	
 			break;
+		case tk2dTileMapData.TileType.Hexagon:
+			{
+				float xOffsetMult, yOffsetMult;
+				tileMap.data.GetTileOffset(out xOffsetMult, out yOffsetMult);
+				float xOffset = (y & 1) * xOffsetMult;
+				Vector3 p0 = new Vector3(tileMapData.tileOrigin.x + (x + xOffset) * tileMapData.tileSize.x, tileMapData.tileOrigin.y + y * tileMapData.tileSize.y, 0);
+				Vector3 p1 = new Vector3(p0.x + tileMapData.tileSize.x, p0.y + tileMapData.tileSize.y * 2, 0);
+				Vector3[] v = new Vector3[4];
+				v[0] = new Vector3(p0.x + (p1.x-p0.x)*0.5f, p0.y, 0);
+				v[1] = new Vector3(p1.x, p0.y + (p1.y-p0.y)*0.5f, 0);
+				v[2] = new Vector3(p1.x - (p1.x-p0.x)*0.5f, p1.y, 0);
+				v[3] = new Vector3(p0.x, p1.y - (p1.y-p0.y)*0.5f, 0);
+				
+				for (int i = 0; i < v.Length; ++i)
+					v[i] = tileMap.transform.TransformPoint(v[i]);
+				
+				Handles.DrawSolidRectangleWithOutline(v, tileSelectionFillColor, tileSelectionOutlineColor);
+			}	
+			break;
 		}
+		
 	}
 	
 	void DrawTileCursor(tk2dTileMapEditorBrush brush)
@@ -425,6 +445,8 @@ public class tk2dTileMapSceneGUI
 			int xoffset = 0;
 			if (tileMap.data.tileType == tk2dTileMapData.TileType.Isometric &&  (cursorY & 1) == 1) 
 				xoffset = 1;
+			else if (tileMap.data.tileType == tk2dTileMapData.TileType.Hexagon &&  (cursorY & 1) == 1) 
+				xoffset = 1;
 			
 			foreach (var tile in brush.tiles)
 			{
@@ -496,7 +518,26 @@ public class tk2dTileMapSceneGUI
 				}
 			}
 		}
-		
+		else if (tileMap.data.tileType == tk2dTileMapData.TileType.Hexagon)
+		{
+			int xOffset = 0;
+			int yOffset = 0;
+			if ((y0 & 1) != 0)
+				yOffset -= 1;
+			
+			for (int layer = startLayer; layer < endLayer; ++layer)
+			{
+				for (int y = numTilesY - 1; y >= 0; --y)
+				{
+					for (int x = 0; x < numTilesX; ++x)
+					{
+						int tile = tileMap.Layers[layer].GetTile(x0 + x, y0 + y);
+						tiles.Add(tile);
+						sparseTile.Add(new tk2dSparseTile(x + xOffset, y + yOffset, allLayers?layer:0, tile));
+					}
+				}
+			}
+		}
 		
 		brush.type = tk2dTileMapEditorBrush.Type.Custom;
 		
