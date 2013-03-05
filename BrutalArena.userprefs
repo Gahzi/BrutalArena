@@ -1,6 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TutorialSpriteScript.cs">
+    <Files>
+      <File FileName="Assets/Scripts/TutorialSpriteScript.cs" Line="25" Column="1" />
+      <File FileName="Assets/Scripts/Character.cs" Line="8" Column="24" />
+      <File FileName="Assets/TK2DROOT/tk2d/Code/TileMap/tk2dTileMap.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="C:\Users\Shervin\Documents\GitHub\BrutalArena\Assets\TK2DROOT\tk2d\Editor\Tilemap\tk2dTileMapSceneGUI.cs" line="45" />
