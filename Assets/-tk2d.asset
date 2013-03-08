@@ -361,16 +361,19 @@ MonoBehaviour:
     - Player
     - Enemy
     - Character
+    - Hexagon4
     spriteTextureGUIDs:
     - d141efa7805934ea9897545433786b07
     - 735da96872ec045049549d277a767222
     - fd258879fa7ad4564a2f0afaaa19f8f0
     - 6bb6372a1d2a64614af15e7fd70f17b9
+    - 38a343800ae1c4c85b7405ef07d58bd6
     spriteTextureTimeStamps:
-    - 1362431958
+    - 1362505145
     - 1362430944
     - 1362430990
     - 1362444103
+    - 1362505413
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
