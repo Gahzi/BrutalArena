@@ -1,10 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TutorialSpriteScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TileMap Script.cs">
     <Files>
       <File FileName="Assets/Scripts/TutorialSpriteScript.cs" Line="25" Column="1" />
-      <File FileName="Assets/Scripts/Character.cs" Line="8" Column="24" />
+      <File FileName="Assets/Scripts/Character.cs" Line="1" Column="1" />
       <File FileName="Assets/TK2DROOT/tk2d/Code/TileMap/tk2dTileMap.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/TileMap Script.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
