@@ -3,45 +3,77 @@ using System.Collections;
 
 public class TileMapScript : MonoBehaviour {
 	
-	ArrayList tiles = new ArrayList();
+	Hashtable tiles = new Hashtable();
 	
 	void Awake() {
+		string tileKey = "";
+		string rowSymbol = "";
+		string columnSymbol = "";
+		
 		foreach(Transform row in transform) {
-		  tiles.Add(row);
+			rowSymbol = row.gameObject.name;
+			foreach(Transform tile in row) {	
+				columnSymbol = tile.gameObject.name;
+				tileKey = rowSymbol + " " + columnSymbol;
+				tiles.Add(tileKey,tile);
+			}
+			
 		}
-	}
-
-	// Use this for initialization
-	void Start() {
 	}
 	
 	public Vector3 GetWorldPositionFromCoordinate(float x, float y) {
 		Vector3 newPosition = new Vector3(0,0,0);
-		bool isTileFound = false;
-		string targetRow = "Row " + y;
-		string targetCol = "Column " + x;
+		string targetRowCol = "Row " + y + " Column " + x;
 		
-		foreach(Transform row in tiles) {
-		  	if(row.gameObject.name.Equals(targetRow)) {
-				foreach(Transform tile in row) {
-					if(tile.gameObject.name.Equals(targetCol)) {
-						newPosition = tile.transform.position;	
-						isTileFound = true;
-						break;
-					}
-				}
-			}
+		if(tiles.ContainsKey(targetRowCol)) {
+			newPosition = ((Transform)(tiles[targetRowCol])).position;
 		}
-		
-		if(!isTileFound) {
+		else {
 			Debug.Log("Couldn't find world position from x and y coordinates given");
 			newPosition = new Vector3(0,0,0);
 		}
 		return newPosition;
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	public GameObject GetTileFromCoordinate(float x, float y) {
+		string targetRowCol = "Row " + x + " Column " + y;
+		GameObject tile = null;
+		
+		if(tiles.ContainsKey(targetRowCol)) {
+			tile = ((Transform)tiles[targetRowCol]).gameObject;
+		}
+		else {
+			Debug.Log("Couldn't find a proper tile from x and y coordinates given");
+		}
+		
+		return tile;
+	}
 	
+	public void GetTileFromWorldPosition(Vector3 worldPos) {
+		/*
+		Ray newRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+		RaycastHit newHit;
+		GameObject tile;
+		
+		if(Physics.Raycast(newRay,out newHit,200)) {
+			GameObject hitObject = newHit.collider.gameObject;	
+		}
+		
+		
+		Debug.DrawLine (Camera.main.transform.position, newHit.point, Color.cyan,10.0f);
+		/*
+		
+		/*
+		GameObject tile = GetTileFromCoordinate(0,1);
+		Bounds tileBound = tile.renderer.bounds;
+		
+		Debug.Log("X: " + worldPos.x.ToString() + " Y: " + worldPos.y.ToString());
+		
+		return null;
+		*/
+		//I have the world position i'm checking
+		//I have the world positions of all of the tiles
+		//If the world position given is between a certain radius of any tile's world position
+		//Return that tile.
 	}
 }

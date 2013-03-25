@@ -3,13 +3,14 @@ using System.Collections;
 
 public class CharacterScript : MonoBehaviour {
 
-public int health;
-public int stamina;
-public Vector2 tilePosition;
-public tk2dSprite sprite;
-public TileMapScript map;
-public GameManagerScript gm;
-public bool isCurrentPlayer;
+	public int health;
+	public string characterName;
+	public int stamina;
+	public Vector2 tilePosition;
+	public tk2dSprite sprite;
+	public TileMapScript map;
+	public GameManagerScript gm;
+	public bool isCurrentPlayer; //is it the character's turn?
 	
 	// Use this for initialization
 	public void Start () {

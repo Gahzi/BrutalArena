@@ -2,7 +2,12 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerScript : CharacterScript {
-		
+	
+	public AbilityScript abilityOne;
+	public AbilityScript abilityTwo;
+	public AbilityScript abilityThree;
+	public AbilityScript abilityFour;
+	public AbilityScript abilityFive;
 	
 	// Use this for initialization
 	new void Start () {

@@ -277,7 +277,7 @@ MonoBehaviour:
       - {x: 64, y: 128}
       - {x: 128, y: 97}
       - {x: 128, y: 32}
-    polyColliderCap: 0
+    polyColliderCap: 1
     colliderConvex: 0
     colliderSmoothSphereCollisions: 0
     colliderColor: 0

@@ -1,19 +1,54 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Model Scripts/CharacterScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Ability Scripts/BasicAttackScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/Model Scripts/CharacterScript.cs" Line="27" Column="4" />
-      <File FileName="Assets/Scripts/ConstantsScript.cs" Line="6" Column="43" />
-      <File FileName="Assets/Scripts/GameManagerScript.cs" Line="40" Column="37" />
-      <File FileName="Assets/Scripts/Model Scripts/PlayerScript.cs" Line="17" Column="6" />
-      <File FileName="Assets/TK2DROOT/tk2d/Editor/Camera/tk2dCameraEditor.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player Scripts/FighterScript.cs" Line="15" Column="14" />
+      <File FileName="Assets/Scripts/Model Scripts/PlayerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Model Scripts/CharacterScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Model Scripts/GameManagerScript.cs" Line="55" Column="4" />
+      <File FileName="Assets/Scripts/GUI Scripts/CreateGUIScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Model Scripts/AbilityScript.cs" Line="7" Column="27" />
+      <File FileName="Assets/Scripts/Model Scripts/TileMapScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Ability Scripts/BasicAttackScript.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Ability Scripts" expanded="True">
+                  <Node name="BasicAttackScript.cs" selected="True" />
+                </Node>
+                <Node name="GUI Scripts" expanded="True" />
+                <Node name="Model Scripts" expanded="True" />
+                <Node name="Player Scripts" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+          <Node name="Assembly-CSharp-Editor" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="TK2DROOT" expanded="True">
+                <Node name="tk2d" expanded="True">
+                  <Node name="Editor" expanded="True">
+                    <Node name="Camera" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="C:\Users\Shervin\Documents\GitHub\BrutalArena\Assets\TK2DROOT\tk2d\Editor\Tilemap\tk2dTileMapSceneGUI.cs" line="45" />
       <Breakpoint file="/Users/shervinghazazani/Desktop/BrutalArena/Assets/TK2DROOT/tk2d/Code/TileMap/tk2dTileMap.cs" line="297" />
+      <Breakpoint file="/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/TileMapScript.cs" line="59" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="Assets/Scripts/Model Scripts/TileMapScript.cs" line="47" offsetX="511" offsetY="690" expression="tiles" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>
