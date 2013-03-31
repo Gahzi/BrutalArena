@@ -5,14 +5,10 @@ using System.Collections;
 public class CreateGUIScript : MonoBehaviour {
 	
 	CharacterScript attachedCharacter;
-	public bool isAbilityOneSelected = false;
-	public bool isAbilityTwoSelected = false;
-	public bool isAbilityThreeSelected = false;
-	public bool isAbilityFourSelected = false;
-	public bool isAbilityFiveSelected = false;
-	
 	public int selected;
+	private int previousSelected = -1;
 	public GUIContent[] buttons = new GUIContent[5];
+	public bool isNewButtonSelected = false;
 	
 	// Use this for initialization
 	void Start () {
@@ -26,61 +22,27 @@ public class CreateGUIScript : MonoBehaviour {
 			GUI.Label(new Rect(25,45,100,30), "Health Points: " + attachedCharacter.health.ToString());	
 			GUI.Label(new Rect(25,65,100,30), "Stamina: " + attachedCharacter.stamina.ToString());
 			
-			if(attachedCharacter is PlayerScript) {
-				PlayerScript attachedPlayer = (PlayerScript)attachedCharacter;
+			if(attachedCharacter.characterType == CharacterScript.CharType.player) {
 
-				buttons[0] = new GUIContent(attachedPlayer.abilityOne.name,attachedPlayer.abilityOne.tooltipText);
-				buttons[1] = new GUIContent(attachedPlayer.abilityTwo.name,attachedPlayer.abilityTwo.tooltipText);
-				buttons[2] = new GUIContent(attachedPlayer.abilityThree.name,attachedPlayer.abilityThree.tooltipText);
-				buttons[3] = new GUIContent(attachedPlayer.abilityFour.name,attachedPlayer.abilityFour.tooltipText);
-				buttons[4] = new GUIContent(attachedPlayer.abilityFive.name,attachedPlayer.abilityFive.tooltipText);
+				buttons[0] = new GUIContent(attachedCharacter.abilityOne.abilityName,attachedCharacter.abilityOne.tooltipText);
+				buttons[1] = new GUIContent(attachedCharacter.abilityTwo.abilityName,attachedCharacter.abilityTwo.tooltipText);
+				buttons[2] = new GUIContent(attachedCharacter.abilityThree.abilityName,attachedCharacter.abilityThree.tooltipText);
+				buttons[3] = new GUIContent(attachedCharacter.abilityFour.abilityName,attachedCharacter.abilityFour.tooltipText);
+				buttons[4] = new GUIContent(attachedCharacter.abilityFive.abilityName,attachedCharacter.abilityFive.tooltipText);
+				
 				selected = GUI.SelectionGrid(new Rect(25,95,110,150),selected,buttons,1);
 				
-				if(selected == 0) {
-					attachedPlayer.abilityOne.Selected();
-				}
-				if(selected == 1) {
-					attachedPlayer.abilityTwo.Selected();
+				if(GUI.Button(new Rect(25,260,110,30),"End Turn")) {
+					attachedCharacter.EndTurn();		
 				}
 				
-				if(selected == 2) {
-					attachedPlayer.abilityThree.Selected();
+				if(previousSelected != selected) {
+					isNewButtonSelected = true;	
+					previousSelected = selected;
 				}
-				
-				if(selected == 3) {
-					attachedPlayer.abilityFour.Selected();
+				else {
+					isNewButtonSelected = false;	
 				}
-				
-				if(selected == 4) {
-					attachedPlayer.abilityFive.Selected();
-				}
-				
-				/*
-				isAbilityOneSelected = GUI.Button(new Rect(25,95,110,30), attachedPlayer.abilityOne.name);
-				isAbilityTwoSelected = GUI.Button(new Rect(25,135,110,30), attachedPlayer.abilityTwo.name);
-				isAbilityThreeSelected = GUI.Button(new Rect(25,175,110,30), attachedPlayer.abilityThree.name);
-				isAbilityFourSelected = GUI.Button(new Rect(25,215,110,30), attachedPlayer.abilityFour.name);
-				isAbilityFiveSelected = GUI.Button(new Rect(25,255,110,30), attachedPlayer.abilityFive.name);
-
-				if(isAbilityOneSelected) {
-					attachedPlayer.abilityOne.Selected();
-				}
-				if(isAbilityTwoSelected) {
-					attachedPlayer.abilityTwo.Selected();
-				}
-				
-				if(isAbilityThreeSelected) {
-					attachedPlayer.abilityThree.Selected();
-				}
-				
-				if(isAbilityFourSelected) {
-					attachedPlayer.abilityFour.Selected();
-				}
-				
-				if(isAbilityFiveSelected) {
-					attachedPlayer.abilityFive.Selected();
-				}
-				*/
 			}
 			else {
 				// Must be an enemy so don't show move Buttons
@@ -88,7 +50,11 @@ public class CreateGUIScript : MonoBehaviour {
 		}
 	}
 	
-	public void SetGUIToCharacter(CharacterScript character) {
-			attachedCharacter = character;
+	public void SetAttachedCharacter(CharacterScript character) {
+		attachedCharacter = character;
+	}
+	
+	public CharacterScript GetAttachedCharacter() {
+		return attachedCharacter;		
 	}
 }

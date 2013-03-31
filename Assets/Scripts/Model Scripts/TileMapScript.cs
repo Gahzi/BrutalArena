@@ -3,7 +3,9 @@ using System.Collections;
 
 public class TileMapScript : MonoBehaviour {
 	
-	Hashtable tiles = new Hashtable();
+	private Hashtable tiles = new Hashtable();
+	//TODO: Perhaps store tileScript instead of raw transforms?
+	private TileScript currentHoveredObject;
 	
 	void Awake() {
 		string tileKey = "";
@@ -21,7 +23,16 @@ public class TileMapScript : MonoBehaviour {
 		}
 	}
 	
-	public Vector3 GetWorldPositionFromCoordinate(float x, float y) {
+	public TileScript GetCurrentHoveredTileObject() {
+		return currentHoveredObject;
+	}
+	
+	public void SetCurrentHoveredTileObject(TileScript tile) {
+		currentHoveredObject = tile;	
+	}
+	
+	
+	public Vector3 GetWorldPositionFromTileCoordinate(float x, float y) {
 		Vector3 newPosition = new Vector3(0,0,0);
 		string targetRowCol = "Row " + y + " Column " + x;
 		
@@ -50,30 +61,20 @@ public class TileMapScript : MonoBehaviour {
 	}
 	
 	public void GetTileFromWorldPosition(Vector3 worldPos) {
-		/*
-		Ray newRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-		RaycastHit newHit;
-		GameObject tile;
-		
-		if(Physics.Raycast(newRay,out newHit,200)) {
-			GameObject hitObject = newHit.collider.gameObject;	
-		}
-		
-		
-		Debug.DrawLine (Camera.main.transform.position, newHit.point, Color.cyan,10.0f);
-		/*
-		
-		/*
-		GameObject tile = GetTileFromCoordinate(0,1);
-		Bounds tileBound = tile.renderer.bounds;
-		
-		Debug.Log("X: " + worldPos.x.ToString() + " Y: " + worldPos.y.ToString());
-		
-		return null;
-		*/
+		//TODO: Need to figure this out.
 		//I have the world position i'm checking
 		//I have the world positions of all of the tiles
 		//If the world position given is between a certain radius of any tile's world position
 		//Return that tile.
+	}
+	
+	//Helper function to move objects from tile to tile
+	public void MoveCharacterToTileCoordinate(CharacterScript character, TileScript newTile) {
+		character.currentTile.SetTileInhabitant(null);
+		character.currentTile = newTile;
+		newTile.SetTileInhabitant(character);
+		Vector3 newPosition = GetWorldPositionFromTileCoordinate(newTile.tileCoordinate.x,newTile.tileCoordinate.y);
+		newPosition.z = character.gameObject.transform.position.z;
+		character.gameObject.transform.position = newPosition;
 	}
 }

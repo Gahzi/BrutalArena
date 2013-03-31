@@ -3,20 +3,24 @@ using System.Collections;
 
 public class AbilityScript {
 	
-	public string name;
+	public string abilityName;
 	public string tooltipText;
-	public int stmCost;
+	public int staminaCost;
+	public int damage;
+	public float range;
+	public CharacterScript player;
 	
-	public AbilityScript() {
-		name = "No Name";
+	public AbilityScript(CharacterScript attachedPlayer) {
+		abilityName = "No Name";
 		tooltipText = "No Tooltip Text";
-		stmCost = 0;
+		staminaCost = 0;
+		player = attachedPlayer;
 	}
 	
 	public AbilityScript(string newName, string newToolTipText, int newStmCost) {
-		name = newName;
+		abilityName = newName;
 		tooltipText = newToolTipText;
-		stmCost = newStmCost;
+		staminaCost = newStmCost;
 	}
 	
 	// Use this for initialization
@@ -25,8 +29,7 @@ public class AbilityScript {
 	}
 	
 	// Update is called once per frame
-	public virtual void Execute(Vector2 tileCoordinate) {
+	public virtual void Execute(TileScript tile) {
 		Debug.Log("Need to override base execute function");
-		
 	}
 }

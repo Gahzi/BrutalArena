@@ -1,15 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Ability Scripts/BasicAttackScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Model Scripts/CharacterScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player Scripts/FighterScript.cs" Line="15" Column="14" />
-      <File FileName="Assets/Scripts/Model Scripts/PlayerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Model Scripts/CharacterScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Model Scripts/GameManagerScript.cs" Line="55" Column="4" />
-      <File FileName="Assets/Scripts/GUI Scripts/CreateGUIScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Model Scripts/AbilityScript.cs" Line="7" Column="27" />
-      <File FileName="Assets/Scripts/Model Scripts/TileMapScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Ability Scripts/BasicAttackScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy Scripts/GnollScript.cs" Line="10" Column="34" />
+      <File FileName="Assets/Scripts/Model Scripts/CharacterScript.cs" Line="22" Column="32" />
+      <File FileName="Assets/Scripts/Ability Scripts/BasicAttackScript.cs" Line="24" Column="5" />
+      <File FileName="Assets/Scripts/Model Scripts/AbilityScript.cs" Line="22" Column="14" />
+      <File FileName="Assets/Scripts/Ability Scripts/ComboScript.cs" Line="19" Column="54" />
+      <File FileName="Assets/Scripts/Ability Scripts/DefendScript.cs" Line="9" Column="14" />
+      <File FileName="Assets/Scripts/Ability Scripts/MoveScript.cs" Line="25" Column="35" />
+      <File FileName="Assets/Scripts/Ability Scripts/StompScript.cs" Line="9" Column="14" />
+      <File FileName="Assets/Scripts/Model Scripts/PlayerScript.cs" Line="10" Column="35" />
+      <File FileName="Assets/Scripts/GUI Scripts/CreateGUIScript.cs" Line="22" Column="97" />
+      <File FileName="Assets/Scripts/Player Scripts/FighterScript.cs" Line="11" Column="35" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,11 +20,13 @@
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Ability Scripts" expanded="True">
-                  <Node name="BasicAttackScript.cs" selected="True" />
-                </Node>
+                <Node name="Ability Scripts" expanded="True" />
+                <Node name="Enemy Scripts" expanded="True" />
                 <Node name="GUI Scripts" expanded="True" />
-                <Node name="Model Scripts" expanded="True" />
+                <Node name="Helper Scripts" expanded="True" />
+                <Node name="Model Scripts" expanded="True">
+                  <Node name="CharacterScript.cs" selected="True" />
+                </Node>
                 <Node name="Player Scripts" expanded="True" />
               </Node>
             </Node>
@@ -45,7 +50,6 @@
     <BreakpointStore>
       <Breakpoint file="C:\Users\Shervin\Documents\GitHub\BrutalArena\Assets\TK2DROOT\tk2d\Editor\Tilemap\tk2dTileMapSceneGUI.cs" line="45" />
       <Breakpoint file="/Users/shervinghazazani/Desktop/BrutalArena/Assets/TK2DROOT/tk2d/Code/TileMap/tk2dTileMap.cs" line="297" />
-      <Breakpoint file="/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/TileMapScript.cs" line="59" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>

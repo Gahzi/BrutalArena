@@ -6,26 +6,54 @@ public class CharacterScript : MonoBehaviour {
 	public int health;
 	public string characterName;
 	public int stamina;
-	public Vector2 tilePosition;
+	public TileScript currentTile;
 	public tk2dSprite sprite;
 	public TileMapScript map;
 	public GameManagerScript gm;
-	public bool isCurrentPlayer; //is it the character's turn?
+	private bool isCurrentPlayer; //is it the character's turn?
+	
+	//Character Types
+	public enum CharType {
+		player,
+		enemy,
+		npc
+	}
+	
+	public CharType characterType;
+	
+	public AbilityScript abilityOne;
+	public AbilityScript abilityTwo;
+	public AbilityScript abilityThree;
+	public AbilityScript abilityFour;
+	public AbilityScript abilityFive;
 	
 	// Use this for initialization
 	public void Start () {
+		characterType = CharType.npc;
 		isCurrentPlayer = false;
     	sprite = GetComponent<tk2dSprite>();
 		if(map == null) Debug.Log("Forgot to drag tk2dTileMap into inspector");
 		gm = GameObject.Find(ConstantsScript.gameManagerObjectName).GetComponent<GameManagerScript>();
 		if(gm == null) Debug.Log("Could not find Game Manager in Scene");
 		
-		this.gameObject.transform.position = map.GetWorldPositionFromCoordinate(tilePosition.x,tilePosition.y);
+		if(currentTile == null) Debug.Log("Could not find tile object associated with");
+		else {
+			map.MoveCharacterToTileCoordinate(this,currentTile);
+		}		
 	}
 	
 	public void Update() {
+		
 		if(isCurrentPlayer) {
 			
+		}
+		
+		//check for death
+		if(health <= 0) {
+			Debug.Log(this.gameObject.name + " has died");
+			//run death animation
+			//delete yourself
+
 		}
 	}
 	
@@ -37,4 +65,6 @@ public class CharacterScript : MonoBehaviour {
 		isCurrentPlayer = false;
 		gm.EndTurn();
 	}
+	
+	
 }

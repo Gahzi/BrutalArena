@@ -5,9 +5,6 @@ public class ConstantsScript {
 	public const string guiManagerObjectName = "GUI Manager";
 	public const string gameManagerObjectName = "Game Manager";
 	
-	
 	//GameObject Tags
 	public const string characterTag = "Character";
-	
-	
 }

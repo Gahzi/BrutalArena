@@ -3,10 +3,10 @@ using System.Collections;
 
 public class DefendScript : AbilityScript {
 	
-	public DefendScript() {
-		name = "Defend";
+	public DefendScript(CharacterScript attachedPlayer) : base(attachedPlayer)  {
+		abilityName = "Defend";
 		tooltipText = "Prepare your unit to defend incoming damage";
-		stmCost = 2;
+		staminaCost = 2;
 	}
 	
 	// Use this for initialization
@@ -15,7 +15,7 @@ public class DefendScript : AbilityScript {
 		
 	}
 	
-	public override void Execute(Vector2 tileCoordinate) {
+	public override void Execute(TileScript tile) {
 		//player has selected a position to move to and we 
 	}
 

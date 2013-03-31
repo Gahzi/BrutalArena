@@ -3,10 +3,10 @@ using System.Collections;
 
 public class ComboScript : AbilityScript {
 	
-	public ComboScript() {
-		name = "Combo";
+	public ComboScript(CharacterScript attachedPlayer) : base(attachedPlayer) {
+		abilityName = "Combo";
 		tooltipText = "Attack a unit using a combo";
-		stmCost = 3;
+		staminaCost = 3;
 	}
 	
 	// Use this for initialization
@@ -15,7 +15,7 @@ public class ComboScript : AbilityScript {
 		
 	}
 	
-	public override void Execute(Vector2 tileCoordinate) {
+	public override void Execute(TileScript tile) {
 		//player has selected a position to move to and we 
 	}
 

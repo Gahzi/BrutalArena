@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class GameManagerScript : MonoBehaviour {
 	
-	public List<GameObject> characterList = new List<GameObject>();
-	public List<GameObject> turnOrderList = new List<GameObject>();
+	List<GameObject> characterList = new List<GameObject>();
+	List<GameObject> turnOrderList = new List<GameObject>();
 	TileMapScript map;
 	CreateGUIScript gui;
 	
@@ -16,6 +16,8 @@ public class GameManagerScript : MonoBehaviour {
 		map =  GameObject.Find(ConstantsScript.tileMapObjectName).GetComponent<TileMapScript>();
 		gui =  GameObject.Find(ConstantsScript.guiManagerObjectName).GetComponent<CreateGUIScript>();
 		
+		//TODO: Change this or else characters won't show in characterlist.
+		//GameObject.FindObjectsOfType(typeof(CharacterScript));
 		GameObject[] chars = GameObject.FindGameObjectsWithTag(ConstantsScript.characterTag);
 		
 		foreach(GameObject character in chars) {
@@ -37,7 +39,7 @@ public class GameManagerScript : MonoBehaviour {
 			if(currentCharacter != nextCharacter) {
 				currentCharacter = nextCharacter;
 				currentCharacter.StartTurn();
-				gui.SetGUIToCharacter(currentCharacter);
+				gui.SetAttachedCharacter(currentCharacter);
 				//Set GUI elements to character 
 			}
 		}
@@ -48,40 +50,54 @@ public class GameManagerScript : MonoBehaviour {
 		
 	}
 	
+	void HandleMouseMoved() {
+		//if we have clicked on an ability and are about to cast it
+		//change currentlyhoveredtile state (color / whatever) or multiple tiles	
+	}
+	
 	void HandleMouseInput() {
+		//if an ability is currently selected and we have clicked on a tile we are hovering over, 
+		//if we have clicked on a tile and we have already clicked on an ability, then cast spell
+		
+		//otherwise if we havn't then do nothing
+		
 		if(Input.GetMouseButtonUp(0)) {
+			//TODO: This can be refactored with more readability and elegance.
+			CharacterScript player = gui.GetAttachedCharacter();
+			TileScript currentSelectedTile = map.GetCurrentHoveredTileObject();
 			
-			map.GetTileFromWorldPosition(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-			
-			
-			if(gui.selected == 0) {
-				Debug.Log("Ability One Selected");
-				//gui.selected = -1;
+			if(player != null) {
+				if(gui.selected == 0 && currentSelectedTile != null) {
+					//Debug.Log("Ability One Executed");
+					player.abilityOne.Execute(currentSelectedTile);
+					gui.selected = -1;
+				}
+				else if(gui.selected == 1 && currentSelectedTile != null) {
+					//Debug.Log("Ability Two Executed");
+					player.abilityTwo.Execute(currentSelectedTile);
+					gui.selected = -1;
+				}
+				else if(gui.selected == 2 && currentSelectedTile != null) {
+					//Debug.Log("Ability Three Executed");
+					player.abilityThree.Execute(currentSelectedTile);
+					gui.selected = -1;
+				}
+				else if(gui.selected == 3 && currentSelectedTile != null) {
+					//Debug.Log("Ability Four Executed");
+					player.abilityFour.Execute(currentSelectedTile);
+					gui.selected = -1;
+				}
+				else if(gui.selected == 4 && currentSelectedTile != null) {
+					//Debug.Log("Ability Five Executed");
+					player.abilityFive.Execute(currentSelectedTile);
+					gui.selected = -1;
+				}
+				else if(gui.selected != -1 && map.GetCurrentHoveredTileObject() == null && !gui.isNewButtonSelected){
+					gui.selected = -1;	
+					//Debug.Log("Unclicking");
+				}
 			}
 			
-			if(gui.selected == 1) {
-				Debug.Log("Ability Two Selected");
-				//gui.selected = -1;
-			}
-			
-			if(gui.selected == 2) {
-				Debug.Log("Ability Three Selected");
-				//gui.selected = -1;
-			}
-			
-			if(gui.selected == 3) {
-				Debug.Log("Ability Four Selected");
-				//gui.selected = -1;
-			}
-			
-			if(gui.selected == 4) {
-				Debug.Log("Ability Five Selected");
-				//gui.selected = -1;
-			}
-			
-			//lmb has been clicked
-			// check if a button has been selected
-			// if a button has selected, call that abilities execute method.
 		}
 	}
 	
