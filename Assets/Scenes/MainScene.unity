@@ -6689,12 +6689,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc6376cb21744188b2f4a616fe8a747, type: 3}
   m_Name: 
   health: 5
+  healthMax: 0
   characterName: Shervin
   stamina: 15
+  staminaMax: 0
   currentTile: {fileID: 1250493274}
   sprite: {fileID: 418390045}
   map: {fileID: 490770585}
-  gm: {fileID: 736929490}
+  gm: {fileID: 0}
   characterType: 0
 --- !u!1 &419193387
 GameObject:
@@ -10633,7 +10635,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 736929489}
-  - 114: {fileID: 736929490}
+  - 114: {fileID: 736929491}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -10652,7 +10654,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!114 &736929490
+--- !u!114 &736929491
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -10660,7 +10662,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 736929488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc830e3cce87642a1b57c84a56dacfbe, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d09bee354d48624ba31b7d4bf1a95cf, type: 3}
   m_Name: 
 --- !u!43 &742182807
 Mesh:
@@ -21094,7 +21096,7 @@ GameObject:
   - 114: {fileID: 1309883620}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21154,7 +21156,7 @@ Renderer:
   m_GameObject: {fileID: 1309883614}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
@@ -21186,13 +21188,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0d8dad189de34985841870e9c60e352, type: 3}
   m_Name: 
   health: 5
+  healthMax: 0
   characterName: Gnoll
-  stamina: 5
+  stamina: 12
+  staminaMax: 12
   currentTile: {fileID: 1182562811}
   sprite: {fileID: 1309883616}
   map: {fileID: 490770585}
-  gm: {fileID: 736929490}
-  characterType: 0
+  gm: {fileID: 736929491}
+  characterType: 1
 --- !u!1 &1325074043
 GameObject:
   m_ObjectHideFlags: 0

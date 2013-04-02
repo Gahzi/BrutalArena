@@ -17,7 +17,7 @@ public class MoveScript : AbilityScript {
 		
 	}
 	
-	public override void Execute(TileScript tile) {
+	public override bool Execute(TileScript tile) {
 		if(tile.GetTileInhabitant() == null) {
 			//TODO: Rewrite distance algorithm to be more simple with Math.Abs,
 			//This should fix double move bug.
@@ -27,8 +27,10 @@ public class MoveScript : AbilityScript {
 				if(player.stamina >= staminaCost) {
 					player.map.MoveCharacterToTileCoordinate(player,tile);
 					player.stamina -= staminaCost;
+					return true;
 				}
 			}
 		}
+		return false;
 	}
 }

@@ -17,15 +17,9 @@ public class BasicAttackScript : AbilityScript {
 		
 	}
 	
-	public override void Execute(TileScript tile) {
+	public override bool Execute(TileScript tile) {
 		CharacterScript enemy = tile.GetTileInhabitant();
 		
-		//if enemy isn't null
-		//if the tile we selected contains an enemy,
-			//if we meet the range requirement
-			//if we meet the stamina requirement
-				//apply damage
-				//reduce stamina
 		if(enemy) { 
 			if(enemy.characterType == CharacterScript.CharType.enemy) {
 				//TODO: Need to make same distance fix as move ability
@@ -35,10 +29,12 @@ public class BasicAttackScript : AbilityScript {
 						enemy.health -= damage;
 						player.stamina -= staminaCost;
 						Debug.Log("Hitting Enemy for " + damage + " damage to " + enemy.health + " health");
+						return true;
 					}
 				}
 			}
 		}
+		return false;
 		
 		
 		

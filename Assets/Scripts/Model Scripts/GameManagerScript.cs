@@ -17,7 +17,6 @@ public class GameManagerScript : MonoBehaviour {
 		gui =  GameObject.Find(ConstantsScript.guiManagerObjectName).GetComponent<CreateGUIScript>();
 		
 		//TODO: Change this or else characters won't show in characterlist.
-		//GameObject.FindObjectsOfType(typeof(CharacterScript));
 		GameObject[] chars = GameObject.FindGameObjectsWithTag(ConstantsScript.characterTag);
 		
 		foreach(GameObject character in chars) {
@@ -34,7 +33,18 @@ public class GameManagerScript : MonoBehaviour {
 		//handle mouse input
 		HandleMouseInput();
 		
-		if(turnOrderList.Count > 0) {
+		//if the current turn is finish, start the next turn
+		if(turnOrderList.Count == 0) {
+			foreach(GameObject characterObject in characterList) {
+				CharacterScript character = characterObject.GetComponent<CharacterScript>();
+				character.stamina = character.staminaMax;
+				turnOrderList.Add(characterObject);
+			}
+		}
+		
+		//if we aren't finished the current turn,
+		//iterate through all characters and give them the chance to move.
+		else if(turnOrderList.Count > 0) {
 			CharacterScript nextCharacter = turnOrderList[0].GetComponent<CharacterScript>();
 			if(currentCharacter != nextCharacter) {
 				currentCharacter = nextCharacter;
@@ -43,6 +53,7 @@ public class GameManagerScript : MonoBehaviour {
 				//Set GUI elements to character 
 			}
 		}
+		
 		
 		//TODO:
 		//if there are no more enemies in the round or if there are no more players in the round.
@@ -102,11 +113,20 @@ public class GameManagerScript : MonoBehaviour {
 	}
 	
 	public void EndTurn() {
+		turnOrderList.Remove(currentCharacter.gameObject);
 		SortTurnOrderListByStamina();
+	}
+	
+	public List<GameObject> GetTurnOrderList() {
+		return turnOrderList;
 	}
 	
 	void SortTurnOrderListByStamina() {
 		turnOrderList.Sort(new CharacterListComparer());
+	}
+	
+	public List<GameObject> GetCharacterList() {
+		return characterList;
 	}
 	
 	private class CharacterListComparer : IComparer<GameObject> {

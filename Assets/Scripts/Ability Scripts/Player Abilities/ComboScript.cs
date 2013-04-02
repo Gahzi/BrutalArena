@@ -15,8 +15,9 @@ public class ComboScript : AbilityScript {
 		
 	}
 	
-	public override void Execute(TileScript tile) {
+	public override bool Execute(TileScript tile) {
 		//player has selected a position to move to and we 
+		return true;
 	}
 
 }

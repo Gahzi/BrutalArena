@@ -1,18 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Model Scripts/CharacterScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy Scripts\GnollScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/Enemy Scripts/GnollScript.cs" Line="10" Column="34" />
-      <File FileName="Assets/Scripts/Model Scripts/CharacterScript.cs" Line="22" Column="32" />
-      <File FileName="Assets/Scripts/Ability Scripts/BasicAttackScript.cs" Line="24" Column="5" />
-      <File FileName="Assets/Scripts/Model Scripts/AbilityScript.cs" Line="22" Column="14" />
-      <File FileName="Assets/Scripts/Ability Scripts/ComboScript.cs" Line="19" Column="54" />
-      <File FileName="Assets/Scripts/Ability Scripts/DefendScript.cs" Line="9" Column="14" />
-      <File FileName="Assets/Scripts/Ability Scripts/MoveScript.cs" Line="25" Column="35" />
-      <File FileName="Assets/Scripts/Ability Scripts/StompScript.cs" Line="9" Column="14" />
-      <File FileName="Assets/Scripts/Model Scripts/PlayerScript.cs" Line="10" Column="35" />
-      <File FileName="Assets/Scripts/GUI Scripts/CreateGUIScript.cs" Line="22" Column="97" />
-      <File FileName="Assets/Scripts/Player Scripts/FighterScript.cs" Line="11" Column="35" />
+      <File FileName="Assets\Scripts\Model Scripts\GameManagerScript.cs" Line="121" Column="23" />
+      <File FileName="Assets\Scripts\Model Scripts\CharacterScript.cs" Line="7" Column="23" />
+      <File FileName="Assets\Scripts\Enemy Scripts\GnollScript.cs" Line="46" Column="6" />
+      <File FileName="Assets\Scripts\Model Scripts\TileMapScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player Scripts\FighterScript.cs" Line="18" Column="40" />
+      <File FileName="Assets\Scripts\Ability Scripts\Enemy Abilities\RockThrowScript.cs" Line="21" Column="3" />
+      <File FileName="Assets\Scripts\Ability Scripts\General Abilities\BasicAttackScript.cs" Line="22" Column="3" />
+      <File FileName="Assets\Scripts\Model Scripts\AbilityScript.cs" Line="34" Column="15" />
+      <File FileName="Assets\Scripts\Ability Scripts\General Abilities\MoveScript.cs" Line="34" Column="16" />
+      <File FileName="Assets\Scripts\Ability Scripts\Player Abilities\ComboScript.cs" Line="21" Column="3" />
+      <File FileName="Assets\Scripts\Ability Scripts\Player Abilities\StompScript.cs" Line="21" Column="2" />
+      <File FileName="Assets\Scripts\Ability Scripts\Player Abilities\DefendScript.cs" Line="20" Column="15" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,25 +21,18 @@
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Ability Scripts" expanded="True" />
-                <Node name="Enemy Scripts" expanded="True" />
+                <Node name="Ability Scripts" expanded="True">
+                  <Node name="Enemy Abilities" expanded="True" />
+                  <Node name="General Abilities" expanded="True" />
+                  <Node name="Player Abilities" expanded="True" />
+                </Node>
+                <Node name="Enemy Scripts" expanded="True">
+                  <Node name="GnollScript.cs" selected="True" />
+                </Node>
                 <Node name="GUI Scripts" expanded="True" />
                 <Node name="Helper Scripts" expanded="True" />
-                <Node name="Model Scripts" expanded="True">
-                  <Node name="CharacterScript.cs" selected="True" />
-                </Node>
+                <Node name="Model Scripts" expanded="True" />
                 <Node name="Player Scripts" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
-          <Node name="Assembly-CSharp-Editor" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="TK2DROOT" expanded="True">
-                <Node name="tk2d" expanded="True">
-                  <Node name="Editor" expanded="True">
-                    <Node name="Camera" expanded="True" />
-                  </Node>
-                </Node>
               </Node>
             </Node>
           </Node>
@@ -53,6 +47,6 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="Assets/Scripts/Model Scripts/TileMapScript.cs" line="47" offsetX="511" offsetY="690" expression="tiles" liveUpdate="False" />
+    <Watch file="Assets\Scripts\Model Scripts\TileMapScript.cs" line="47" offsetX="511" offsetY="690" expression="tiles" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>

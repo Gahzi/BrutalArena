@@ -29,7 +29,8 @@ public class AbilityScript {
 	}
 	
 	// Update is called once per frame
-	public virtual void Execute(TileScript tile) {
+	public virtual bool Execute(TileScript tile) {
 		Debug.Log("Need to override base execute function");
+		return true;
 	}
 }

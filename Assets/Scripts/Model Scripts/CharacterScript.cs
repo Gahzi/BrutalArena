@@ -4,13 +4,16 @@ using System.Collections;
 public class CharacterScript : MonoBehaviour {
 
 	public int health;
+	public int healthMax;
 	public string characterName;
 	public int stamina;
+	public int staminaMax;
 	public TileScript currentTile;
 	public tk2dSprite sprite;
 	public TileMapScript map;
 	public GameManagerScript gm;
-	private bool isCurrentPlayer; //is it the character's turn?
+	
+	private bool hasEndedTurn;
 	
 	//Character Types
 	public enum CharType {
@@ -28,9 +31,9 @@ public class CharacterScript : MonoBehaviour {
 	public AbilityScript abilityFive;
 	
 	// Use this for initialization
-	public void Start () {
+	public virtual void Start () {
 		characterType = CharType.npc;
-		isCurrentPlayer = false;
+		hasEndedTurn = true;
     	sprite = GetComponent<tk2dSprite>();
 		if(map == null) Debug.Log("Forgot to drag tk2dTileMap into inspector");
 		gm = GameObject.Find(ConstantsScript.gameManagerObjectName).GetComponent<GameManagerScript>();
@@ -42,12 +45,7 @@ public class CharacterScript : MonoBehaviour {
 		}		
 	}
 	
-	public void Update() {
-		
-		if(isCurrentPlayer) {
-			
-		}
-		
+	public virtual void Update() {
 		//check for death
 		if(health <= 0) {
 			Debug.Log(this.gameObject.name + " has died");
@@ -57,12 +55,16 @@ public class CharacterScript : MonoBehaviour {
 		}
 	}
 	
-	public void StartTurn() {
-		isCurrentPlayer = true;
+	public bool HasEndedTurn() {
+		return hasEndedTurn;	
 	}
 	
-	public void EndTurn() {
-		isCurrentPlayer = false;
+	public virtual void StartTurn() {
+		hasEndedTurn = false;
+	}
+	
+	public virtual void EndTurn() {
+		hasEndedTurn = true;
 		gm.EndTurn();
 	}
 	

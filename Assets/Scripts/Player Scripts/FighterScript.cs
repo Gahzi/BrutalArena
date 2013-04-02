@@ -4,7 +4,7 @@ using System.Collections;
 public class FighterScript : CharacterScript {
 
 	// Use this for initialization
-	new void Start () {
+	public override void Start () {
 		base.Start();
 		
 		//set the character type
@@ -18,7 +18,7 @@ public class FighterScript : CharacterScript {
 		abilityFive = new DefendScript(this);
 	}
 	
-	new void Update () {
+	public override void Update () {
 		base.Update();	
 	}
 }
