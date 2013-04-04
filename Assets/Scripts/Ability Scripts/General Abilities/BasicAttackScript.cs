@@ -8,7 +8,7 @@ public class BasicAttackScript : AbilityScript {
 		tooltipText = "Attack a unit using your basic attack";
 		staminaCost = 2;
 		damage = 2;
-		range = 1.4f;
+		range = 1;
 	}
 	
 	// Use this for initialization
@@ -21,16 +21,13 @@ public class BasicAttackScript : AbilityScript {
 		CharacterScript enemy = tile.GetTileInhabitant();
 		
 		if(enemy) { 
-			if(enemy.characterType == CharacterScript.CharType.enemy) {
-				//TODO: Need to make same distance fix as move ability
-				float distance = Vector2.Distance(tile.tileCoordinate,player.currentTile.tileCoordinate);
-				if(distance <= range) {
-					if(player.stamina >= staminaCost) {
-						enemy.health -= damage;
-						player.stamina -= staminaCost;
-						Debug.Log("Hitting Enemy for " + damage + " damage to " + enemy.health + " health");
-						return true;
-					}
+			int distance = player.map.GetAStar().GetRangeBetweenTwoTiles(player.currentTile,tile);
+			if(distance <= range) {
+				if(player.stamina >= staminaCost) {
+					enemy.health -= damage;
+					player.stamina -= staminaCost;
+					Debug.Log("Hitting Enemy for " + damage + " damage to " + enemy.health + " health");
+					return true;
 				}
 			}
 		}

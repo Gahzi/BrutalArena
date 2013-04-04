@@ -33,7 +33,7 @@ public class GnollScript : CharacterScript {
 				case GnollState.attacking : {
 					//TODO: Create a playerList in GameManager and use that instead of iterating each frame.
 					List<GameObject> characterList = gm.GetCharacterList();
-					CharacterScript targetPlayer;
+					CharacterScript targetPlayer = null;
 					foreach(GameObject characterObject in characterList) {
 						CharacterScript character = characterObject.GetComponent<CharacterScript>();
 						if(character.characterType == CharType.player) {
@@ -41,13 +41,25 @@ public class GnollScript : CharacterScript {
 						}
 					}
 				
-					
+					if(targetPlayer) {
+						int rangeToPlayer = map.GetAStar().GetRangeBetweenTwoTiles(currentTile,targetPlayer.currentTile);
+						if(rangeToPlayer <= abilityTwo.range) {
+							abilityTwo.Execute(targetPlayer.currentTile);
+						}
+						else {
+							List<Vector2> movePath = map.GetAStar().GetPathBetweenTwoTiles(currentTile,targetPlayer.currentTile);
+							TileScript targetTile = (TileScript)map.GetTiles()[movePath[1]];
+							abilityOne.Execute(targetTile);
+						}
+					}
+					else {
+						Debug.Log("Couldn't find any player to target");
+					}
 				
-					
-					//get closest player tilecoordinates
-					//if in range to basic attack, attack
-					//otherwise move towards him
-			
+					//check if we should end the turn
+					if(stamina < abilityTwo.staminaCost) {
+						EndTurn();
+					}
 					break;
 				}
 				
@@ -70,9 +82,10 @@ public class GnollScript : CharacterScript {
 	
 	public override void StartTurn() {
 		base.StartTurn();
-		
+		state = GnollState.attacking;
 		//if i'm under 25%, consider running away + throwing stone
 		//otherwise, move forward and try to attack.
+		/*
 		if(health < 6) {
 			if(Random.Range(0,100) < 25) {
 				state = GnollState.runningthrowing;
@@ -81,6 +94,7 @@ public class GnollScript : CharacterScript {
 		else {
 			state = GnollState.attacking;	
 		}
+		*/
 	}
 	
 	public override void EndTurn() {

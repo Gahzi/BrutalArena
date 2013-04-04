@@ -8,7 +8,7 @@ public class RockThrowScript : AbilityScript {
 		tooltipText = "Throw a rock at target character";
 		staminaCost = 2;
 		damage = 1;
-		range = 2f;
+		range = 1;
 		//TODO: Fix range so that it represents the amount of tile coordinates away instead of float
 	}
 	
@@ -20,8 +20,8 @@ public class RockThrowScript : AbilityScript {
 		CharacterScript enemy = tile.GetTileInhabitant();
 		
 		if(enemy) { 
-			float distance = Vector2.Distance(tile.tileCoordinate,player.currentTile.tileCoordinate);
-			if(distance <= range) {
+			int distance = player.map.GetAStar().GetRangeBetweenTwoTiles(player.currentTile,tile);
+			if( distance <= range) {
 				if(player.stamina >= staminaCost) {
 					enemy.health -= damage;
 					player.stamina -= staminaCost;

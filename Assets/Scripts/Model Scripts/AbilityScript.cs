@@ -7,7 +7,7 @@ public class AbilityScript {
 	public string tooltipText;
 	public int staminaCost;
 	public int damage;
-	public float range;
+	public int range;
 	public CharacterScript player;
 	
 	public AbilityScript(CharacterScript attachedPlayer) {

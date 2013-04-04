@@ -9,6 +9,7 @@ public class GameManagerScript : MonoBehaviour {
 	TileMapScript map;
 	CreateGUIScript gui;
 	
+	
 	CharacterScript currentCharacter;
 	
 	// Use this for initialization

@@ -6688,11 +6688,11 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fc6376cb21744188b2f4a616fe8a747, type: 3}
   m_Name: 
-  health: 5
-  healthMax: 0
+  health: 8
+  healthMax: 8
   characterName: Shervin
-  stamina: 15
-  staminaMax: 0
+  stamina: 8
+  staminaMax: 8
   currentTile: {fileID: 1250493274}
   sprite: {fileID: 418390045}
   map: {fileID: 490770585}
@@ -21190,8 +21190,8 @@ MonoBehaviour:
   health: 5
   healthMax: 0
   characterName: Gnoll
-  stamina: 12
-  staminaMax: 12
+  stamina: 6
+  staminaMax: 6
   currentTile: {fileID: 1182562811}
   sprite: {fileID: 1309883616}
   map: {fileID: 490770585}

@@ -21,15 +21,15 @@ public class MoveScript : AbilityScript {
 		if(tile.GetTileInhabitant() == null) {
 			//TODO: Rewrite distance algorithm to be more simple with Math.Abs,
 			//This should fix double move bug.
-			float distance = Vector2.Distance(tile.tileCoordinate,player.currentTile.tileCoordinate);
-			Debug.Log(distance.ToString());
-			if(distance <= 1.5f) {
+			//float distance = Vector2.Distance(tile.tileCoordinate,player.currentTile.tileCoordinate);
+			//Debug.Log(distance.ToString());
+			//if(distance <= 1.5f) {
 				if(player.stamina >= staminaCost) {
 					player.map.MoveCharacterToTileCoordinate(player,tile);
 					player.stamina -= staminaCost;
 					return true;
 				}
-			}
+			//}
 		}
 		return false;
 	}
