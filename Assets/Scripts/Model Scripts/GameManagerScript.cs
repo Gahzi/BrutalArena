@@ -40,12 +40,13 @@ public class GameManagerScript : MonoBehaviour {
 				CharacterScript character = characterObject.GetComponent<CharacterScript>();
 				character.stamina = character.staminaMax;
 				turnOrderList.Add(characterObject);
+				SortTurnOrderListByStamina();
 			}
 		}
 		
 		//if we aren't finished the current turn,
 		//iterate through all characters and give them the chance to move.
-		else if(turnOrderList.Count > 0) {
+		if(turnOrderList.Count > 0) {
 			CharacterScript nextCharacter = turnOrderList[0].GetComponent<CharacterScript>();
 			if(currentCharacter != nextCharacter) {
 				currentCharacter = nextCharacter;

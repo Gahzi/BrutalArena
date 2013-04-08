@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class GnollScript : CharacterScript {
 	
@@ -49,7 +50,11 @@ public class GnollScript : CharacterScript {
 						else {
 							List<Vector2> movePath = map.GetAStar().GetPathBetweenTwoTiles(currentTile,targetPlayer.currentTile);
 							TileScript targetTile = (TileScript)map.GetTiles()[movePath[1]];
-							abilityOne.Execute(targetTile);
+						//TODO: Remove this
+							if(!abilityOne.Execute(targetTile)) {
+								EndTurn ();
+								break;
+							}
 						}
 					}
 					else {
@@ -70,7 +75,6 @@ public class GnollScript : CharacterScript {
 					break;
 				}
 			}
-		
 		}
 		
 		

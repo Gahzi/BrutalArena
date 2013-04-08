@@ -1,20 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Helper Scripts/AStarScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy Scripts/GnollScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/Enemy Scripts/GnollScript.cs" Line="47" Column="1" />
-      <File FileName="Assets/Scripts/Helper Scripts/AStarScript.cs" Line="136" Column="7" />
-      <File FileName="Assets/Scripts/Model Scripts/GameManagerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Model Scripts/TileMapScript.cs" Line="26" Column="33" />
-      <File FileName="Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs" Line="24" Column="4" />
-      <File FileName="Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player Scripts/FighterScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GUI Scripts/CreateGUIScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Model Scripts/CharacterScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy Scripts/GnollScript.cs" Line="63" Column="5" />
+      <File FileName="Assets/Scripts/Helper Scripts/AStarScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Model Scripts/GameManagerScript.cs" Line="52" Column="1" />
+      <File FileName="Assets/Scripts/Model Scripts/TileMapScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs" Line="38" Column="1" />
+      <File FileName="Assets/Scripts/Player Scripts/FighterScript.cs" Line="24" Column="1" />
+      <File FileName="Assets/Scripts/GUI Scripts/CreateGUIScript.cs" Line="9" Column="36" />
+      <File FileName="Assets/Scripts/Model Scripts/CharacterScript.cs" Line="74" Column="1" />
       <File FileName="Assets/Scripts/Model Scripts/TileScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Ability Scripts/Enemy Abilities/RockThrowScript.cs" Line="23" Column="88" />
+      <File FileName="Assets/Scripts/Ability Scripts/Enemy Abilities/RockThrowScript.cs" Line="24" Column="28" />
       <File FileName="Assets/Scripts/Ability Scripts/Player Abilities/ComboScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Model Scripts/AbilityScript.cs" Line="10" Column="12" />
+      <File FileName="Assets/Scripts/Model Scripts/AbilityScript.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,11 +27,11 @@
                   <Node name="General Abilities" expanded="True" />
                   <Node name="Player Abilities" expanded="True" />
                 </Node>
-                <Node name="Enemy Scripts" expanded="True" />
-                <Node name="GUI Scripts" expanded="True" />
-                <Node name="Helper Scripts" expanded="True">
-                  <Node name="AStarScript.cs" selected="True" />
+                <Node name="Enemy Scripts" expanded="True">
+                  <Node name="GnollScript.cs" selected="True" />
                 </Node>
+                <Node name="GUI Scripts" expanded="True" />
+                <Node name="Helper Scripts" expanded="True" />
                 <Node name="Model Scripts" expanded="True" />
                 <Node name="Player Scripts" expanded="True" />
               </Node>
@@ -45,8 +45,14 @@
     <BreakpointStore>
       <Breakpoint file="C:\Users\Shervin\Documents\GitHub\BrutalArena\Assets\TK2DROOT\tk2d\Editor\Tilemap\tk2dTileMapSceneGUI.cs" line="45" />
       <Breakpoint file="/Users/shervinghazazani/Desktop/BrutalArena/Assets/TK2DROOT/tk2d/Code/TileMap/tk2dTileMap.cs" line="297" />
-      <Breakpoint file="/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/GnollScript.cs" line="46" />
-      <Breakpoint file="/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/GnollScript.cs" line="51" />
+      <Breakpoint file="/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/GnollScript.cs" line="33" />
+      <Breakpoint file="/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/GameManagerScript.cs" line="39" />
+      <Breakpoint file="/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/GameManagerScript.cs" line="118" />
+      <Breakpoint file="/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/GameManagerScript.cs" line="52" />
+      <Breakpoint file="/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/GnollScript.cs" line="45" />
+      <Breakpoint file="/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/GnollScript.cs" line="31" />
+      <Breakpoint file="/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/GnollScript.cs" line="66" />
+      <Breakpoint file="/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/GnollScript.cs" line="65" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>

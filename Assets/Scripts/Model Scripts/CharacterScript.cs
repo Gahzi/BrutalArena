@@ -42,13 +42,19 @@ public class CharacterScript : MonoBehaviour {
 		if(currentTile == null) Debug.Log("Could not find tile object associated with");
 		else {
 			map.MoveCharacterToTileCoordinate(this,currentTile);
-		}		
+		}
+		
 	}
 	
 	public virtual void Update() {
 		//check for death
 		if(health <= 0) {
 			Debug.Log(this.gameObject.name + " has died");
+			gm.GetTurnOrderList().Remove(this.gameObject);
+			gm.GetCharacterList().Remove(this.gameObject);
+			this.gameObject.SetActive(false);
+			Destroy(this.gameObject);
+			
 			//run death animation
 			//delete yourself
 

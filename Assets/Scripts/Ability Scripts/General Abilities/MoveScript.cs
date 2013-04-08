@@ -7,6 +7,7 @@ public class MoveScript : AbilityScript {
 		abilityName = "Move";
 		tooltipText = "Move to the selected tile";
 		staminaCost = 2;
+		range = 1;
 	}
 	
 	
@@ -24,11 +25,14 @@ public class MoveScript : AbilityScript {
 			//float distance = Vector2.Distance(tile.tileCoordinate,player.currentTile.tileCoordinate);
 			//Debug.Log(distance.ToString());
 			//if(distance <= 1.5f) {
+			int distance = player.map.GetAStar().GetRangeBetweenTwoTiles(player.currentTile,tile);
+			if( distance <= range) {
 				if(player.stamina >= staminaCost) {
 					player.map.MoveCharacterToTileCoordinate(player,tile);
 					player.stamina -= staminaCost;
 					return true;
 				}
+			}
 			//}
 		}
 		return false;
