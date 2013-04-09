@@ -27,6 +27,7 @@ public class BasicAttackScript : AbilityScript {
 					enemy.health -= damage;
 					player.stamina -= staminaCost;
 					Debug.Log("Hitting Enemy for " + damage + " damage to " + enemy.health + " health");
+					
 					return true;
 				}
 			}
