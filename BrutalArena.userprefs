@@ -2,19 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy Scripts/GnollScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/Enemy Scripts/GnollScript.cs" Line="63" Column="5" />
-      <File FileName="Assets/Scripts/Helper Scripts/AStarScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Model Scripts/GameManagerScript.cs" Line="52" Column="1" />
-      <File FileName="Assets/Scripts/Model Scripts/TileMapScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs" Line="38" Column="1" />
-      <File FileName="Assets/Scripts/Player Scripts/FighterScript.cs" Line="24" Column="1" />
-      <File FileName="Assets/Scripts/GUI Scripts/CreateGUIScript.cs" Line="9" Column="36" />
-      <File FileName="Assets/Scripts/Model Scripts/CharacterScript.cs" Line="74" Column="1" />
-      <File FileName="Assets/Scripts/Model Scripts/TileScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Ability Scripts/Enemy Abilities/RockThrowScript.cs" Line="24" Column="28" />
-      <File FileName="Assets/Scripts/Ability Scripts/Player Abilities/ComboScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Model Scripts/AbilityScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy Scripts/GnollScript.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
