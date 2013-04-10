@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BasicAttackScript : AbilityScript {
 	
+	
 	public BasicAttackScript(CharacterScript attachedPlayer) : base(attachedPlayer) {
 		abilityName = "Basic Attack";
 		tooltipText = "Attack a unit using your basic attack";
@@ -10,6 +11,8 @@ public class BasicAttackScript : AbilityScript {
 		damage = 2;
 		range = 1;
 	}
+	
+	
 	
 	// Use this for initialization
 	public override void Selected() {
@@ -27,7 +30,10 @@ public class BasicAttackScript : AbilityScript {
 					enemy.health -= damage;
 					player.stamina -= staminaCost;
 					Debug.Log("Hitting Enemy for " + damage + " damage to " + enemy.health + " health");
-					player.gameObject.audio.Play();
+					//player.gameObject.audio.Play();
+					//TODO: Figure out a more efficient way to do this stuff on the next line
+					GameObject gameManager = GameObject.Find ("Game Manager");
+					gameManager.SendMessage("SwordHit");
 					return true;
 				}
 			}
