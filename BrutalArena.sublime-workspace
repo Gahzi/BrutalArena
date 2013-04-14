@@ -1,0 +1,590 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Tile",
+				"TileFavorProperty"
+			],
+			[
+				"turn",
+				"turnOrderList"
+			],
+			[
+				"u",
+				"Update"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Assets/Scripts/Model Scripts/GameManagerScript.cs",
+			"settings":
+			{
+				"buffer_size": 4486,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Scripts/Model Scripts/TileScript.cs",
+			"settings":
+			{
+				"buffer_size": 1360,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/shervinghazazani/Desktop/BrutalArena.sublime-project",
+			"settings":
+			{
+				"buffer_size": 347,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Scripts/Ability Scripts/Enemy Abilities/RockThrowScript.cs",
+			"settings":
+			{
+				"buffer_size": 924,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs",
+			"settings":
+			{
+				"buffer_size": 836,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Scripts/Helper Scripts/AStarScript.cs",
+			"settings":
+			{
+				"buffer_size": 5206,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Scripts/Model Scripts/TileMapScript.cs",
+			"settings":
+			{
+				"buffer_size": 2364,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Unity3D Build System/Unity.sublime-build",
+	"command_palette":
+	{
+		"height": 327.0,
+		"selected_items":
+		[
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"Open",
+				"Snippet: GUI.Button(position,content,style)"
+			],
+			[
+				"open",
+				"Unity Reference: Open Function Reference"
+			],
+			[
+				"Unity",
+				"Set Syntax: Unity C#"
+			],
+			[
+				"PAck Rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"Pack List",
+				"Package Control: List Packages"
+			],
+			[
+				"Pa instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Pa insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack Instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Package Control: List Packages"
+			],
+			[
+				"pac",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 486.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/GnollScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Enemy Abilities/RockThrowScript.cs",
+		"/Users/shervinghazazani/Desktop/BrutalArena.sublime-project",
+		"/Users/shervinghazazani/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/AbilityScript.cs",
+		"/Users/shervinghazazani/Desktop/EA Letter",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/GUI Scripts/CreateGUIScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/GUI Scripts/CreateGUIScripts.cs",
+		"/Users/shervinghazazani/Library/Application Support/iPhone Simulator/6.1/Applications/F385DABC-01D6-400A-92B4-3783CC511170/Documents/SmartFunnel1dot6.sqlite",
+		"/Users/shervinghazazani/Desktop/Auro - Game Kickstarter.",
+		"/Users/shervinghazazani/Desktop/Confirmation Number Visa",
+		"/Users/shervinghazazani/Desktop/Wetwork Thoughts",
+		"/Users/shervinghazazani/Desktop/Spy Game",
+		"/Users/shervinghazazani/Desktop/tiled-master/README.md",
+		"/Users/shervinghazazani/Desktop/Everytime Chef takes damage, his movement speeds i",
+		"/Users/shervinghazazani/Games/BrutalArena/README.md",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Editor/CreatePlane.cs",
+		"/Users/shervinghazazani/Desktop/Ship Architecture.txt",
+		"/Users/shervinghazazani/Desktop/Chef Character",
+		"/Users/shervinghazazani/Desktop/Game Balance and Costing Systems.txt",
+		"/Users/shervinghazazani/Desktop/Learning League of Legends",
+		"/Users/shervinghazazani/Desktop/http:::www.youtube.com:watch?v=hNTnb7v2CHg&feature",
+		"/Users/shervinghazazani/Desktop/things that i should talk about for my presentatio",
+		"/Users/shervinghazazani/Desktop/JourneyPresentation.txt",
+		"/Users/shervinghazazani/Desktop/Problems with Martial Arts Game.txt",
+		"/Users/shervinghazazani/Documents/School/Game Studio 1/Yolo-Polo/.gitignore",
+		"/Users/shervinghazazani/Desktop/GDC - IGDA Scholarship.txt",
+		"/Users/shervinghazazani/Documents/School/Game Studio 1/Yolo-Polo/README.md",
+		"/Users/shervinghazazani/Desktop/Spring 2013 Classes.txt",
+		"/Users/shervinghazazani/Documents/Blog Posts/Spec Ops The Line",
+		"/Users/shervinghazazani/Desktop/1. Expert Play",
+		"/Users/shervinghazazani/Documents/School/Game Studio 1/GS1A3/readme.txt",
+		"/Users/shervinghazazani/Documents/School/Game Studio 1/GS1A3/.gitignore",
+		"/Users/shervinghazazani/Desktop/Things to do.txt",
+		"/Users/shervinghazazani/Desktop/.gitignore",
+		"/Users/shervinghazazani/Desktop/MOBA 2.txt",
+		"/Users/shervinghazazani/Desktop/Critical Play Report 5",
+		"/Users/shervinghazazani/Desktop/Critical Play Report Week 4",
+		"/Users/shervinghazazani/Desktop/DefenderLoop.txt",
+		"/Users/shervinghazazani/Desktop/Critical Play Report 3.txt",
+		"/Users/shervinghazazani/Desktop/Wayne Reply.txt",
+		"/Users/shervinghazazani/Desktop/Richard Garfield Questions.txt",
+		"/Users/shervinghazazani/Desktop/Chris Bell Questions.txt",
+		"/Users/shervinghazazani/Desktop/Richard Garfield Questions",
+		"/Users/shervinghazazani/Desktop/Chris Bell Questions",
+		"/Users/shervinghazazani/Desktop/Game Design 1 : Sept 10 2012",
+		"/Users/shervinghazazani/Desktop/Game Design Assignment 1:",
+		"/Users/shervinghazazani/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Volumes/Git 1.7.11.3 Snow Leopard Intel Universal/README.txt"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"TODO",
+			"weak",
+			"strongX",
+			"p1score",
+			"p1score =",
+			"p1score=true",
+			"p1score",
+			"score",
+			"collision",
+			"pMove",
+			"p1force",
+			"force",
+			"strikeRange",
+			"p1force",
+			"pMove",
+			"keyPressed",
+			"it",
+			"\""
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Assets/Scripts/Model Scripts/GameManagerScript.cs",
+					"settings":
+					{
+						"buffer_size": 4486,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1700,
+								1700
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Assets/Scripts/Model Scripts/TileScript.cs",
+					"settings":
+					{
+						"buffer_size": 1360,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								708,
+								708
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/shervinghazazani/Desktop/BrutalArena.sublime-project",
+					"settings":
+					{
+						"buffer_size": 347,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								257,
+								257
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "Assets/Scripts/Ability Scripts/Enemy Abilities/RockThrowScript.cs",
+					"settings":
+					{
+						"buffer_size": 924,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								303,
+								303
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs",
+					"settings":
+					{
+						"buffer_size": 836,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								271,
+								271
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Assets/Scripts/Helper Scripts/AStarScript.cs",
+					"settings":
+					{
+						"buffer_size": 5206,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4458,
+								4458
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1922.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 0,
+					"file": "Assets/Scripts/Model Scripts/GameManagerScript.cs",
+					"settings":
+					{
+						"buffer_size": 4486,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3095,
+								3095
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 962.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Assets/Scripts/Model Scripts/TileMapScript.cs",
+					"settings":
+					{
+						"buffer_size": 2364,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1858,
+								1858
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"tile",
+				"Model Scripts/TileScript.cs"
+			],
+			[
+				"tilemapscript",
+				"Model Scripts/TileMapScript.cs"
+			],
+			[
+				"gamem",
+				"Model Scripts/GameManagerScript.cs"
+			],
+			[
+				"astarscript",
+				"Helper Scripts/AStarScript.cs"
+			],
+			[
+				"gno",
+				"Enemy Scripts/GnollScript.cs"
+			],
+			[
+				"gnoll",
+				"Enemy Scripts/GnollScript.cs"
+			],
+			[
+				"move",
+				"Ability Scripts/General Abilities/MoveScript.cs"
+			],
+			[
+				"rock",
+				"Ability Scripts/Enemy Abilities/RockThrowScript.cs"
+			],
+			[
+				"ro",
+				"Ability Scripts/Enemy Abilities/RockThrowScript.cs"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/shervinghazazani/Desktop/BrutalArena.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 201.0,
+	"status_bar_visible": true
+}

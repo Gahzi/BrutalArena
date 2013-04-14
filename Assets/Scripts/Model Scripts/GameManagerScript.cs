@@ -1,15 +1,28 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System;
+using BAConstants;
 
 public class GameManagerScript : MonoBehaviour {
 	
 	List<GameObject> characterList = new List<GameObject>();
 	List<GameObject> turnOrderList = new List<GameObject>();
+	List<Favor> favorList = new List<Favor>();
+
 	TileMapScript map;
 	CreateGUIScript gui;
 	
+	tk2dSpriteCollectionData scData;
 	
+	public int favor = 0;
+	public int fWaveRequirement = 0;
+	public int nextFavorWaveCost = 0;
+
+	public int enemySpawnCount = 1;
+	public int enemySpawnRate = 1;
+
 	CharacterScript currentCharacter;
 	
 	// Use this for initialization
@@ -17,11 +30,20 @@ public class GameManagerScript : MonoBehaviour {
 		map =  GameObject.Find(ConstantsScript.tileMapObjectName).GetComponent<TileMapScript>();
 		gui =  GameObject.Find(ConstantsScript.guiManagerObjectName).GetComponent<CreateGUIScript>();
 		
-		//TODO: Change this or else characters won't show in characterlist.
+		//TODO: Change this to check for character class.
 		GameObject[] chars = GameObject.FindGameObjectsWithTag(ConstantsScript.characterTag);
 		
 		foreach(GameObject character in chars) {
 			characterList.Add(character);
+		}
+		
+		favor = 0;
+
+		if(fWaveRequirement == 0) {
+			Debug.Log("Forgot to change Favor Wave Requirement to anything btu 0");
+		}
+		else {
+			nextFavorWaveCost = fWaveRequirement;
 		}
 		
 		turnOrderList.AddRange(characterList);
@@ -36,6 +58,20 @@ public class GameManagerScript : MonoBehaviour {
 		
 		//if the current turn is finish, start the next turn
 		if(turnOrderList.Count == 0) {
+			List<Favor> favorsToDelete = new List<Favor>();
+			foreach(Favor favor in favorList) {
+				if(favor.GetCurrentTile() == null) {
+					favorsToDelete.Add(favor);
+				}
+				else {
+					favor.MoveToNextTile();	
+				}
+			}
+			
+			foreach(Favor favor in favorsToDelete) {
+				favorList.Remove(favor);	
+			}
+
 			foreach(GameObject characterObject in characterList) {
 				CharacterScript character = characterObject.GetComponent<CharacterScript>();
 				character.stamina = character.staminaMax;
@@ -56,10 +92,25 @@ public class GameManagerScript : MonoBehaviour {
 			}
 		}
 		
-		
-		//TODO:
-		//if there are no more enemies in the round or if there are no more players in the round.
-		//round is over (round won or game over)
+		bool enemyFound = false;
+		foreach(GameObject characterObject in characterList) {
+			CharacterScript character = characterObject.GetComponent<CharacterScript>();
+			if(character.characterType == CharacterScript.CharType.enemy) {
+				enemyFound = true;
+			}
+		}
+
+		if(!enemyFound) {
+			enemySpawnCount += enemySpawnRate;
+			Hashtable tiles = map.GetTiles();
+
+			for(int i = 1; i <= enemySpawnCount; i++) {
+				//TODO:Figure out a better spawning algorithm.
+				Vector2 spawnTileCoord = new Vector2(i,0);
+				TileScript spawnTile = (TileScript)tiles[spawnTileCoord];
+				CreateCharacter(CharacterConstants.CharacterType.Gnoll,spawnTile);
+			}
+		}
 		
 	}
 	
@@ -75,7 +126,6 @@ public class GameManagerScript : MonoBehaviour {
 		//otherwise if we havn't then do nothing
 		
 		if(Input.GetMouseButtonUp(0)) {
-			//TODO: This can be refactored with more readability and elegance.
 			CharacterScript player = gui.GetAttachedCharacter();
 			TileScript currentSelectedTile = map.GetCurrentHoveredTileObject();
 			
@@ -113,6 +163,36 @@ public class GameManagerScript : MonoBehaviour {
 			
 		}
 	}
+
+	public void CreateCharacter(BAConstants.CharacterConstants.CharacterType type, TileScript startingTile) {
+		
+		switch(type) {
+			case BAConstants.CharacterConstants.CharacterType.Gnoll: {
+				//TODO: Turn "Enemy" into a constant that is referenced from ConstantsScript
+				GameObject newObject = (GameObject)Instantiate(Resources.Load(CharacterConstants.GNOLL_PREFAB_NAME),Vector3.zero,Quaternion.identity);
+				GnollScript newGnollScript = newObject.GetComponent<GnollScript>();
+				newGnollScript.currentTile = startingTile;
+				newGnollScript.gm = this;
+				newGnollScript.map = map;
+				characterList.Add(newObject);
+				break;
+			}
+		}
+	}
+
+	public void KillCharacter(CharacterScript character) {
+		Debug.Log(this.gameObject.name + " has died");
+		turnOrderList.Remove(character.gameObject);
+		characterList.Remove(character.gameObject);
+
+		if(character.characterType == CharacterScript.CharType.enemy) {
+			favor += character.favorAwarded;
+			if(favor >= fWaveRequirement) {
+				GenerateNewFavorWave();
+				nextFavorWaveCost += fWaveRequirement;
+			}
+		}
+	}
 	
 	public void EndTurn() {
 		turnOrderList.Remove(currentCharacter.gameObject);
@@ -148,6 +228,31 @@ public class GameManagerScript : MonoBehaviour {
 			
 			else { return 0; }
          }
+	}
+
+	public int GetFavor() {
+		return favor;
+	}
+
+	public void SetFavor(int newFavor) {
+		favor = newFavor;
+	}
+
+	public void GenerateNewFavorWave() {
+		System.Random rand = new System.Random();
+		ConstantsScript.TileFavorDirection side = (ConstantsScript.TileFavorDirection)rand.Next(1,6);
+		ConstantsScript.TileFavorEffect effect = (ConstantsScript.TileFavorEffect)rand.Next(1,6);
+
+		ReadOnlyCollection<Vector2> startingTiles = ConstantsScript.GetFavorWaveStartingTiles(side);
+		Hashtable tiles = map.GetTiles();
+		foreach(Vector2 tileCoordinate in startingTiles) {
+			Favor favor = new Favor(this,((TileScript)tiles[tileCoordinate]),effect,side);
+			favorList.Add(favor);
+		}
+	}
+
+	public List<Favor> GetFavorList() {
+		return favorList;
 	}
 }
 		
