@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using BAConstants;
 
 public class CharacterScript : MonoBehaviour {
 
@@ -23,13 +24,15 @@ public class CharacterScript : MonoBehaviour {
 	}
 	
 	public CharType characterType;
+
+	public int favorAwarded;
 	
 	public AbilityScript abilityOne;
 	public AbilityScript abilityTwo;
 	public AbilityScript abilityThree;
 	public AbilityScript abilityFour;
 	public AbilityScript abilityFive;
-	
+
 	// Use this for initialization
 	public virtual void Start () {
 		characterType = CharType.npc;
@@ -50,8 +53,7 @@ public class CharacterScript : MonoBehaviour {
 		//check for death
 		if(health <= 0) {
 			Debug.Log(this.gameObject.name + " has died");
-			gm.GetTurnOrderList().Remove(this.gameObject);
-			gm.GetCharacterList().Remove(this.gameObject);
+			gm.KillCharacter(this);
 			this.gameObject.SetActive(false);
 			Destroy(this.gameObject);
 			

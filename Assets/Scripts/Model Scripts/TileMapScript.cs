@@ -1,19 +1,34 @@
+
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using BAConstants;
 
 public class TileMapScript : MonoBehaviour {
 	
+	//TODO: Use Dictionary instead.
 	private Hashtable tiles = new Hashtable();
+	private List<int> rowCount = new List<int>();
+
 	private AStarScript aStar;
 	private TileScript currentHoveredObject;
 	
 	void Awake() {
+		int column = 0;
+		int lastRowInColumn = 0;
 		foreach(Transform rowTransform in transform) {
 			foreach(Transform tileTransform in rowTransform) {	
 				TileScript tile = tileTransform.gameObject.GetComponent<TileScript>();
 				tiles.Add(tile.tileCoordinate,tile);
+
+				column = (int)tile.tileCoordinate.y;
+				if(lastRowInColumn < (int)tile.tileCoordinate.x) {
+					lastRowInColumn = (int)tile.tileCoordinate.x;
+				}
 			}
-			
+			lastRowInColumn += 1;
+			rowCount.Insert(column,lastRowInColumn);
+			lastRowInColumn = 0;
 		}
 		
 		aStar = new AStarScript(this);
@@ -21,6 +36,10 @@ public class TileMapScript : MonoBehaviour {
 	
 	public Hashtable GetTiles() {
 		return tiles;	
+	}
+
+	public List<int> GetRowCountList() {
+		return rowCount;
 	}
 	
 	public AStarScript GetAStar() {

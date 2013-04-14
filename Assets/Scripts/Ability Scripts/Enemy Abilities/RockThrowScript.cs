@@ -9,7 +9,6 @@ public class RockThrowScript : AbilityScript {
 		staminaCost = 2;
 		damage = 1;
 		range = 1;
-		//TODO: Fix range so that it represents the amount of tile coordinates away instead of float
 	}
 	
 	public override void Selected() {

@@ -69,13 +69,6 @@ public class AStarScript {
 				//calculate weight of adjacents
 				CalculateNeighbourWeights(lowestTile);
 			}
-			//at this point you have full map with weight aka ranges
-			//range check on a certain tile is possible if given starting position
-			//TODO: Save A* results unless move
-			//grab all 6 nearby neighbours and calculate their weight.
-			//add starting tile to finishedList
-			//add 6 neighbours in the recalculate list
-			//iterate through each element in the recalculate list and calculat their neighbours weight.
 		}
 		Debug.Log("Couldn't find shortest path from orig: " + origTile.tileCoordinate.ToString() + " to dest: " + destTile.tileCoordinate.ToString());
 		return null;

@@ -1,0 +1,4 @@
+/Users/shervinghazazani/Games/BrutalArena/Temp/bin/Debug/Assembly-CSharp-Editor.dll.mdb
+/Users/shervinghazazani/Games/BrutalArena/Temp/bin/Debug/Assembly-CSharp-Editor.dll
+/Users/shervinghazazani/Games/BrutalArena/obj/Debug/Assembly-CSharp-Editor.dll
+/Users/shervinghazazani/Games/BrutalArena/obj/Debug/Assembly-CSharp-Editor.dll.mdb

@@ -20,11 +20,6 @@ public class MoveScript : AbilityScript {
 	
 	public override bool Execute(TileScript tile) {
 		if(tile.GetTileInhabitant() == null) {
-			//TODO: Rewrite distance algorithm to be more simple with Math.Abs,
-			//This should fix double move bug.
-			//float distance = Vector2.Distance(tile.tileCoordinate,player.currentTile.tileCoordinate);
-			//Debug.Log(distance.ToString());
-			//if(distance <= 1.5f) {
 			int distance = player.map.GetAStar().GetRangeBetweenTwoTiles(player.currentTile,tile);
 			if( distance <= range) {
 				if(player.stamina >= staminaCost) {

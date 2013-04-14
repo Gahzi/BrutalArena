@@ -16,7 +16,7 @@ public class GnollScript : CharacterScript {
 		base.Start();
 		state = GnollState.attacking;
 		characterType = CharType.enemy;
-		
+
 		//set our gnoll's abilities
 		abilityOne = new MoveScript(this);
 		abilityTwo = new BasicAttackScript(this);

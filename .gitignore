@@ -6,3 +6,4 @@ Library/*
 *.csproj
 *.pidb
 *.sln
+*.sublime-project
