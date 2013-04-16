@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using BAConstants;
 
 public class AudioManagerScript : MonoBehaviour {
 	
@@ -20,10 +21,49 @@ public class AudioManagerScript : MonoBehaviour {
 	void Update () {
 	
 	}
-	
-	public void SwordHit() {
-		audio.clip = SwordHit1;
-		audio.Play();
-		Debug.Log ("Played!");
+
+	public void PlayAudioClip(AudioConstants.AudioClipType type) {
+		switch(type) {
+			case AudioConstants.AudioClipType.Cheer1: {
+				audio.clip = Cheers[0];
+				break;
+			}
+			case AudioConstants.AudioClipType.Cheer2: {
+				audio.clip = Cheers[1];
+				break;
+			}
+			case AudioConstants.AudioClipType.Cheer3: {
+				audio.clip = Cheers[2];
+				break;
+			}
+			case AudioConstants.AudioClipType.CrowdLoop: {
+				audio.clip = CrowdLoop;
+				break;
+			}
+			case AudioConstants.AudioClipType.GameStartSound: {
+				audio.clip = GameStartSound;
+				break;
+			}
+			case AudioConstants.AudioClipType.MonsterGrowl1: {
+				audio.clip = MonsterGrowl1;
+				break;
+			}
+			case AudioConstants.AudioClipType.MonsterGrowl2: {
+				audio.clip = MonsterGrowl2;
+				break;
+			}
+			case AudioConstants.AudioClipType.SwordHit1: {
+				audio.clip = SwordHit1;
+				break;
+			}
+			case AudioConstants.AudioClipType.SwordPickup: {
+				audio.clip = SwordPickup;
+				break;
+			}
+		}
+
+		if(audio.clip != null) {
+			audio.Play();
+		}
 	}
 }

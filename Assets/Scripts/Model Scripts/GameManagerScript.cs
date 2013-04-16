@@ -181,7 +181,7 @@ public class GameManagerScript : MonoBehaviour {
 	}
 
 	public void KillCharacter(CharacterScript character) {
-		Debug.Log(this.gameObject.name + " has died");
+		Debug.Log(character.gameObject.name + " has died");
 		turnOrderList.Remove(character.gameObject);
 		characterList.Remove(character.gameObject);
 

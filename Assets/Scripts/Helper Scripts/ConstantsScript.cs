@@ -11,8 +11,6 @@ namespace BAConstants {
 		public const string guiManagerObjectName = "GUI Manager";
 		public const string gameManagerObjectName = "Game Manager";
 		
-		
-		
 		//GameObject Tags
 		public const string characterTag = "Character";
 		
@@ -41,9 +39,6 @@ namespace BAConstants {
 		//FavorWave tile #
 		public const int favorWaveTileCount = 22;
 
-
-
-		
 		private static readonly ReadOnlyCollection<Vector2> topStartingTiles =
     	new ReadOnlyCollection<Vector2>(new[]
         {
@@ -81,7 +76,7 @@ namespace BAConstants {
     	new ReadOnlyCollection<Vector2>(new[]
         {
             new Vector2(0,12),new Vector2(0,11),new Vector2(0,10),new Vector2(0,9),new Vector2(0,8),new Vector2(0,7),new Vector2(0,6),
-            new Vector2(1,12),new Vector2(1,11),new Vector2(1,10),new Vector2(1,9),new Vector2(1,8),new Vector2(1,7),new Vector2(1,6),new Vector2(1,5),
+            new Vector2(1,12),new Vector2(1,11),new Vector2(1,10),new Vector2(1,9),new Vector2(1,8),new Vector2(1,7),new Vector2(1,6),new Vector2(0,5),
             new Vector2(2,11),new Vector2(2,10),new Vector2(2,9),new Vector2(2,8),new Vector2(2,7),new Vector2(2,6),new Vector2(1,5)
         });
 
@@ -93,8 +88,6 @@ namespace BAConstants {
             new Vector2(1,7),new Vector2(2,6),new Vector2(2,5),new Vector2(2,4),new Vector2(2,3),new Vector2(2,2),new Vector2(2,1)
         });
     	
-
-
     	//Returns the top left tile coordinate for each favor wave's starting position
 		private static readonly Dictionary<TileFavorDirection, ReadOnlyCollection<Vector2>> favorWavesStartingTiles
     	= new Dictionary<TileFavorDirection, ReadOnlyCollection<Vector2>>
@@ -132,6 +125,28 @@ namespace BAConstants {
         public const int GNOLL_HEALTH_MAX = 5;
         public const int GNOLL_STAMINA_MAX = 5;
         public const int GNOLL_FAVOR_AWARDED = 5;
+    }
+
+    /*
+    *
+    *
+    * AUDIO CONSTANTS
+    *
+    */
+    public class AudioConstants {
+
+        public enum AudioClipType {
+            Cheer1,
+            Cheer2,
+            Cheer3,
+            CrowdLoop,
+            GameStartSound,
+            MonsterGrowl1,
+            MonsterGrowl2,
+            SwordHit1,
+            SwordPickup,
+        }
+
     }
 }
 

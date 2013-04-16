@@ -30,7 +30,6 @@ public class TileScript : MonoBehaviour {
 		}
 		else if(favorList.Count > 1) {
 			spriteScript.color = Color.green;
-			Debug.Log ("More than one favor!");	
 		}
 		else {
 			spriteScript.color = Color.white;

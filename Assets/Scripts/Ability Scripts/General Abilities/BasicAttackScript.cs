@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using BAConstants;
 
 public class BasicAttackScript : AbilityScript {
 	
@@ -30,10 +31,9 @@ public class BasicAttackScript : AbilityScript {
 					enemy.health -= damage;
 					player.stamina -= staminaCost;
 					Debug.Log("Hitting Enemy for " + damage + " damage to " + enemy.health + " health");
-					//player.gameObject.audio.Play();
-					//TODO: Figure out a more efficient way to do this stuff on the next line
-					GameObject gameManager = GameObject.Find ("Game Manager");
-					gameManager.SendMessage("SwordHit");
+					GameManagerScript gm = player.gm;
+					AudioManagerScript am = gm.gameObject.GetComponent<AudioManagerScript>();
+					am.PlayAudioClip(BAConstants.AudioConstants.AudioClipType.SwordHit1);
 					return true;
 				}
 			}
