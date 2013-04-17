@@ -204,8 +204,12 @@ public class GameManagerScript : MonoBehaviour {
 				GenerateNewFavorWave();
 				nextFavorWaveCost += fWaveRequirement;
 			}
+		} else if (character.characterType == CharacterConstants.CharacterType.player) {
+			//TODO: Delay for short time
+			Application.LoadLevel(2);
 		}
 	}
+	
 	
 	public void EndTurn() {
 		turnOrderList.Remove(currentCharacter.gameObject);
