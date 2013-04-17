@@ -19,7 +19,7 @@ public class GameManagerScript : MonoBehaviour {
 	public int favor = 0;
 	public int fWaveRequirement = 0;
 	public int nextFavorWaveCost = 0;
-	public float healthGainedPerFavor = 0.2f;
+	public float healthGainedPerFavor = 0.1f;
 
 	public int enemySpawnCount = 1;
 	public int enemySpawnRate = 1;
