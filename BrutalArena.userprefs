@@ -1,23 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< Updated upstream
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TransitionScript.cs">
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GUI Scripts/CreateGUIScript.cs">
->>>>>>> Stashed changes
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy Scripts/TankScript.cs">
     <Files>
       <File FileName="Assets/Scripts/Enemy Scripts/GnollScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Enemy Scripts/TankScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Ability Scripts/Enemy Abilities/PushScript.cs" Line="1" Column="1" />
-<<<<<<< Updated upstream
-      <File FileName="Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/TransitionScript.cs" Line="19" Column="2" />
-=======
-      <File FileName="Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs" Line="31" Column="1" />
-      <File FileName="Assets/Scripts/Model Scripts/AudioManagerScript.cs" Line="27" Column="47" />
-      <File FileName="Assets/Scripts/Player Scripts/FighterScript.cs" Line="29" Column="1" />
-      <File FileName="Assets/Scripts/GUI Scripts/CreateGUIScript.cs" Line="10" Column="49" />
->>>>>>> Stashed changes
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -28,18 +14,11 @@
                 <Node name="Ability Scripts" expanded="True">
                   <Node name="Enemy Abilities" expanded="True" />
                   <Node name="General Abilities" expanded="True" />
-<<<<<<< Updated upstream
-=======
-                  <Node name="Player Abilities" expanded="True" />
->>>>>>> Stashed changes
                 </Node>
-                <Node name="Enemy Scripts" expanded="True" />
-                <Node name="GUI Scripts" expanded="True" />
-                <Node name="Model Scripts" expanded="True">
-                  <Node name="AudioManagerScript.cs" selected="True" />
+                <Node name="Enemy Scripts" expanded="True">
+                  <Node name="TankScript.cs" selected="True" />
                 </Node>
                 <Node name="Player Scripts" expanded="True" />
-                <Node name="TransitionScript.cs" selected="True" />
               </Node>
             </Node>
           </Node>
