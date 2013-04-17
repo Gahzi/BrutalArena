@@ -10836,6 +10836,7 @@ MonoBehaviour:
   favor: 0
   fWaveRequirement: 10
   nextFavorWaveCost: 10
+  healthGainedPerFavor: .200000003
   enemySpawnCount: 1
   enemySpawnRate: 1
 --- !u!82 &736929492
