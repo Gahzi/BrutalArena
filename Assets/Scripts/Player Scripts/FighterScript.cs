@@ -14,8 +14,8 @@ public class FighterScript : CharacterScript {
 		abilityOne = new MoveScript(this);
 		abilityTwo = new BasicAttackScript(this);
 		//abilityThree = new ComboScript(this);
-		//abilityFour = new StompScript(this);
-		//abilityFive = new DefendScript(this);
+		//abilityFour = new CircleAttack(this);
+		//abilityFive = new StompScript(this);
 	}
 	
 	public override void Update () {

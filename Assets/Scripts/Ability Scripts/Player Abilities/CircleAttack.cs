@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using BAConstants;
 
-public class BasicAttackScript : AbilityScript {
+public class CircleAttack : AbilityScript {
 	
 	
-	public BasicAttackScript(CharacterScript attachedPlayer) : base(attachedPlayer) {
-		abilityName = "Basic Attack";
-		tooltipText = "Attack a unit using your basic attack";
-		staminaCost = 2;
+	public CircleAttack(CharacterScript attachedPlayer) : base(attachedPlayer) {
+		abilityName = "Circle Attack";
+		tooltipText = "Attack all enemies around you";
+		staminaCost = 4;
 		damage = 2;
 		range = 1;
 	}
@@ -39,7 +39,7 @@ public class BasicAttackScript : AbilityScript {
 					//+ damageModifier;
 					//- abilityCostModifier
 					player.stamina -= (staminaCost);
-					Debug.Log("Hit Enemy for " + damage + " damage to " + enemy.health + " health");
+					Debug.Log("Hit Enemies for " + damage + " damage to " + enemy.health + " health");
 					GameManagerScript gm = player.gm;
 					AudioManagerScript am = gm.gameObject.GetComponent<AudioManagerScript>();
 					am.PlayAudioClip(BAConstants.AudioConstants.AudioClipType.SwordHit1);
