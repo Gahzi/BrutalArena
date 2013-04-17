@@ -29,7 +29,7 @@ public class CircleAttack : AbilityScript {
 			int distance = player.map.GetAStar().GetRangeBetweenTwoTiles(player.currentTile,tile);
 			if(distance <= range) {
 
-				int abilityCostModifier = tile.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.ReduceAbilityCost);
+				//int abilityCostModifier = tile.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.ReduceAbilityCost);
 				//TODO:add these back in.
 				//- abilityCostModifier;
 				if(player.stamina >= staminaCost ) {
