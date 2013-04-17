@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using BAConstants;
 
 public class TileScript : MonoBehaviour {
@@ -9,7 +10,7 @@ public class TileScript : MonoBehaviour {
 	private CharacterScript tileInhabitant = null;
 	public Vector2 tileCoordinate;
 
-	private List<Favor> favorList = new List<Favor>();
+	private List<Favor> favorList;
 	
 	// Use this for initialization
 	void Start () {
@@ -35,6 +36,16 @@ public class TileScript : MonoBehaviour {
 			spriteScript.color = Color.white;
 		}
 		//Change color depending on the type of favor effects on the tile
+	}
+
+	public int GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect effect) {
+		IEnumerable<Favor> effectFavors = 
+			from favor in favorList
+			where favor.GetFavorEffect() == effect
+			select favor;
+		
+
+		return effectFavors.Count();
 	}
 
 	public List<Favor> GetFavorList() {

@@ -19,6 +19,7 @@ public class GameManagerScript : MonoBehaviour {
 	public int favor = 0;
 	public int fWaveRequirement = 0;
 	public int nextFavorWaveCost = 0;
+	public float healthGainedPerFavor = 0.2f;
 
 	public int enemySpawnCount = 1;
 	public int enemySpawnRate = 1;
@@ -91,18 +92,30 @@ public class GameManagerScript : MonoBehaviour {
 				//Set GUI elements to character 
 			}
 		}
+
+		//End of round check
 		
 		bool enemyFound = false;
+		CharacterScript player = null;
 		foreach(GameObject characterObject in characterList) {
 			CharacterScript character = characterObject.GetComponent<CharacterScript>();
 			if(character.characterType == CharacterScript.CharType.enemy) {
 				enemyFound = true;
 			}
+			if(character.characterType == CharacterScript.CharType.player) {
+				player = character;
+			}
+
+			//TODO:Remove this hack
 		}
 
 		if(!enemyFound) {
 			enemySpawnCount += enemySpawnRate;
 			Hashtable tiles = map.GetTiles();
+
+			if(player) {
+				player.health += (int)(favor * healthGainedPerFavor);
+			}
 
 			for(int i = 1; i <= enemySpawnCount; i++) {
 				//TODO:Figure out a better spawning algorithm.

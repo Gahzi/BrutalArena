@@ -20,7 +20,7 @@ namespace BAConstants {
 		//FavorWave Enums
 		public enum TileFavorEffect {
 			IncreaseDamage = 1,
-			IncreaseStamina = 2,
+			ReduceAbilityCost = 2,
 			IncreaseHitPercentage = 3,
 			DecreaseEnemyDamage = 4,
 			DecreaseEnemyStamina = 5,
@@ -115,6 +115,7 @@ namespace BAConstants {
 
         //TODO: Refactor this or CharacterScript.CharType
         //We don't need both, it's redundant?
+        //Fix: Each character has a type variable that makes it npc,enemy or player
         public enum CharacterType {
             Fighter,
             Gnoll

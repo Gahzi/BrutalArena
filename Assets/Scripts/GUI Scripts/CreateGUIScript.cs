@@ -24,11 +24,11 @@ public class CreateGUIScript : MonoBehaviour {
 			
 			if(attachedCharacter.characterType == CharacterScript.CharType.player) {
 
-				buttons[0] = new GUIContent(attachedCharacter.abilityOne.abilityName,attachedCharacter.abilityOne.tooltipText);
-				buttons[1] = new GUIContent(attachedCharacter.abilityTwo.abilityName,attachedCharacter.abilityTwo.tooltipText);
-				buttons[2] = new GUIContent(attachedCharacter.abilityThree.abilityName,attachedCharacter.abilityThree.tooltipText);
-				buttons[3] = new GUIContent(attachedCharacter.abilityFour.abilityName,attachedCharacter.abilityFour.tooltipText);
-				buttons[4] = new GUIContent(attachedCharacter.abilityFive.abilityName,attachedCharacter.abilityFive.tooltipText);
+				if(attachedCharacter.abilityOne != null) buttons[0] = new GUIContent(attachedCharacter.abilityOne.abilityName,attachedCharacter.abilityOne.tooltipText);
+				if(attachedCharacter.abilityTwo != null) buttons[1] = new GUIContent(attachedCharacter.abilityTwo.abilityName,attachedCharacter.abilityTwo.tooltipText);
+				if(attachedCharacter.abilityThree != null) buttons[2] = new GUIContent(attachedCharacter.abilityThree.abilityName,attachedCharacter.abilityThree.tooltipText);
+				if(attachedCharacter.abilityFour != null) buttons[3] = new GUIContent(attachedCharacter.abilityFour.abilityName,attachedCharacter.abilityFour.tooltipText);
+				if(attachedCharacter.abilityFive != null) buttons[4] = new GUIContent(attachedCharacter.abilityFive.abilityName,attachedCharacter.abilityFive.tooltipText);
 				
 				selected = GUI.SelectionGrid(new Rect(25,95,110,150),selected,buttons,1);
 				
