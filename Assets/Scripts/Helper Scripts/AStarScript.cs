@@ -81,7 +81,7 @@ public class AStarScript {
 		foreach(Vector2 relNeighbourCoord in tileNeighbours) {
 			Vector2 neighbourCoord = centerTile.GetTileCoordinate() + relNeighbourCoord;
 
-			if(rowCount.Contains((int)neighbourCoord.y)) {
+			if(neighbourCoord.y >= 0 && neighbourCoord.y <= 12) { 
 				int currentRowCount = rowCount[(int)centerTile.GetTileCoordinate().y];
 				int destRowCount = rowCount[(int)neighbourCoord.y];
 				if(currentRowCount < destRowCount && (relNeighbourCoord.y == 1 || relNeighbourCoord.y == -1)) {
