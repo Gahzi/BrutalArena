@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
+using BAConstants;
 
 public class CreateGUIScript : MonoBehaviour {
 	
@@ -22,7 +22,7 @@ public class CreateGUIScript : MonoBehaviour {
 			GUI.Label(new Rect(25,45,100,30), "Health Points: " + attachedCharacter.health.ToString());	
 			GUI.Label(new Rect(25,65,100,30), "Stamina: " + attachedCharacter.stamina.ToString());
 			
-			if(attachedCharacter.characterType == CharacterScript.CharType.player) {
+			if(attachedCharacter.characterType == CharacterConstants.CharacterType.player) {
 
 				if(attachedCharacter.abilityOne != null) buttons[0] = new GUIContent(attachedCharacter.abilityOne.abilityName,attachedCharacter.abilityOne.tooltipText);
 				if(attachedCharacter.abilityTwo != null) buttons[1] = new GUIContent(attachedCharacter.abilityTwo.abilityName,attachedCharacter.abilityTwo.tooltipText);

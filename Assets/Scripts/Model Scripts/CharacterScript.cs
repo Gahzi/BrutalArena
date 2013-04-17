@@ -16,14 +16,7 @@ public class CharacterScript : MonoBehaviour {
 	
 	private bool hasEndedTurn;
 	
-	//Character Types
-	public enum CharType {
-		player,
-		enemy,
-		npc
-	}
-	
-	public CharType characterType;
+	public CharacterConstants.CharacterType characterType;
 
 	public int favorAwarded;
 	
@@ -35,7 +28,7 @@ public class CharacterScript : MonoBehaviour {
 
 	// Use this for initialization
 	public virtual void Start () {
-		characterType = CharType.npc;
+		characterType = CharacterConstants.CharacterType.npc;
 		hasEndedTurn = true;
     	sprite = GetComponent<tk2dSprite>();
 		if(map == null) Debug.Log("Forgot to drag tk2dTileMap into inspector");

@@ -99,10 +99,10 @@ public class GameManagerScript : MonoBehaviour {
 		CharacterScript player = null;
 		foreach(GameObject characterObject in characterList) {
 			CharacterScript character = characterObject.GetComponent<CharacterScript>();
-			if(character.characterType == CharacterScript.CharType.enemy) {
+			if(character.characterType == CharacterConstants.CharacterType.enemy) {
 				enemyFound = true;
 			}
-			if(character.characterType == CharacterScript.CharType.player) {
+			if(character.characterType == CharacterConstants.CharacterType.player) {
 				player = character;
 			}
 
@@ -121,7 +121,7 @@ public class GameManagerScript : MonoBehaviour {
 				//TODO:Figure out a better spawning algorithm.
 				Vector2 spawnTileCoord = new Vector2(i,0);
 				TileScript spawnTile = (TileScript)tiles[spawnTileCoord];
-				CreateCharacter(CharacterConstants.CharacterType.Gnoll,spawnTile);
+				CreateCharacter(CharacterConstants.CharacterClass.Gnoll,spawnTile);
 			}
 		}
 		
@@ -177,10 +177,10 @@ public class GameManagerScript : MonoBehaviour {
 		}
 	}
 
-	public void CreateCharacter(BAConstants.CharacterConstants.CharacterType type, TileScript startingTile) {
+	public void CreateCharacter(BAConstants.CharacterConstants.CharacterClass type, TileScript startingTile) {
 		
 		switch(type) {
-			case BAConstants.CharacterConstants.CharacterType.Gnoll: {
+			case BAConstants.CharacterConstants.CharacterClass.Gnoll: {
 				//TODO: Turn "Enemy" into a constant that is referenced from ConstantsScript
 				GameObject newObject = (GameObject)Instantiate(Resources.Load(CharacterConstants.GNOLL_PREFAB_NAME),Vector3.zero,Quaternion.identity);
 				GnollScript newGnollScript = newObject.GetComponent<GnollScript>();
@@ -198,7 +198,7 @@ public class GameManagerScript : MonoBehaviour {
 		turnOrderList.Remove(character.gameObject);
 		characterList.Remove(character.gameObject);
 
-		if(character.characterType == CharacterScript.CharType.enemy) {
+		if(character.characterType == CharacterConstants.CharacterType.enemy) {
 			favor += character.favorAwarded;
 			if(favor >= fWaveRequirement) {
 				GenerateNewFavorWave();
@@ -255,7 +255,6 @@ public class GameManagerScript : MonoBehaviour {
 		System.Random rand = new System.Random();
 		ConstantsScript.TileFavorDirection side = (ConstantsScript.TileFavorDirection)rand.Next(1,6);
 		ConstantsScript.TileFavorEffect effect = (ConstantsScript.TileFavorEffect)rand.Next(1,6);
-
 		ReadOnlyCollection<Vector2> startingTiles = ConstantsScript.GetFavorWaveStartingTiles(side);
 		Hashtable tiles = map.GetTiles();
 		foreach(Vector2 tileCoordinate in startingTiles) {

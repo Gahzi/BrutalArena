@@ -20,10 +20,10 @@ namespace BAConstants {
 		//FavorWave Enums
 		public enum TileFavorEffect {
 			IncreaseDamage = 1,
-			ReduceAbilityCost = 2,
+			DecreaseAbilityCost = 2,
 			IncreaseHitPercentage = 3,
 			DecreaseEnemyDamage = 4,
-			DecreaseEnemyStamina = 5,
+			IncreaseEnemyAbilityCost = 5,
 			DecreaseEnemyHitPercentage = 6
 		};
 
@@ -113,13 +113,20 @@ namespace BAConstants {
     */
     public class CharacterConstants {
 
-        //TODO: Refactor this or CharacterScript.CharType
+        //TODO: Refactor this or CharacterScript.CharacterConstants.CharacterType
         //We don't need both, it's redundant?
         //Fix: Each character has a type variable that makes it npc,enemy or player
-        public enum CharacterType {
+        public enum CharacterClass {
             Fighter,
             Gnoll
         };
+
+        //Character Types
+        public enum CharacterType {
+            player,
+            enemy,
+            npc
+        }
 
         public const string GNOLL_PREFAB_NAME = "Enemy";
         public const string GNOLL_NAME = "Gnoll";
