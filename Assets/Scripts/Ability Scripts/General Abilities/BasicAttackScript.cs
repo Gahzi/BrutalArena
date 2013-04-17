@@ -26,26 +26,44 @@ public class BasicAttackScript : AbilityScript {
 		CharacterScript enemy = tile.GetTileInhabitant();
 		
 		if(enemy) { 
-			int distance = player.map.GetAStar().GetRangeBetweenTwoTiles(player.currentTile,tile);
-			if(distance <= range) {
-
-				int abilityCostModifier = tile.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.ReduceAbilityCost);
-				//TODO:add these back in.
-				//- abilityCostModifier;
-				if(player.stamina >= staminaCost ) {
-
-					int damageModifier = tile.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.IncreaseDamage);
-					enemy.health -= damage; 
-					//+ damageModifier;
-					//- abilityCostModifier
-					player.stamina -= (staminaCost);
-					Debug.Log("Hitting Enemy for " + damage + " damage to " + enemy.health + " health");
-					GameManagerScript gm = player.gm;
-					AudioManagerScript am = gm.gameObject.GetComponent<AudioManagerScript>();
-					am.PlayAudioClip(BAConstants.AudioConstants.AudioClipType.SwordHit1);
-					return true;
+			switch(player.characterType) {
+				case CharacterConstants.CharacterType.player: {
+					int distance = player.map.GetAStar().GetRangeBetweenTwoTiles(player.currentTile,tile);
+					if(distance <= range) {
+						int abilityCostModifier = tile.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.DecreaseAbilityCost);
+						if(player.stamina >= staminaCost - abilityCostModifier) {
+							int damageModifier = tile.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.IncreaseDamage);
+							enemy.health -= (damage + damageModifier);
+							player.stamina -= (staminaCost - abilityCostModifier);
+							Debug.Log("Hitting Enemy for " + damage + " damage to " + enemy.health + " health");
+							GameManagerScript gm = player.gm;
+							AudioManagerScript am = gm.gameObject.GetComponent<AudioManagerScript>();
+							am.PlayAudioClip(BAConstants.AudioConstants.AudioClipType.SwordHit1);
+							return true;
+						}
+					}
+					break;
+				}
+				case CharacterConstants.CharacterType.enemy: {
+					int distance = player.map.GetAStar().GetRangeBetweenTwoTiles(player.currentTile,tile);
+					if(distance <= range) {
+						int increaseAbilityCostModifier = tile.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.IncreaseEnemyAbilityCost);
+						if(player.stamina >= staminaCost + increaseAbilityCostModifier) {
+							int decreaseDamageModifier = tile.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.DecreaseEnemyDamage);
+							enemy.health -= (damage - decreaseDamageModifier);
+							player.stamina -= (staminaCost + increaseAbilityCostModifier);
+							Debug.Log("Hitting Enemy for " + damage + " damage to " + enemy.health + " health");
+							GameManagerScript gm = player.gm;
+							AudioManagerScript am = gm.gameObject.GetComponent<AudioManagerScript>();
+							am.PlayAudioClip(BAConstants.AudioConstants.AudioClipType.SwordHit1);
+							return true;
+						}
+					}
+					break;
 				}
 			}
+			
+			
 		}
 		return false;
 		

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using BAConstants;
 
 public class FighterScript : CharacterScript {
 
@@ -8,7 +9,7 @@ public class FighterScript : CharacterScript {
 		base.Start();
 		
 		//set the character type
-		characterType = CharType.player;
+		characterType = CharacterConstants.CharacterType.player;
 		
 		//set our fighter's abilities
 		abilityOne = new MoveScript(this);

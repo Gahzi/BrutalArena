@@ -10,8 +10,8 @@ public class AStarScript {
 	Vector2[] tileNeighbours = { 
 		new Vector2(0,-1), 
 		new Vector2(1,0),
-		new Vector2(1,1), 
-		new Vector2(0,1),
+		new Vector2(0,1), 
+		new Vector2(-1,1),
 		new Vector2(-1,0), 
 		new Vector2(-1,-1)
 	};
@@ -76,8 +76,19 @@ public class AStarScript {
 	}
 	
 	private void CalculateNeighbourWeights(AStarTile centerTile) {
+		List<int> rowCount = map.GetRowCountList();
+
 		foreach(Vector2 relNeighbourCoord in tileNeighbours) {
 			Vector2 neighbourCoord = centerTile.GetTileCoordinate() + relNeighbourCoord;
+
+			if(rowCount.Contains((int)neighbourCoord.y)) {
+				int currentRowCount = rowCount[(int)centerTile.GetTileCoordinate().y];
+				int destRowCount = rowCount[(int)neighbourCoord.y];
+				if(currentRowCount < destRowCount && (relNeighbourCoord.y == 1 || relNeighbourCoord.y == -1)) {
+					neighbourCoord.x += 1;
+				}
+			}
+
 			if(map.GetTiles().Contains(neighbourCoord)) {
 				AStarTile neighbourTile = new AStarTile(neighbourCoord);
 				neighbourTile.SetParent(centerTile);

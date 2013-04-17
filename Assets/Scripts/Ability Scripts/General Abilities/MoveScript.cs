@@ -21,6 +21,7 @@ public class MoveScript : AbilityScript {
 	public override bool Execute(TileScript tile) {
 		if(tile.GetTileInhabitant() == null) {
 			int distance = player.map.GetAStar().GetRangeBetweenTwoTiles(player.currentTile,tile);
+			Debug.Log("Distance: " + distance.ToString());
 			if( distance <= range) {
 				if(player.stamina >= staminaCost) {
 					player.map.MoveCharacterToTileCoordinate(player,tile);

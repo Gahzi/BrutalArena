@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using BAConstants;
 
 public class GnollScript : CharacterScript {
 	
@@ -15,7 +16,7 @@ public class GnollScript : CharacterScript {
 	public override void Start () {
 		base.Start();
 		state = GnollState.attacking;
-		characterType = CharType.enemy;
+		characterType = CharacterConstants.CharacterType.enemy;
 
 		//set our gnoll's abilities
 		abilityOne = new MoveScript(this);
@@ -37,7 +38,7 @@ public class GnollScript : CharacterScript {
 					CharacterScript targetPlayer = null;
 					foreach(GameObject characterObject in characterList) {
 						CharacterScript character = characterObject.GetComponent<CharacterScript>();
-						if(character.characterType == CharType.player) {
+						if(character.characterType == CharacterConstants.CharacterType.player) {
 							targetPlayer = character;
 						}
 					}
