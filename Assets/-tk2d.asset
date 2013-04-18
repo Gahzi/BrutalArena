@@ -362,18 +362,36 @@ MonoBehaviour:
     - Enemy
     - Character
     - Hexagon4
+    - DamageIconProto
+    - EnemyCrudeGnoll
+    - EnemySkullKid
+    - HealthIconProto
+    - PlayerType2
+    - PlayerTypeFist
     spriteTextureGUIDs:
     - d141efa7805934ea9897545433786b07
     - 735da96872ec045049549d277a767222
     - fd258879fa7ad4564a2f0afaaa19f8f0
     - 6bb6372a1d2a64614af15e7fd70f17b9
     - 38a343800ae1c4c85b7405ef07d58bd6
+    - 315a03242ba2a49a1856526aadfd41f0
+    - e180ff0d7d9bb4066a28c44a7add37d7
+    - c6fcff5d05824449195f5cd4f403d9bf
+    - 243f6eec81be34613905d2698743c04d
+    - 6d6c6f7636d6e4f6cadb31a4caa9541c
+    - 08b54903450b3481eaa31477700d6efa
     spriteTextureTimeStamps:
-    - 1365522937
-    - 1365522937
-    - 1366139000
-    - 1365522937
-    - 1365522937
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366220810
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
