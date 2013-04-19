@@ -49,7 +49,6 @@ public class TileScript : MonoBehaviour {
 			where favor.GetFavorEffect() == effect
 			select favor;
 		
-
 		return effectFavors.Count();
 	}
 

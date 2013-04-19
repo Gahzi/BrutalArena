@@ -270,6 +270,10 @@ public class GameManagerScript : MonoBehaviour {
 	public List<Favor> GetFavorList() {
 		return favorList;
 	}
+	
+	public void SetAttachedTileInGUI(TileScript hoveredTile) {
+		gui.attachedTile = hoveredTile;
+	}
 }
 		
 		

@@ -9,7 +9,8 @@ public class TileMapScript : MonoBehaviour {
 	//TODO: Use Dictionary instead.
 	private Hashtable tiles = new Hashtable();
 	private List<int> rowCount = new List<int>();
-
+	
+	public	GameManagerScript gm;
 	private AStarScript aStar;
 	private TileScript currentHoveredObject;
 	
@@ -32,6 +33,7 @@ public class TileMapScript : MonoBehaviour {
 		}
 		
 		aStar = new AStarScript(this);
+		gm = GameObject.Find(ConstantsScript.gameManagerObjectName).GetComponent<GameManagerScript>();
 	}
 	
 	public Hashtable GetTiles() {
@@ -52,6 +54,7 @@ public class TileMapScript : MonoBehaviour {
 	
 	public void SetCurrentHoveredTileObject(TileScript tile) {
 		currentHoveredObject = tile;	
+		gm.SetAttachedTileInGUI(currentHoveredObject);
 	}
 	
 	public Vector3 GetWorldPositionFromTileCoordinate(float x, float y) {
