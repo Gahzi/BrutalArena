@@ -76,6 +76,9 @@ public class GnollScript : CharacterScript {
 					break;
 				}
 			}
+			if(!isBusy) {
+				StartCoroutine(Sleep(4000000.0f));	
+			}
 		}
 		
 		

@@ -136,4 +136,17 @@ public class Favor {
 			currentTile = null;	
 		}
 	}
+	
+	public Color getFavorColor() {
+		switch(effect) {
+			case ConstantsScript.TileFavorEffect.IncreaseDamage: return TileConstants.increaseDamageColor;
+			case ConstantsScript.TileFavorEffect.DecreaseAbilityCost: return TileConstants.decreaseAbilityCostColor;
+			case ConstantsScript.TileFavorEffect.IncreaseHitPercentage: return TileConstants.increaseHitPercentageColor;
+			case ConstantsScript.TileFavorEffect.DecreaseEnemyDamage: return TileConstants.decreaseEnemyDamageColor;
+			case ConstantsScript.TileFavorEffect.IncreaseEnemyAbilityCost: return TileConstants.increaseEnemyAbilityCost;
+			case ConstantsScript.TileFavorEffect.DecreaseEnemyHitPercentage: return TileConstants.decreaseEnemyHitPercentage;
+		}
+		Debug.Log("Failed to find proper Favor Color");
+		return new Color(1.0f,1.0f,1.0f,1.0f);
+	}
 }

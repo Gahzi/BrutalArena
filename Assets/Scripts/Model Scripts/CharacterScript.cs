@@ -13,6 +13,13 @@ public class CharacterScript : MonoBehaviour {
 	public tk2dSprite sprite;
 	public TileMapScript map;
 	public GameManagerScript gm;
+	public bool isBusy = false;
+
+	public IEnumerator Sleep(float time) {
+		isBusy = true;
+        yield return new WaitForSeconds(time);
+    	isBusy = false;
+	}
 	
 	private bool hasEndedTurn;
 	

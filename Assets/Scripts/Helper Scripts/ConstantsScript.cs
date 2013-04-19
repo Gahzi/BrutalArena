@@ -108,6 +108,23 @@ namespace BAConstants {
     /*
     *
     *
+    *TILE CONSTANTS
+    *
+    *
+    */
+
+    public class TileConstants {
+        public static Color increaseDamageColor = new Color(1.0f,0.75f,0f,1f);
+		public static Color decreaseAbilityCostColor = new Color(1.0f,0f,0.9f,1f);
+		public static Color increaseHitPercentageColor = new Color(0.2f,0.9f,0.15f,1f);
+		public static Color decreaseEnemyDamageColor = new Color(1.0f,0f,0f,1f);
+		public static Color increaseEnemyAbilityCost = new Color(0.5f,1f,0.9f,1f);
+		public static Color decreaseEnemyHitPercentage = new Color(0f,0f,1f,1f);
+    }
+
+    /*
+    *
+    *
     *CHARACTER CONSTANTS
     *
     */

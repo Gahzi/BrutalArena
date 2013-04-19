@@ -26,14 +26,19 @@ public class TileScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		tk2dSprite spriteScript = this.gameObject.GetComponent<tk2dSprite>();
-		if(favorList.Count == 1) {
-			spriteScript.color = Color.red;
+		
+		if(favorList.Count == 0) {
+			spriteScript.color = Color.white;
+		}
+		else if(favorList.Count == 1) {
+			spriteScript.color = favorList[0].getFavorColor();	
 		}
 		else if(favorList.Count > 1) {
-			spriteScript.color = Color.green;
-		}
-		else {
-			spriteScript.color = Color.white;
+			Color finalColor = Color.white;
+			foreach(Favor favor in favorList) {
+				finalColor = Color.Lerp(finalColor,favor.getFavorColor(),0.5f);
+			}
+			spriteScript.color = finalColor;
 		}
 		//Change color depending on the type of favor effects on the tile
 	}
