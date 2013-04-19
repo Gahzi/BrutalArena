@@ -368,6 +368,7 @@ MonoBehaviour:
     - HealthIconProto
     - PlayerType2
     - PlayerTypeFist
+    - ArenaFloor
     spriteTextureGUIDs:
     - d141efa7805934ea9897545433786b07
     - 735da96872ec045049549d277a767222
@@ -380,18 +381,20 @@ MonoBehaviour:
     - 243f6eec81be34613905d2698743c04d
     - 6d6c6f7636d6e4f6cadb31a4caa9541c
     - 08b54903450b3481eaa31477700d6efa
+    - 15f35ad177cc442b9b880720e1b1da7d
     spriteTextureTimeStamps:
-    - 1364920615
-    - 1364920615
-    - 1366379766
-    - 1364920615
-    - 1364920615
-    - 1366379766
-    - 1366379766
-    - 1366379766
-    - 1366379766
-    - 1366379766
-    - 1366379766
+    - 1362505145
+    - 1362430944
+    - 1366150864
+    - 1362444103
+    - 1362505413
+    - 1366216439
+    - 1366216439
+    - 1366216439
+    - 1366216439
+    - 1366216439
+    - 1366216439
+    - 1366382550
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
