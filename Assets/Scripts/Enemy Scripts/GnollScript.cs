@@ -46,7 +46,9 @@ public class GnollScript : CharacterScript {
 					if(targetPlayer) {
 						int rangeToPlayer = map.GetAStar().GetRangeBetweenTwoTiles(currentTile,targetPlayer.currentTile);
 						if(rangeToPlayer <= abilityTwo.range) {
-							abilityTwo.Execute(targetPlayer.currentTile);
+							if(!abilityTwo.Execute(targetPlayer.currentTile)) {
+								EndTurn();
+							}
 						}
 						else {
 							List<Vector2> movePath = map.GetAStar().GetPathBetweenTwoTiles(currentTile,targetPlayer.currentTile);
@@ -75,9 +77,6 @@ public class GnollScript : CharacterScript {
 					//otherwise move one tile coordinate away from player.
 					break;
 				}
-			}
-			if(!isBusy) {
-				StartCoroutine(Sleep(4000000.0f));	
 			}
 		}
 		
