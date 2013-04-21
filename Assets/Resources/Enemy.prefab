@@ -88,6 +88,7 @@ MonoBehaviour:
   sprite: {fileID: 11400002}
   map: {fileID: 0}
   gm: {fileID: 0}
+  isBusy: 0
   characterType: 1
   favorAwarded: 10
 --- !u!114 &11400002
@@ -103,7 +104,7 @@ MonoBehaviour:
   collection: {fileID: 11400000, guid: d00a5c9b650504bb0adc5c5ab785fd42, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
-  _spriteId: 2
+  _spriteId: 13
   pixelPerfect: 0
   boxCollider: {fileID: 0}
   meshCollider: {fileID: 6400000}

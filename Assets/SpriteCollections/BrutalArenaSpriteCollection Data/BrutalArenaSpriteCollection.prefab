@@ -541,14 +541,51 @@ MonoBehaviour:
     normals: []
     tangents: []
     uvs:
-    - {x: .859376967, y: .466797858}
-    - {x: .982419908, y: .466797858}
-    - {x: .859376967, y: .528319359}
-    - {x: .982419908, y: .528319359}
+    - {x: .769533217, y: .533204079}
+    - {x: .892576158, y: .533204079}
+    - {x: .769533217, y: .594725609}
+    - {x: .892576158, y: .594725609}
     indices: 000000000300000001000000020000000300000000000000
     material: {fileID: 2100000, guid: 484a8fbc85f324209bebb4e05f60005d, type: 2}
     materialId: 0
     sourceTextureGUID: 291183a07ea744e8abc2ff6fadb0588f
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    colliderType: 0
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+  - name: EnemySkullBloody
+    boundsData:
+    - {x: 0, y: 0, z: 0}
+    - {x: .200000003, y: .200000003, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0, z: 0}
+    - {x: .200000003, y: .200000003, z: 0}
+    texelSize: {x: .00312500005, y: .00312500005}
+    positions:
+    - {x: -.100000001, y: -.100000001, z: 0}
+    - {x: .100000001, y: -.100000001, z: 0}
+    - {x: -.100000001, y: .100000001, z: 0}
+    - {x: .100000001, y: .100000001, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: .859376967, y: .466797858}
+    - {x: .984373033, y: .466797858}
+    - {x: .859376967, y: .529295921}
+    - {x: .984373033, y: .529295921}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: 484a8fbc85f324209bebb4e05f60005d, type: 2}
+    materialId: 0
+    sourceTextureGUID: 5e78269cc97a44126ac6186c02d15a73
     extractRegion: 0
     regionX: 0
     regionY: 0
@@ -575,7 +612,7 @@ MonoBehaviour:
   loadable: 0
   invOrthoSize: 1
   halfTargetHeight: 320
-  buildKey: 775776198
+  buildKey: 1570744079
   dataGuid: d00a5c9b650504bb0adc5c5ab785fd42
   managedSpriteCollection: 0
   hasPlatformData: 0
