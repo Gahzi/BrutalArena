@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using BAConstants;
 
 public class MoveScript : AbilityScript {
 	
@@ -21,15 +22,14 @@ public class MoveScript : AbilityScript {
 	public override bool Execute(TileScript tile) {
 		if(tile.GetTileInhabitant() == null) {
 			int distance = player.map.GetAStar().GetRangeBetweenTwoTiles(player.currentTile,tile);
-			Debug.Log("Distance: " + distance.ToString());
 			if( distance <= range) {
+				int abilityCostModifier = player.currentTile.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.DecreaseAbilityCost);
 				if(player.stamina >= staminaCost) {
 					player.map.MoveCharacterToTileCoordinate(player,tile);
-					player.stamina -= staminaCost;
+					player.stamina -= (staminaCost - abilityCostModifier);
 					return true;
 				}
 			}
-			//}
 		}
 		return false;
 	}

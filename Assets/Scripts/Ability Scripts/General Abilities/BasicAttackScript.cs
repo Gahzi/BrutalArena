@@ -52,7 +52,7 @@ public class BasicAttackScript : AbilityScript {
 							int decreaseDamageModifier = player.currentTile.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.DecreaseEnemyDamage);
 							enemy.health -= (damage - decreaseDamageModifier);
 							player.stamina -= (staminaCost + increaseAbilityCostModifier);
-							Debug.Log("Hitting Enemy for " + damage + " damage to " + enemy.health + " health");
+							Debug.Log("Hitting Player for " + damage + " damage to " + enemy.health + " health");
 							GameManagerScript gm = player.gm;
 							AudioManagerScript am = gm.gameObject.GetComponent<AudioManagerScript>();
 							am.PlayAudioClip(BAConstants.AudioConstants.AudioClipType.SwordHit1);

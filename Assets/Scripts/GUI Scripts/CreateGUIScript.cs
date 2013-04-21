@@ -68,10 +68,10 @@ public class CreateGUIScript : MonoBehaviour {
 
 				if(increaseDamageCount > 0) favorText += "Increases player damage by " + increaseDamageCount + "." + Environment.NewLine;
 				if(decreaseAbilityCostCount > 0) favorText += "Decreases player ability cost by " + decreaseAbilityCostCount + " Stamina." + Environment.NewLine;
-				if(increaseHitPercentageCount > 0) favorText += "Increases player hit % by " + increaseHitPercentageCount + "percent." + Environment.NewLine;
+				if(increaseHitPercentageCount > 0) favorText += "Increases player hit % by " + increaseHitPercentageCount + " percent." + Environment.NewLine;
 				if(decreaseEnemyDamageCount > 0) favorText += "Decreases enemy damage done by " + decreaseEnemyDamageCount + Environment.NewLine;
-				if(increaseEnemyAbilityCostCount > 0) favorText += "Increases enemy ability cost by " + increaseEnemyAbilityCostCount + "stamina." +  Environment.NewLine;
-				if(decreaseEnemyHitPercentageCount > 0) favorText += "Decreases enemy hit % by " + decreaseEnemyHitPercentageCount + "percent." +  Environment.NewLine;
+				if(increaseEnemyAbilityCostCount > 0) favorText += "Increases enemy ability cost by " + increaseEnemyAbilityCostCount + " Stamina." +  Environment.NewLine;
+				if(decreaseEnemyHitPercentageCount > 0) favorText += "Decreases enemy hit % by " + decreaseEnemyHitPercentageCount + " percent." +  Environment.NewLine;
 			}
 			
 			if(!favorText.Equals("")) {

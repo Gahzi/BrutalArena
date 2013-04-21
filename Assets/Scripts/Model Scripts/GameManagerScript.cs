@@ -73,12 +73,7 @@ public class GameManagerScript : MonoBehaviour {
 				favorList.Remove(favor);	
 			}
 
-			foreach(GameObject characterObject in characterList) {
-				CharacterScript character = characterObject.GetComponent<CharacterScript>();
-				character.stamina = character.staminaMax;
-				turnOrderList.Add(characterObject);
-				SortTurnOrderListByStamina();
-			}
+			StartNewFullTurn();
 		}
 		
 		//if we aren't finished the current turn,
@@ -121,7 +116,8 @@ public class GameManagerScript : MonoBehaviour {
 				//TODO:Figure out a better spawning algorithm.
 				Vector2 spawnTileCoord = new Vector2(i,0);
 				TileScript spawnTile = (TileScript)tiles[spawnTileCoord];
-				CreateCharacter(CharacterConstants.CharacterClass.Gnoll,spawnTile);
+				GameObject newCharacterObject = CreateCharacter(CharacterConstants.GNOLL_PREFAB_NAME + " " + i.ToString() ,CharacterConstants.CharacterClass.Gnoll,spawnTile);
+				turnOrderList.Add(newCharacterObject);
 			}
 		}
 		
@@ -177,20 +173,24 @@ public class GameManagerScript : MonoBehaviour {
 		}
 	}
 
-	public void CreateCharacter(BAConstants.CharacterConstants.CharacterClass type, TileScript startingTile) {
+	public GameObject CreateCharacter(string charName, BAConstants.CharacterConstants.CharacterClass type, TileScript startingTile) {
+		GameObject newCharacterObject = null;
 		
 		switch(type) {
 			case BAConstants.CharacterConstants.CharacterClass.Gnoll: {
 				//TODO: Turn "Enemy" into a constant that is referenced from ConstantsScript
-				GameObject newObject = (GameObject)Instantiate(Resources.Load(CharacterConstants.GNOLL_PREFAB_NAME),Vector3.zero,Quaternion.identity);
-				GnollScript newGnollScript = newObject.GetComponent<GnollScript>();
+				newCharacterObject = (GameObject)Instantiate(Resources.Load(CharacterConstants.GNOLL_PREFAB_NAME),Vector3.zero,Quaternion.identity);
+				GnollScript newGnollScript = newCharacterObject.GetComponent<GnollScript>();
+				newCharacterObject.name = charName;
+				newGnollScript.characterName = charName;
 				newGnollScript.currentTile = startingTile;
 				newGnollScript.gm = this;
 				newGnollScript.map = map;
-				characterList.Add(newObject);
+				characterList.Add(newCharacterObject);
 				break;
 			}
 		}
+		return newCharacterObject;
 	}
 
 	public void KillCharacter(CharacterScript character) {
@@ -210,6 +210,14 @@ public class GameManagerScript : MonoBehaviour {
 		}
 	}
 	
+	public void StartNewFullTurn() {
+		foreach(GameObject characterObject in characterList) {
+				CharacterScript character = characterObject.GetComponent<CharacterScript>();
+				character.stamina = character.staminaMax;
+				turnOrderList.Add(characterObject);
+		}
+		SortTurnOrderListByStamina();
+	}
 	
 	public void EndTurn() {
 		turnOrderList.Remove(currentCharacter.gameObject);

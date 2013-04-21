@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"GetTile",
+				"GetTileCoordinate"
+			],
+			[
+				"Character",
+				"CharacterConstants"
+			],
+			[
 				"health",
 				"healthGainedPerFavor"
 			],
@@ -58,10 +66,6 @@
 			[
 				"stam",
 				"staminaMax"
-			],
-			[
-				"Character",
-				"CharacterScript"
 			],
 			[
 				"character",
@@ -164,10 +168,10 @@
 	"buffers":
 	[
 		{
-			"contents": "#ifndef WITCHBALL_CONSTANTS_H_\n#define WITCHBALL_CONSTANTS_H_\n\n#include <Box2D.h>\n\n#include \"ofMain.h\"\n#include \"utilities.h\"\n\n/**\n * Audio properties.\n */\nconst int kConcurrentSounds = 10;\n\nextern const char *kBackgroundMusicFilename;\nextern const char *kBackgroundMusicTwoFilename = \"bgm2.wav\";\nextern const char *kBackhit1 = \"backhit1.wav\";\nextern const char *kBackhit2 = \"backhit2.wav\";\nextern const char *kBackhit3 = \"backhit3.wav\";\nextern const char *kBackhit4 = \"backhit4.wav\";\nextern const char *kHit1 = \"hit1.wav\";\nextern const char *kHit2 = \"hit2.wav\";\nextern const char *kHit3 = \"hit3.wav\";\nextern const char *kHit4 = \"hit4.wav\";\nextern const char *kWallBounceFilename = \"wallbounce.wav\";\n\n/**\n * Video properties.\n */\n int kHeight = 600; // pixels\n int kWidth = 1200; // pixels\n extern const char *kGlutDisplayString = \"rgba double depth alpha samples>=4\";\n float kHalfHeight = kHeight / 2; // pixels\n float kHalfWidth = kWidth / 2; // pixels\n float kAspectRatio = static_cast<float>(kWidth) / static_cast<float>(kHeight);\n\n/**\n * Level properties.\n */\n float kCourtWidth = 20.0; // m\n float kCourtHeight = kCourtWidth / kAspectRatio; // m\n float kHalfCourtWidth = kCourtWidth / 2.0; // m\n float kHalfCourtHeight = kCourtHeight / 2.0; // m\n\n/**\n * Physics properties.\n */\n float kAngularDamping = 0.0;\nextern const b2Vec2 kAntiGravity = b2Vec2(0.0, 9.81); // m/s^2\n float kBallRadius = 11.0 * kCourtWidth / kWidth;\n int kBox2dPositionIterations = 3;\n int kBox2dVelocityIterations = 8;\n float kDampingSpeed = 10.0;\n float kDensity = 1.0; // kg/m^2\n bool kFixedRotation = true;\n float kFriction = 0.0;\nextern const b2Vec2 kGravity = b2Vec2(0.0, -9.81); // m/s^2\n float kLinearDamping = 0.1;\n float kMouseDensity = 10.0;\n float kMouseMass = 50.0;\n float kPlayerRadius = 17.0 * kCourtWidth / kWidth;\n float kRestitution = 0.99;\n float kSmoothGravityDiscontinuityXRange = 10.0 * kBallRadius;\n float kSmoothGravityDiscontinuityYRange = 10.0 * kBallRadius;\n float kTimeStep = 1.0 / 60.0; // seconds\nextern const b2Vec2 kZeroGravity = b2Vec2(0.0, 0.0); // m/s^2\n\nextern const b2Vec2 kTopLeftGravity = Box2dVector(-9.81 * ofVec2f(-1.0, 1.0).normalized());\nextern const b2Vec2 kTopRightGravity = Box2dVector(-9.81 * ofVec2f(1.0, 1.0).normalized());\nextern const b2Vec2 kBottomLeftGravity = Box2dVector(-9.81 * ofVec2f(-1.0, -1.0).normalized());\nextern const b2Vec2 kBottomRightGravity = Box2dVector(-9.81 * ofVec2f(1.0, -1.0).normalized());\n\nextern const float kGravityAngle[] = {\n  0.0,\n  90.0,\n  180.0,\n  270.0\n};\n\nextern const b2Vec2 kTopLeftQuadrantGravity[] = {\n  kTopLeftGravity,\n  kTopRightGravity,\n  kBottomRightGravity,\n  kBottomLeftGravity\n};\n\nextern const b2Vec2 kTopRightQuadrantGravity[] = {\n  kTopRightGravity,\n  kBottomRightGravity,\n  kBottomLeftGravity,\n  kTopLeftGravity\n};\n\nextern const b2Vec2 kBottomLeftQuadrantGravity[] = {\n  kBottomLeftGravity,\n  kTopLeftGravity,\n  kTopRightGravity,\n  kBottomRightGravity\n};\n\nextern const b2Vec2 kBottomRightQuadrantGravity[] = {\n  kBottomRightGravity,\n  kBottomLeftGravity,\n  kTopLeftGravity,\n  kTopRightGravity\n};\n\n/**\n * Model Properties\n */\n float kBallTrailAlphaStart = 128.0;\n float kBallTrailFadeCoefficient = 0.9;\n int kBallTrailLength = 30;\n int kBallTrailSpacing = 1;\n\n float kGravityMixerRate = 0.05;\n float kPlayerMoveDelta = 0.015;\n int kPointsToWin = 7;\n float kPlayerBallCollisionMultiplier = 0.1;\n float kPlayerTrailAlphaStart = 128.0;\n float kPlayerTrailFadeCoefficient = 0.65;\n int kPlayerTrailLength = 10;\n int kPlayerTrailSpacing = 1;\n\n/**\n * Controller properties.\n */\n float kControllerRateX = 1.0 / 5.0;\n float kControllerRateY = 1.0 / 40.0;\n\nextern const ofPoint kPlayer1TopBack[] = {\n  ofPoint(-kHalfCourtWidth + kPlayerRadius, kPlayerRadius),\n  ofPoint(kHalfCourtWidth - kPlayerRadius, kPlayerRadius),\n  ofPoint(kHalfCourtWidth - kPlayerRadius, -kHalfCourtHeight + kPlayerRadius),\n  ofPoint(-kHalfCourtWidth + kPlayerRadius, -kHalfCourtHeight + kPlayerRadius)\n};\nextern const ofPoint kPlayer1TopForward[] = {\n  ofPoint(-kPlayerRadius, kPlayerRadius),\n  ofPoint(kPlayerRadius, kPlayerRadius),\n  ofPoint(kPlayerRadius, -kHalfCourtHeight + kPlayerRadius),\n  ofPoint(-kPlayerRadius, -kHalfCourtHeight + kPlayerRadius)\n};\n\nextern const ofPoint kPlayer2TopBack[] = {\n  ofPoint(kHalfCourtWidth - kPlayerRadius, kPlayerRadius),\n  ofPoint(kHalfCourtWidth - kPlayerRadius, -kHalfCourtHeight + kPlayerRadius),\n  ofPoint(-kHalfCourtWidth + kPlayerRadius, -kHalfCourtHeight + kPlayerRadius),\n  ofPoint(-kHalfCourtWidth + kPlayerRadius, kPlayerRadius)\n};\nextern const ofPoint kPlayer2TopForward[] = {\n  ofPoint(kPlayerRadius, kPlayerRadius),\n  ofPoint(kPlayerRadius, -kHalfCourtHeight + kPlayerRadius),\n  ofPoint(-kPlayerRadius, -kHalfCourtHeight + kPlayerRadius),\n  ofPoint(-kPlayerRadius, kPlayerRadius)\n};\n\nextern const ofPoint kPlayer1BottomBack[] = {\n  -kPlayer1TopBack[0],\n  -kPlayer1TopBack[1],\n  -kPlayer1TopBack[2],\n  -kPlayer1TopBack[3]\n};\nextern const ofPoint kPlayer1BottomForward[] = {\n  -kPlayer1TopForward[0],\n  -kPlayer1TopForward[1],\n  -kPlayer1TopForward[2],\n  -kPlayer1TopForward[3]\n};\n\nextern const ofPoint kPlayer2BottomBack[] = {\n  -kPlayer2TopBack[0],\n  -kPlayer2TopBack[1],\n  -kPlayer2TopBack[2],\n  -kPlayer2TopBack[3]\n};\nextern const ofPoint kPlayer2BottomForward[] = {\n  -kPlayer2TopForward[0],\n  -kPlayer2TopForward[1],\n  -kPlayer2TopForward[2],\n  -kPlayer2TopForward[3]\n};\n\n/**\n * View properties.\n */\nextern const ofMatrix4x4 kViewMatrix =\n    ofMatrix4x4::newScaleMatrix(kWidth / kCourtWidth, -kWidth / kCourtWidth, 1) *\n        ofMatrix4x4::newTranslationMatrix(kHalfWidth, kHalfHeight, 0.0);\nextern const ofMatrix4x4 kViewMatrixInverse = ofMatrix4x4::getInverseOf(kViewMatrix);\n\n#endif  // WITCHBALL_CONSTANTS_H_\n",
+			"file": "Assets/Scripts/Model Scripts/TileMapScript.cs",
 			"settings":
 			{
-				"buffer_size": 5715,
+				"buffer_size": 3025,
 				"line_ending": "Unix"
 			}
 		}
@@ -175,7 +179,7 @@
 	"build_system": "Packages/Unity3D Build System/Unity.sublime-build",
 	"command_palette":
 	{
-		"height": 247.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
@@ -231,7 +235,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 492.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -248,28 +252,30 @@
 	},
 	"file_history":
 	[
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/CharacterScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Player Scripts/FighterScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Helper Scripts/ConstantsScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/TileScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Helper Scripts/ConstantsScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/GameManagerScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/GnollScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/GUI Scripts/CreateGUIScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/Favor.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Helper Scripts/AStarScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/CharacterScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/ArcherScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/TankScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Player Scripts/FighterScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/BrutalArena.sublime-project",
 		"/Users/shervinghazazani/Desktop/Todo list:",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/AudioManagerScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/Favor.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/GnollScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/TileMapScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/FavorWaveScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/FavorEffect.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Helper Scripts/AStarScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Enemy Abilities/RockThrowScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/BrutalArena.sublime-project",
 		"/Users/shervinghazazani/Desktop/BrutalArena.sublime-project",
 		"/Users/shervinghazazani/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/AbilityScript.cs",
 		"/Users/shervinghazazani/Desktop/EA Letter",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/GUI Scripts/CreateGUIScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/GUI Scripts/CreateGUIScripts.cs",
 		"/Users/shervinghazazani/Library/Application Support/iPhone Simulator/6.1/Applications/F385DABC-01D6-400A-92B4-3783CC511170/Documents/SmartFunnel1dot6.sqlite",
 		"/Users/shervinghazazani/Desktop/Auro - Game Kickstarter.",
@@ -322,6 +328,7 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts",
 			"",
 			"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts",
 			"",
@@ -334,6 +341,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"gui",
+			"GUI",
+			"GetCurrentHoveredTileObject",
+			"currentHoveredObject()",
+			"currentHoveredObject",
+			"Instantiate",
+			"Generate",
+			"ReduceAbilityCost",
+			"DecreaseEnemyStamina",
+			"CharacterType",
+			"CharType",
+			"CharacterConstants.CharacterType",
+			"CharacterType",
 			" =.*",
 			"IncreaseStamina",
 			"Audio",
@@ -383,6 +403,10 @@
 		"regex": true,
 		"replace_history":
 		[
+			"DecreaseAbilityCost",
+			"CharacterConstants.CharacterType",
+			"CharacterType",
+			"CharacterConstants.CharacterClass",
 			"ReduceAbilityCost",
 			"tileCoordinate",
 			"TileFavorDirection"
@@ -401,27 +425,27 @@
 			[
 				{
 					"buffer": 0,
+					"file": "Assets/Scripts/Model Scripts/TileMapScript.cs",
 					"settings":
 					{
-						"buffer_size": 5715,
+						"buffer_size": 3025,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								130,
-								130
+								1160,
+								1162
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 551.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -475,6 +499,102 @@
 		"selected_items":
 		[
 			[
+				"move",
+				"Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs"
+			],
+			[
+				"basi",
+				"Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs"
+			],
+			[
+				"creat",
+				"Assets/Scripts/GUI Scripts/CreateGUIScript.cs"
+			],
+			[
+				"create",
+				"Assets/Scripts/GUI Scripts/CreateGUIScript.cs"
+			],
+			[
+				"basic",
+				"Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs"
+			],
+			[
+				"gn",
+				"Assets/Scripts/Enemy Scripts/GnollScript.cs"
+			],
+			[
+				"gnoll",
+				"Assets/Scripts/Enemy Scripts/GnollScript.cs"
+			],
+			[
+				"tilemap",
+				"Assets/Scripts/Model Scripts/TileMapScript.cs"
+			],
+			[
+				"constant",
+				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
+			],
+			[
+				"tile",
+				"Assets/Scripts/Model Scripts/TileScript.cs"
+			],
+			[
+				"tilescript",
+				"Assets/Scripts/Model Scripts/TileScript.cs"
+			],
+			[
+				"chara",
+				"Assets/Scripts/Model Scripts/CharacterScript.cs"
+			],
+			[
+				"character",
+				"Assets/Scripts/Model Scripts/CharacterScript.cs"
+			],
+			[
+				"fav",
+				"Assets/Scripts/Model Scripts/Favor.cs"
+			],
+			[
+				"astar",
+				"Assets/Scripts/Helper Scripts/AStarScript.cs"
+			],
+			[
+				"game",
+				"Assets/Scripts/Model Scripts/GameManagerScript.cs"
+			],
+			[
+				"constan",
+				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
+			],
+			[
+				"fight",
+				"Assets/Scripts/Player Scripts/FighterScript.cs"
+			],
+			[
+				"fighter",
+				"Assets/Scripts/Player Scripts/FighterScript.cs"
+			],
+			[
+				"t",
+				"Assets/Scripts/Enemy Scripts/TankScript.cs"
+			],
+			[
+				"tank",
+				"Assets/Scripts/Enemy Scripts/TankScript.cs"
+			],
+			[
+				"archer",
+				"Assets/Scripts/Enemy Scripts/ArcherScript.cs"
+			],
+			[
+				"const",
+				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
+			],
+			[
+				"bas",
+				"Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs"
+			],
+			[
 				"cara",
 				"Assets/Scripts/Model Scripts/CharacterScript.cs"
 			],
@@ -485,14 +605,6 @@
 			[
 				"gam",
 				"Assets/Scripts/Model Scripts/GameManagerScript.cs"
-			],
-			[
-				"constant",
-				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
-			],
-			[
-				"tile",
-				"Assets/Scripts/Model Scripts/TileScript.cs"
 			],
 			[
 				"cons",
@@ -507,10 +619,6 @@
 				"Assets/Scripts/Model Scripts/AudioManagerScript.cs"
 			],
 			[
-				"bas",
-				"Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs"
-			],
-			[
 				"audi",
 				"Assets/Scripts/Model Scripts/AudioManagerScript.cs"
 			],
@@ -519,16 +627,8 @@
 				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
 			],
 			[
-				"character",
-				"Assets/Scripts/Model Scripts/CharacterScript.cs"
-			],
-			[
 				"audio",
 				"Assets/Scripts/Model Scripts/AudioManagerScript.cs"
-			],
-			[
-				"game",
-				"Assets/Scripts/Model Scripts/GameManagerScript.cs"
 			],
 			[
 				"tilescr",
@@ -539,32 +639,12 @@
 				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
 			],
 			[
-				"fighter",
-				"Assets/Scripts/Player Scripts/FighterScript.cs"
-			],
-			[
-				"gnoll",
-				"Assets/Scripts/Enemy Scripts/GnollScript.cs"
-			],
-			[
 				"fa",
 				"Assets/Scripts/Model Scripts/Favor.cs"
 			],
 			[
 				"tilesc",
 				"Assets/Scripts/Model Scripts/TileScript.cs"
-			],
-			[
-				"tilemap",
-				"Assets/Scripts/Model Scripts/TileMapScript.cs"
-			],
-			[
-				"const",
-				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
-			],
-			[
-				"fav",
-				"Assets/Scripts/Model Scripts/Favor.cs"
 			],
 			[
 				"gae",
@@ -589,10 +669,6 @@
 			[
 				"gno",
 				"Enemy Scripts/GnollScript.cs"
-			],
-			[
-				"move",
-				"Ability Scripts/General Abilities/MoveScript.cs"
 			],
 			[
 				"rock",
