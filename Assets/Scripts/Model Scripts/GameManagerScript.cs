@@ -111,16 +111,27 @@ public class GameManagerScript : MonoBehaviour {
 			if(player) {
 				player.health += (int)(favor * healthGainedPerFavor);
 			}
-
+			System.Random rand = new System.Random(); 
 			for(int i = 1; i <= enemySpawnCount; i++) {
 				//TODO:Figure out a better spawning algorithm.
-				Vector2 spawnTileCoord = new Vector2(i,0);
-				TileScript spawnTile = (TileScript)tiles[spawnTileCoord];
-				GameObject newCharacterObject = CreateCharacter(CharacterConstants.GNOLL_PREFAB_NAME + " " + i.ToString() ,CharacterConstants.CharacterClass.Gnoll,spawnTile);
+				Vector2 spawnTileCoord = new Vector2(rand.Next(0,12),rand.Next(0,12));
+				
+				bool hasNewSpawnFound = false;
+				
+				while(!hasNewSpawnFound) {
+					spawnTileCoord = new Vector2(rand.Next(0,12),rand.Next(0,12));	
+					if(map.GetTiles()[spawnTileCoord] != null) {
+						TileScript spawnTile = (TileScript)map.GetTiles()[spawnTileCoord];
+						if(spawnTile.GetTileInhabitant() == null) {
+							hasNewSpawnFound = true;	
+						}
+					}				
+				}
+				GameObject newCharacterObject = CreateCharacter(CharacterConstants.GNOLL_PREFAB_NAME + " " + i.ToString() ,CharacterConstants.CharacterClass.Gnoll,(TileScript)map.GetTiles()[spawnTileCoord]);
 				turnOrderList.Add(newCharacterObject);
-			}
+			}		
 		}
-		
+
 	}
 	
 	void HandleMouseMoved() {
