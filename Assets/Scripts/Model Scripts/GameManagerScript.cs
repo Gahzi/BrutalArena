@@ -102,6 +102,7 @@ public class GameManagerScript : MonoBehaviour {
 			}
 
 			//TODO:Remove this hack
+			//TODO:Increment enemy base damage every n waves
 		}
 
 		if(!enemyFound) {
