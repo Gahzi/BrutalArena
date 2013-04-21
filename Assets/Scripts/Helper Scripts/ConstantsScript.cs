@@ -120,6 +120,7 @@ namespace BAConstants {
 		public static Color decreaseEnemyDamageColor = new Color(1.0f,0f,0f,1f);
 		public static Color increaseEnemyAbilityCost = new Color(0.5f,1f,0.9f,1f);
 		public static Color decreaseEnemyHitPercentage = new Color(0f,0f,1f,1f);
+		//public static Color baseTileColor = new Color(0.15f, 0.69f, 0.11f, 1f);
     }
 
     /*

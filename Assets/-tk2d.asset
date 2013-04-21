@@ -369,6 +369,7 @@ MonoBehaviour:
     - PlayerType2
     - PlayerTypeFist
     - ArenaFloor
+    - HeroIcon
     spriteTextureGUIDs:
     - d141efa7805934ea9897545433786b07
     - 735da96872ec045049549d277a767222
@@ -382,19 +383,21 @@ MonoBehaviour:
     - 6d6c6f7636d6e4f6cadb31a4caa9541c
     - 08b54903450b3481eaa31477700d6efa
     - 15f35ad177cc442b9b880720e1b1da7d
+    - 291183a07ea744e8abc2ff6fadb0588f
     spriteTextureTimeStamps:
-    - 1362505145
-    - 1362430944
-    - 1366150864
-    - 1362444103
-    - 1362505413
-    - 1366216439
-    - 1366216439
-    - 1366216439
-    - 1366216439
-    - 1366216439
-    - 1366216439
-    - 1366382550
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366220810
+    - 1366397174
+    - 1366396770
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
