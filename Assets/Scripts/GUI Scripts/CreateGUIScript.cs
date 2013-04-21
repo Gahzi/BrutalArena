@@ -55,7 +55,7 @@ public class CreateGUIScript : MonoBehaviour {
 		
 		if(attachedTile) {
 			GUI.contentColor = Color.black;
-			GUI.Label(new Rect(Screen.width - 225, 25, 200, 30), "Tile Location: " + attachedTile.tileCoordinate.ToString());
+			//GUI.Label(new Rect(Screen.width - 225, 25, 200, 30), "Tile Location: " + attachedTile.tileCoordinate.ToString());
 			string favorText = "";
 			
 			if(attachedTile.GetFavorList().Count > 0) {
