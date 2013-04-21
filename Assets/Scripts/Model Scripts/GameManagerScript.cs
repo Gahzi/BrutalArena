@@ -280,9 +280,15 @@ public class GameManagerScript : MonoBehaviour {
 		ConstantsScript.TileFavorDirection side = (ConstantsScript.TileFavorDirection)rand.Next(1,6);
 		ConstantsScript.TileFavorEffect effect = (ConstantsScript.TileFavorEffect)rand.Next(1,6);
 		ReadOnlyCollection<Vector2> startingTiles = ConstantsScript.GetFavorWaveStartingTiles(side);
+		Vector2 startingTileCoordinate = startingTiles[rand.Next(0,startingTiles.Count - 1)];
+		List<TileScript> adjacentTiles = map.GetAllAdjacentTiles(startingTileCoordinate);
 		Hashtable tiles = map.GetTiles();
-		foreach(Vector2 tileCoordinate in startingTiles) {
-			Favor favor = new Favor(this,((TileScript)tiles[tileCoordinate]),effect,side);
+
+		Favor centerFavor = new Favor(this,(TileScript)tiles[startingTileCoordinate],effect,side);
+		favorList.Add(centerFavor);
+		
+		foreach(TileScript tile in adjacentTiles) {
+			Favor favor = new Favor(this,tile,effect,side);
 			favorList.Add(favor);
 		}
 	}

@@ -9,6 +9,7 @@ public class TileScript : MonoBehaviour {
 	private TileMapScript map;
 	private CharacterScript tileInhabitant = null;
 	public Vector2 tileCoordinate;
+	public bool isHighlighted = false;
 
 	private List<Favor> favorList;
 	

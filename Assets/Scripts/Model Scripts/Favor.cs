@@ -35,13 +35,13 @@ public class Favor {
 		TileMapScript map =  currentTile.GetTileMap();
 		Hashtable tiles = map.GetTiles();
 		Vector2 tileCoordinate = currentTile.GetTileCoordinate();
-		List<int> rowCount = map.GetRowCountList();
-		int currentRowCount = rowCount[(int)tileCoordinate.y];
+		List<int> rowCounts = map.GetRowCounts();
+		int currentRowCount = rowCounts[(int)tileCoordinate.y];
 		
 		switch(direction) {
 			case ConstantsScript.TileFavorDirection.Top: {
 				if((int)tileCoordinate.y-2 >= 0) {
-					int nextRowCount = rowCount[(int)tileCoordinate.y-2];
+					int nextRowCount = rowCounts[(int)tileCoordinate.y-2];
 					
 					if(currentRowCount < nextRowCount ) {
 						tileCoordinate.x += 1;
@@ -55,7 +55,7 @@ public class Favor {
 			}
 			case ConstantsScript.TileFavorDirection.TopRight: {
 				if((int)tileCoordinate.y-1 >= 0) {
-					int nextRowCount = rowCount[(int)tileCoordinate.y-1];
+					int nextRowCount = rowCounts[(int)tileCoordinate.y-1];
 					if(currentRowCount < nextRowCount ) {
 						tileCoordinate.x += 2;
 					}
@@ -68,8 +68,8 @@ public class Favor {
 				break;
 			}
 			case ConstantsScript.TileFavorDirection.BottomRight: {
-				if((int)tileCoordinate.y+1 <= rowCount.Count-1) {
-					int nextRowCount = rowCount[(int)tileCoordinate.y+1];
+				if((int)tileCoordinate.y+1 <= rowCounts.Count-1) {
+					int nextRowCount = rowCounts[(int)tileCoordinate.y+1];
 					if(currentRowCount < nextRowCount ) {
 						tileCoordinate.x += 2;
 					}
@@ -82,8 +82,8 @@ public class Favor {
 				break;
 			}
 			case ConstantsScript.TileFavorDirection.Bottom: {
-				if((int)tileCoordinate.y+2 <= rowCount.Count-1) {
-					int nextRowCount = rowCount[(int)tileCoordinate.y+2];
+				if((int)tileCoordinate.y+2 <= rowCounts.Count-1) {
+					int nextRowCount = rowCounts[(int)tileCoordinate.y+2];
 					if(currentRowCount < nextRowCount ) {
 						tileCoordinate.x += 1;
 					}
@@ -96,8 +96,8 @@ public class Favor {
 				break;
 			}
 			case ConstantsScript.TileFavorDirection.BottomLeft: {
-				if((int)tileCoordinate.y+1 <= rowCount.Count-1 ) {
-					int nextRowCount = rowCount[(int)tileCoordinate.y+1];
+				if((int)tileCoordinate.y+1 <= rowCounts.Count-1 ) {
+					int nextRowCount = rowCounts[(int)tileCoordinate.y+1];
 					if(currentRowCount < nextRowCount ) {
 						tileCoordinate.x -= 1;
 					}
@@ -111,7 +111,7 @@ public class Favor {
 			}
 			case ConstantsScript.TileFavorDirection.TopLeft: {
 				if((int)tileCoordinate.y-1 >= 0) {
-					int nextRowCount = rowCount[(int)tileCoordinate.y-1];
+					int nextRowCount = rowCounts[(int)tileCoordinate.y-1];
 					if(currentRowCount < nextRowCount ) {
 						tileCoordinate.x -= 1;
 					}

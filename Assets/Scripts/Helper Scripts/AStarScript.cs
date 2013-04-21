@@ -76,14 +76,14 @@ public class AStarScript {
 	}
 	
 	private void CalculateNeighbourWeights(AStarTile centerTile) {
-		List<int> rowCount = map.GetRowCountList();
+		List<int> rowCounts = map.GetRowCounts();
 
 		foreach(Vector2 relNeighbourCoord in tileNeighbours) {
 			Vector2 neighbourCoord = centerTile.GetTileCoordinate() + relNeighbourCoord;
 
 			if(neighbourCoord.y >= 0 && neighbourCoord.y <= 12) { 
-				int currentRowCount = rowCount[(int)centerTile.GetTileCoordinate().y];
-				int destRowCount = rowCount[(int)neighbourCoord.y];
+				int currentRowCount = rowCounts[(int)centerTile.GetTileCoordinate().y];
+				int destRowCount = rowCounts[(int)neighbourCoord.y];
 				if(currentRowCount < destRowCount && (relNeighbourCoord.y == 1 || relNeighbourCoord.y == -1)) {
 					neighbourCoord.x += 1;
 				}

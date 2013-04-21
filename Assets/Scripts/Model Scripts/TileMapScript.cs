@@ -8,7 +8,7 @@ public class TileMapScript : MonoBehaviour {
 	
 	//TODO: Use Dictionary instead.
 	private Hashtable tiles = new Hashtable();
-	private List<int> rowCount = new List<int>();
+	private List<int> rowCounts = new List<int>();
 	
 	public	GameManagerScript gm;
 	private AStarScript aStar;
@@ -28,7 +28,7 @@ public class TileMapScript : MonoBehaviour {
 				}
 			}
 			lastRowInColumn += 1;
-			rowCount.Insert(column,lastRowInColumn);
+			rowCounts.Insert(column,lastRowInColumn);
 			lastRowInColumn = 0;
 		}
 		
@@ -40,8 +40,8 @@ public class TileMapScript : MonoBehaviour {
 		return tiles;	
 	}
 
-	public List<int> GetRowCountList() {
-		return rowCount;
+	public List<int> GetRowCounts() {
+		return rowCounts;
 	}
 	
 	public AStarScript GetAStar() {
@@ -82,6 +82,28 @@ public class TileMapScript : MonoBehaviour {
 		}
 		
 		return tile;
+	}
+	
+	public List<TileScript> GetAllAdjacentTiles(Vector2 tileCoordinate) {
+		List<TileScript> adjacentTiles = new List<TileScript>(7);
+			
+		foreach(Vector2 relNeighbourCoord in TileConstants.tileNeighbours) {
+			Vector2 neighbourCoord = tileCoordinate + relNeighbourCoord;
+
+			if(neighbourCoord.y >= 0 && neighbourCoord.y <= 12) { 
+				int centerRowCount = rowCounts[(int)tileCoordinate.y];
+				int destRowCount = rowCounts[(int)neighbourCoord.y];
+				
+				if(centerRowCount < destRowCount && (relNeighbourCoord.y == 1 || relNeighbourCoord.y == -1)) {
+					neighbourCoord.x += 1;
+				}
+			}
+
+			if(tiles.Contains(neighbourCoord)) {
+				adjacentTiles.Add((TileScript)tiles[neighbourCoord]);
+			}
+		}
+			return adjacentTiles;
 	}
 	
 	public void GetTileFromWorldPosition(Vector3 worldPos) {
