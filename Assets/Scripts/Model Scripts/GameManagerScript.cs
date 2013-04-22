@@ -107,10 +107,14 @@ public class GameManagerScript : MonoBehaviour {
 
 		if(!enemyFound) {
 			enemySpawnCount += enemySpawnRate;
-			Hashtable tiles = map.GetTiles();
 
 			if(player) {
-				player.health += (int)(favor * healthGainedPerFavor);
+				if(player.health + ((int)(favor * healthGainedPerFavor)) >= player.healthMax) {
+					player.health = player.healthMax;
+				}
+				else {
+					player.health += (int)(favor * healthGainedPerFavor);
+				}
 			}
 			System.Random rand = new System.Random(); 
 			for(int i = 1; i <= enemySpawnCount; i++) {
