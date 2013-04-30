@@ -171,16 +171,26 @@ public class GameManagerScript : MonoBehaviour {
 					if(currentHoveredTileInhabitant.characterType == CharacterConstants.CharacterType.enemy) {
 						//MOVE and ATTACK
 						//bring up attack dialogue
-						//
-						Vector2 adjacentTile = hoveredPath[(hoveredPath.Count - 2)];
-						TileScript tile = (TileScript)player.map.GetTiles()[adjacentTile];
-						int tempStamina = currentCharacter.stamina;
-						bool canMovetoTile = player.abilityOne.ValidateMove(ref tempStamina,tile);
-						bool canAttackAtTile = player.abilityTwo.ValidateMove(ref tempStamina,currentHoveredTile);
+						Vector2 adjacentTile = Vector2.zero;
+						if(hoveredPath.Count == 2) {
+							adjacentTile = hoveredPath[(hoveredPath.Count - 1)];
+							int tempStamina = currentCharacter.stamina;
+							bool canAttackAtTile = player.abilityTwo.ValidateMove(ref tempStamina,currentHoveredTile);
 						
-						if(canMovetoTile && canAttackAtTile) {
-							player.abilityOne.Execute(tile);
-							player.abilityTwo.Execute(currentHoveredTile);
+							if(canAttackAtTile) {
+								player.abilityTwo.Execute(currentHoveredTile);
+							}
+						}
+						else if(hoveredPath.Count > 2) {
+							adjacentTile = hoveredPath[(hoveredPath.Count - 2)];
+							TileScript tile = (TileScript)player.map.GetTiles()[adjacentTile];
+							int tempStamina = currentCharacter.stamina;
+							bool canMovetoTile = player.abilityOne.ValidateMove(ref tempStamina,tile);
+							bool canAttackAtTile = player.abilityTwo.ValidateMove(ref tempStamina,currentHoveredTile);
+							if(canMovetoTile && canAttackAtTile) {
+								player.abilityOne.Execute(tile);
+								player.abilityTwo.Execute(currentHoveredTile);
+							}
 						}
 					}
 				}
@@ -318,11 +328,7 @@ public class GameManagerScript : MonoBehaviour {
 				if(hoveredInhabitant.characterType == CharacterConstants.CharacterType.enemy) {
 					hoveredPath = map.GetAStar().GetPathBetweenTwoTiles(currentCharacter.currentTile,hoveredTile);
 					if(hoveredPath.Count == 2) {
-						Vector2 adjacentTile = hoveredPath[(hoveredPath.Count - 1)];
-						TileScript tile = (TileScript)map.GetTiles()[adjacentTile];
-						//tempStamina = currentCharacter.stamina;
 						bool canAttackAtTile = currentCharacter.abilityTwo.ValidateMove(ref tempStamina,hoveredTile);
-						
 						if(canAttackAtTile) {
 							foreach(Vector2 tileCoordInPath in hoveredPath) {
 								TileScript tileInPath = (TileScript)map.GetTiles()[tileCoordInPath];
@@ -345,7 +351,6 @@ public class GameManagerScript : MonoBehaviour {
 						if(canMovetoTile && canAttackAtTile) {
 							foreach(Vector2 tileCoordInPath in hoveredPath) {
 								TileScript tileInPath = (TileScript)map.GetTiles()[tileCoordInPath];
-								tk2dSprite tileSprite = tileInPath.GetComponent<tk2dSprite>();
 								
 								if(hoveredPath.IndexOf(tileCoordInPath) == (hoveredPath.Count - 1)) {
 									tileInPath.isAttackable = true;
