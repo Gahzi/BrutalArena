@@ -22,9 +22,9 @@ public class CreateGUIScript : MonoBehaviour {
 		//Set label text color to be black
 		GUI.contentColor = Color.black;
 		if(attachedCharacter != null) {
-			GUI.Label(new Rect(25,25,200,30), "Character: " + attachedCharacter.characterName);
-			GUI.Label(new Rect(25,45,100,30), "Health Points: " + attachedCharacter.health.ToString());	
-			GUI.Label(new Rect(25,65,100,30), "Stamina: " + attachedCharacter.stamina.ToString());
+			GUI.Label(new Rect(200,225,200,30), "Character: " + attachedCharacter.characterName);
+			GUI.Label(new Rect(200,245,100,30), "Health Points: " + attachedCharacter.health.ToString());	
+			GUI.Label(new Rect(200,265,100,30), "Stamina: " + attachedCharacter.stamina.ToString());
 			
 			if(attachedCharacter.characterType == CharacterConstants.CharacterType.player) {
 				GUI.contentColor = Color.white;
