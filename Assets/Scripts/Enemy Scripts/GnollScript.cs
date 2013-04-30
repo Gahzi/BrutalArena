@@ -28,6 +28,20 @@ public class GnollScript : CharacterScript {
 	public override void Update () {
 		base.Update();
 		
+		//check if we have enough stamina to move/attack again
+		//otherwise end the turn
+		
+		//wait n number of seconds before next move
+	}
+	
+	public override void StartTurn() {
+		base.StartTurn();
+		state = GnollState.attacking;
+		
+		StartCoroutine("RunCoroutineTurn",1.0f);
+	}
+	
+	public override void RunTurn() {
 		//If we havn't ended our turn yet
 		if(!HasEndedTurn()) {
 			//check my own health
@@ -79,29 +93,6 @@ public class GnollScript : CharacterScript {
 				}
 			}
 		}
-		
-		
-		//check if we have enough stamina to move/attack again
-		//otherwise end the turn
-		
-		//wait n number of seconds before next move
-	}
-	
-	public override void StartTurn() {
-		base.StartTurn();
-		state = GnollState.attacking;
-		//if i'm under 25%, consider running away + throwing stone
-		//otherwise, move forward and try to attack.
-		/*
-		if(health < 6) {
-			if(Random.Range(0,100) < 25) {
-				state = GnollState.runningthrowing;
-			}		
-		}
-		else {
-			state = GnollState.attacking;	
-		}
-		*/
 	}
 	
 	public override void EndTurn() {

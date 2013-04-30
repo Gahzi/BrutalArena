@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using BAConstants;
 
 public class MoveScript : AbilityScript {
@@ -20,15 +21,70 @@ public class MoveScript : AbilityScript {
 	}
 	
 	public override bool Execute(TileScript tile) {
-		if(tile.GetTileInhabitant() == null) {
-			int distance = player.map.GetAStar().GetRangeBetweenTwoTiles(player.currentTile,tile);
-			if( distance <= range) {
-				int abilityCostModifier = player.currentTile.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.DecreaseAbilityCost);
-				if(player.stamina >= staminaCost) {
-					player.map.MoveCharacterToTileCoordinate(player,tile);
-					player.stamina -= (staminaCost - abilityCostModifier);
-					return true;
+		switch(player.characterType) {
+			case CharacterConstants.CharacterType.player: {
+				List<Vector2> path = player.map.GetAStar().GetPathBetweenTwoTiles(player.currentTile,tile);
+				
+				if(path.Count > 0) {
+					//Reduce the count cost by since it includes the movers current position.
+					int totalStaminaCost = staminaCost * (path.Count-1);
+					int totalAbilityCostModifier = 0;
+					
+					//remove target location tile since we don't need to check
+					//for it's ability cost modifiers
+					path.RemoveAt(path.Count-1);
+				
+					foreach(Vector2 tileCoordinate in path) {
+						TileScript currentTileInPath = (TileScript)player.map.GetTiles()[tileCoordinate];
+						totalAbilityCostModifier += currentTileInPath.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.DecreaseAbilityCost);
+					}
+				
+					if(player.stamina >= (totalStaminaCost - totalAbilityCostModifier)) {
+						player.map.MoveCharacterToTileCoordinate(player,tile);
+						player.stamina -= (totalStaminaCost - totalAbilityCostModifier);
+						return true;
+					}
 				}
+				break;
+			}
+			
+			case CharacterConstants.CharacterType.enemy: {
+				int distance = player.map.GetAStar().GetRangeBetweenTwoTiles(player.currentTile,tile);
+				if( distance <= range) {
+					int abilityCostModifier = player.currentTile.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.IncreaseEnemyAbilityCost);
+					if(player.stamina >= (staminaCost + abilityCostModifier)) {
+						player.map.MoveCharacterToTileCoordinate(player,tile);
+						player.stamina -= (staminaCost + abilityCostModifier);
+						return true;
+					}
+				}
+				break;
+			}
+		}
+		return false;
+	}
+	
+	public override bool ValidateMove(ref int expectedStamina, TileScript tile) {
+		CharacterScript enemy = tile.GetTileInhabitant();
+		if(enemy == null) {
+			List<Vector2> pathToTile = player.map.GetAStar().GetPathBetweenTwoTiles(player.currentTile,tile);
+			if(pathToTile.Count > 0) {
+				//Reduce the count cost by since it includes the movers current position.
+				int totalStaminaCost = staminaCost * (pathToTile.Count-1);
+				int totalAbilityCostModifier = 0;
+					
+				//remove target location tile since we don't need to check
+				//for it's ability cost modifiers
+				pathToTile.RemoveAt(pathToTile.Count-1);
+				
+				foreach(Vector2 tileCoordinate in pathToTile) {
+					TileScript currentTileInPath = (TileScript)player.map.GetTiles()[tileCoordinate];
+					totalAbilityCostModifier += currentTileInPath.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.DecreaseAbilityCost);
+				}
+				
+				if(player.stamina >= (totalStaminaCost - totalAbilityCostModifier)) {
+					return true;
+				}	
 			}
 		}
 		return false;

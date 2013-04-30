@@ -27,7 +27,7 @@ RenderSettings:
   m_SpotCookie: {fileID: 0}
   m_ObjectHideFlags: 0
 --- !u!127 &3
-LevelGameManager:
+GameManager:
   m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
@@ -138,10 +138,10 @@ GUITexture:
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
-    x: -64
-    y: -29
-    width: 128.070007
-    height: 58
+    x: 0
+    y: 0
+    width: 1
+    height: 1
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0

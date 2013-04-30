@@ -71,6 +71,17 @@ public class CharacterScript : MonoBehaviour {
 		hasEndedTurn = false;
 	}
 	
+	public virtual void RunTurn() {
+		Debug.Log("Run Turn Method has not been overriden.");
+	}
+	
+	public IEnumerator RunCoroutineTurn(float waitForSeconds) {
+		while(!hasEndedTurn) {
+			RunTurn();
+			yield return new WaitForSeconds(waitForSeconds);	
+		}
+	}
+	
 	public virtual void EndTurn() {
 		hasEndedTurn = true;
 		gm.EndTurn();

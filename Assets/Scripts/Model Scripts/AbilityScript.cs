@@ -33,4 +33,10 @@ public class AbilityScript {
 		Debug.Log("Need to override base execute function");
 		return true;
 	}
+	
+	// Update is called once per frame
+	public virtual bool ValidateMove(ref int expectedStamina,TileScript tile) {
+		Debug.Log("Need to override base validate move function");
+		return true;
+	}
 }

@@ -48,9 +48,16 @@ public class CircleAttack : AbilityScript {
 			}
 		}
 		return false;
-		
-		
-		
+	}
+	
+	public override bool ValidateMove(ref int expectedStamina, TileScript tile) {
+		CharacterScript enemy = tile.GetTileInhabitant();
+		if(enemy) {
+			if(enemy.characterType != player.characterType && expectedStamina >= staminaCost) {
+				return true;	
+			}
+		}
+		return false;
 	}
 
 }

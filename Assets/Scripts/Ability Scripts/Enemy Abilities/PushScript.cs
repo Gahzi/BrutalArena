@@ -34,4 +34,16 @@ public class PushScript : AbilityScript {
 		}
 		return false;
 	}
+	
+	//we wish to see if the player can execute their ability on the given tile coordinate
+	public override bool ValidateMove(ref int expectedStamina, TileScript tile) {
+		CharacterScript enemy = tile.GetTileInhabitant();
+		if(enemy) {
+			if(enemy.characterType != player.characterType && expectedStamina >= staminaCost) {
+				expectedStamina -= staminaCost;
+				return true;	
+			}
+		}
+		return false;
+	}
 }

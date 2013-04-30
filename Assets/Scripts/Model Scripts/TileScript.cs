@@ -10,6 +10,7 @@ public class TileScript : MonoBehaviour {
 	private CharacterScript tileInhabitant = null;
 	public Vector2 tileCoordinate;
 	public bool isHighlighted = false;
+	public bool isAttackable = false;
 
 	private List<Favor> favorList;
 	
@@ -28,20 +29,29 @@ public class TileScript : MonoBehaviour {
 	void Update () {
 		tk2dSprite spriteScript = this.gameObject.GetComponent<tk2dSprite>();
 		
-		if(favorList.Count == 0) {
-			spriteScript.color = Color.white;
+		if(isAttackable) {
+			spriteScript.color = TileConstants.highlightedAttackColor;	
 		}
-		else if(favorList.Count == 1) {
-			spriteScript.color = favorList[0].getFavorColor();	
+		else if(isHighlighted) {
+			spriteScript.color = TileConstants.highlightedMovementColor;	
 		}
-		else if(favorList.Count > 1) {
-			Color finalColor = Color.white;
-			foreach(Favor favor in favorList) {
-				finalColor = Color.Lerp(finalColor,favor.getFavorColor(),0.5f);
+		else {
+			//Change color depending on the type of favor effects on the tile
+			if(favorList.Count == 0) {
+				spriteScript.color = Color.white;
 			}
-			spriteScript.color = finalColor;
+			else if(favorList.Count == 1) {
+				spriteScript.color = favorList[0].getFavorColor();	
+			}
+			else if(favorList.Count > 1) {
+				Color finalColor = Color.white;
+				foreach(Favor favor in favorList) {
+					finalColor = Color.Lerp(finalColor,favor.getFavorColor(),0.5f);
+				}
+				
+				spriteScript.color = finalColor;
+			}		
 		}
-		//Change color depending on the type of favor effects on the tile
 	}
 
 	public int GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect effect) {

@@ -371,6 +371,9 @@ MonoBehaviour:
     - ArenaFloor
     - HeroIcon
     - EnemySkullBloody
+    - Background
+    - SingleHexTransparent
+    - HeroHelmetTransparent
     spriteTextureGUIDs:
     - d141efa7805934ea9897545433786b07
     - 735da96872ec045049549d277a767222
@@ -386,21 +389,27 @@ MonoBehaviour:
     - 15f35ad177cc442b9b880720e1b1da7d
     - 291183a07ea744e8abc2ff6fadb0588f
     - 5e78269cc97a44126ac6186c02d15a73
+    - 3bf40bec0b79a40f58123cb1384c81eb
+    - 502e31418b7ee402bb97511398b908b1
+    - dc75f922f3a534b4fbb80b039c72a023
     spriteTextureTimeStamps:
-    - 1366557216
-    - 1366557216
-    - 1366557216
-    - 1366557216
-    - 1366557216
-    - 1366557216
-    - 1366557216
-    - 1366557216
-    - 1366557216
-    - 1366557216
-    - 1366557216
-    - 1366557216
-    - 1366557216
-    - 1366557216
+    - 1362505145
+    - 1362430944
+    - 1366150864
+    - 1362444103
+    - 1362505413
+    - 1366216439
+    - 1366216439
+    - 1366216439
+    - 1366216439
+    - 1366216439
+    - 1366216439
+    - 1366382550
+    - 1366556610
+    - 1366556610
+    - 1367282566
+    - 1367283346
+    - 1367326442
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

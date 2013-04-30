@@ -11,6 +11,8 @@ public class GameManagerScript : MonoBehaviour {
 	List<GameObject> turnOrderList = new List<GameObject>();
 	List<Favor> favorList = new List<Favor>();
 
+	List<Vector2> hoveredPath = new List<Vector2>();
+
 	TileMapScript map;
 	CreateGUIScript gui;
 	
@@ -152,39 +154,38 @@ public class GameManagerScript : MonoBehaviour {
 		
 		if(Input.GetMouseButtonUp(0)) {
 			CharacterScript player = gui.GetAttachedCharacter();
-			TileScript currentSelectedTile = map.GetCurrentHoveredTileObject();
+			TileScript currentHoveredTile = map.GetCurrentHoveredTileObject();
 			
-			if(player != null) {
-				if(gui.selected == 0 && currentSelectedTile != null) {
-					//Debug.Log("Ability One Executed");
-					player.abilityOne.Execute(currentSelectedTile);
-					gui.selected = -1;
+			if(player != null && currentHoveredTile != null) {
+				CharacterScript currentHoveredTileInhabitant = currentHoveredTile.GetTileInhabitant();
+				if(currentHoveredTileInhabitant == null) {
+					player.abilityOne.Execute(currentHoveredTile);
+					if(hoveredPath.Count > 0) {
+						foreach(Vector2 tileCoordinate in hoveredPath) {
+							TileScript tile = (TileScript)map.GetTiles()[tileCoordinate];
+							tile.isHighlighted = false;
+						}
+					}
 				}
-				else if(gui.selected == 1 && currentSelectedTile != null) {
-					//Debug.Log("Ability Two Executed");
-					player.abilityTwo.Execute(currentSelectedTile);
-					gui.selected = -1;
-				}
-				else if(gui.selected == 2 && currentSelectedTile != null) {
-					//Debug.Log("Ability Three Executed");
-					player.abilityThree.Execute(currentSelectedTile);
-					gui.selected = -1;
-				}
-				else if(gui.selected == 3 && currentSelectedTile != null) {
-					//Debug.Log("Ability Four Executed");
-					player.abilityFour.Execute(currentSelectedTile);
-					gui.selected = -1;
-				}
-				else if(gui.selected == 4 && currentSelectedTile != null) {
-					//Debug.Log("Ability Five Executed");
-					player.abilityFive.Execute(currentSelectedTile);
-					gui.selected = -1;
-				}
-				else if(gui.selected != -1 && map.GetCurrentHoveredTileObject() == null && !gui.isNewButtonSelected){
-					gui.selected = -1;	
-					//Debug.Log("Unclicking");
+				else if(currentHoveredTileInhabitant != null) {
+					if(currentHoveredTileInhabitant.characterType == CharacterConstants.CharacterType.enemy) {
+						//MOVE and ATTACK
+						//bring up attack dialogue
+						//
+						Vector2 adjacentTile = hoveredPath[(hoveredPath.Count - 2)];
+						TileScript tile = (TileScript)player.map.GetTiles()[adjacentTile];
+						int tempStamina = currentCharacter.stamina;
+						bool canMovetoTile = player.abilityOne.ValidateMove(ref tempStamina,tile);
+						bool canAttackAtTile = player.abilityTwo.ValidateMove(ref tempStamina,currentHoveredTile);
+						
+						if(canMovetoTile && canAttackAtTile) {
+							player.abilityOne.Execute(tile);
+							player.abilityTwo.Execute(currentHoveredTile);
+						}
+					}
 				}
 			}
+			
 			
 		}
 	}
@@ -302,6 +303,75 @@ public class GameManagerScript : MonoBehaviour {
 	}
 	
 	public void SetAttachedTileInGUI(TileScript hoveredTile) {
+		//does tile have an inhabitant
+		int tempStamina = currentCharacter.stamina;
+		foreach(Vector2 tileCoordinate in hoveredPath) {
+			TileScript tile = (TileScript)map.GetTiles()[tileCoordinate];
+			tile.isHighlighted = false;
+			tile.isAttackable = false;
+		}
+		
+		if(currentCharacter.characterType == CharacterConstants.CharacterType.player && hoveredTile != null) {
+			CharacterScript hoveredInhabitant = hoveredTile.GetTileInhabitant();
+			
+			if(hoveredInhabitant != null) {
+				if(hoveredInhabitant.characterType == CharacterConstants.CharacterType.enemy) {
+					hoveredPath = map.GetAStar().GetPathBetweenTwoTiles(currentCharacter.currentTile,hoveredTile);
+					if(hoveredPath.Count == 2) {
+						Vector2 adjacentTile = hoveredPath[(hoveredPath.Count - 1)];
+						TileScript tile = (TileScript)map.GetTiles()[adjacentTile];
+						//tempStamina = currentCharacter.stamina;
+						bool canAttackAtTile = currentCharacter.abilityTwo.ValidateMove(ref tempStamina,hoveredTile);
+						
+						if(canAttackAtTile) {
+							foreach(Vector2 tileCoordInPath in hoveredPath) {
+								TileScript tileInPath = (TileScript)map.GetTiles()[tileCoordInPath];
+								if(hoveredPath.IndexOf(tileCoordInPath) == (hoveredPath.Count - 1)) {
+									tileInPath.isAttackable = true;
+								}
+								else {
+									tileInPath.isHighlighted = true;
+								}
+							}
+						}
+					}
+					else if(hoveredPath.Count > 2) {
+						Vector2 adjacentTile = hoveredPath[(hoveredPath.Count - 2)];
+						TileScript tile = (TileScript)map.GetTiles()[adjacentTile];
+						//tempStamina = currentCharacter.stamina;
+						bool canMovetoTile = currentCharacter.abilityOne.ValidateMove(ref tempStamina,tile);
+						bool canAttackAtTile = currentCharacter.abilityTwo.ValidateMove(ref tempStamina,hoveredTile);
+						
+						if(canMovetoTile && canAttackAtTile) {
+							foreach(Vector2 tileCoordInPath in hoveredPath) {
+								TileScript tileInPath = (TileScript)map.GetTiles()[tileCoordInPath];
+								tk2dSprite tileSprite = tileInPath.GetComponent<tk2dSprite>();
+								
+								if(hoveredPath.IndexOf(tileCoordInPath) == (hoveredPath.Count - 1)) {
+									tileInPath.isAttackable = true;
+								}
+								else {
+									tileInPath.isHighlighted = true;
+								}
+							}
+						}
+					}	
+				}	
+			}
+			else {
+				bool canMoveToHoveredTile = currentCharacter.abilityOne.ValidateMove(ref tempStamina,hoveredTile);
+				
+				if(canMoveToHoveredTile) {
+					hoveredPath = map.GetAStar().GetPathBetweenTwoTiles(currentCharacter.currentTile,hoveredTile);
+					if(hoveredPath.Count > 0) {
+						foreach(Vector2 tileCoordinate in hoveredPath) {
+							TileScript tile = (TileScript)map.GetTiles()[tileCoordinate];
+							tile.isHighlighted = true;
+						}	
+					}
+				}
+			}	
+		}
 		gui.attachedTile = hoveredTile;
 	}
 }

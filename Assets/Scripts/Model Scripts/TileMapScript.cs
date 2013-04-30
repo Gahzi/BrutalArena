@@ -115,6 +115,7 @@ public class TileMapScript : MonoBehaviour {
 	}
 	
 	//Helper function to move objects from tile to tile
+	
 	public void MoveCharacterToTileCoordinate(CharacterScript character, TileScript newTile) {
 		character.currentTile.SetTileInhabitant(null);
 		character.currentTile = newTile;

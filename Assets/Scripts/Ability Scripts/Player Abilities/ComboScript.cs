@@ -19,5 +19,15 @@ public class ComboScript : AbilityScript {
 		//player has selected a position to move to and we 
 		return true;
 	}
+	
+	public override bool ValidateMove(ref int expectedStamina, TileScript tile) {
+		CharacterScript enemy = tile.GetTileInhabitant();
+		if(enemy) {
+			if(enemy.characterType != player.characterType && expectedStamina >= staminaCost) {
+				return true;	
+			}
+		}
+		return false;
+	}
 
 }
