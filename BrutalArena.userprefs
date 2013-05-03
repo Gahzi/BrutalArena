@@ -3,7 +3,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GUI Scripts/CreateGUIScript.cs">
     <Files>
       <File FileName="Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Model Scripts/GameManagerScript.cs" Line="171" Column="1" />
+      <File FileName="Assets/Scripts/Model Scripts/GameManagerScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Model Scripts/CharacterScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Helper Scripts/AStarScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Model Scripts/TileMapScript.cs" Line="1" Column="1" />
