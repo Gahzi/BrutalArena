@@ -374,8 +374,13 @@ MonoBehaviour:
     - Background
     - SingleHexTransparent
     - HeroHelmetTransparent
+<<<<<<< Updated upstream
     - skullenemy2
     - GameOverScreen
+=======
+    - orcnew
+    - skull
+>>>>>>> Stashed changes
     spriteTextureGUIDs:
     - d141efa7805934ea9897545433786b07
     - 735da96872ec045049549d277a767222
@@ -394,6 +399,7 @@ MonoBehaviour:
     - 3bf40bec0b79a40f58123cb1384c81eb
     - 502e31418b7ee402bb97511398b908b1
     - dc75f922f3a534b4fbb80b039c72a023
+<<<<<<< Updated upstream
     - b433890b1b2f0417cab098fc9ba69cd8
     - 908687ec3723c4f53a2204c9567d7c98
     spriteTextureTimeStamps:
@@ -416,6 +422,30 @@ MonoBehaviour:
     - 1367337677
     - 1367345182
     - 1367337677
+=======
+    - f23e2d912f5c54d2597cf9d805192faf
+    - cf66bb1cdf3774c16bbc361c95c1a3f3
+    spriteTextureTimeStamps:
+    - 1362505145
+    - 1362430944
+    - 1366150864
+    - 1367590157
+    - 1367590466
+    - 1366216439
+    - 1366216439
+    - 1366216439
+    - 1366216439
+    - 1366216439
+    - 1366216439
+    - 1366382550
+    - 1366556610
+    - 1366556610
+    - 1367282566
+    - 1367590456
+    - 1367326442
+    - 1367344467
+    - 1367344850
+>>>>>>> Stashed changes
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

@@ -4,16 +4,40 @@
 		"selected_items":
 		[
 			[
+				"currentSEle",
+				"currentSelectedTileInhabitant"
+			],
+			[
+				"currentSel",
+				"currentSelectedTileInhabitant"
+			],
+			[
+				"current",
+				"currentSelectedTile"
+			],
+			[
+				"health",
+				"health"
+			],
+			[
+				"start",
+				"startingTiles"
+			],
+			[
+				"adj",
+				"adjacentTiles"
+			],
+			[
+				"Vecto",
+				"Vector2"
+			],
+			[
 				"GetTile",
 				"GetTileCoordinate"
 			],
 			[
 				"Character",
 				"CharacterConstants"
-			],
-			[
-				"health",
-				"healthGainedPerFavor"
 			],
 			[
 				"ability",
@@ -112,10 +136,6 @@
 				"currentTile"
 			],
 			[
-				"start",
-				"startingTile"
-			],
-			[
 				"Tile",
 				"TileFavorStartingSide"
 			],
@@ -168,10 +188,10 @@
 	"buffers":
 	[
 		{
-			"file": "Assets/Scripts/Model Scripts/TileMapScript.cs",
+			"file": "Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs",
 			"settings":
 			{
-				"buffer_size": 3025,
+				"buffer_size": 3203,
 				"line_ending": "Unix"
 			}
 		}
@@ -252,29 +272,38 @@
 	},
 	"file_history":
 	[
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/TileScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Helper Scripts/ConstantsScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/GameManagerScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/GnollScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/GUI Scripts/CreateGUIScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/Favor.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Helper Scripts/AStarScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Helper Scripts/ConstantsScript.cs",
+		"/Users/shervinghazazani/Desktop/Todo list:",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/GnollScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/CharacterScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Helper Scripts/AStarScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Player Abilities/StompScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Player Abilities/DefendScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Player Abilities/ComboScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Player Abilities/CircleAttack.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Enemy Abilities/RockThrowScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Enemy Abilities/PushScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/Classes 2013",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/GameManagerScript.cs",
+		"/Users/shervinghazazani/Desktop/iossrc/Funtactix Info",
+		"/Users/shervinghazazani/Desktop/WitchballNotes",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/AbilityScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/TileMapScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/Favor.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Helper Scripts/VectorLine.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/TileScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/GUI Scripts/CreateGUIScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/AudioManagerScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/BrutalArena.sublime-project",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/ArcherScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/TankScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Player Scripts/FighterScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/BrutalArena.sublime-project",
-		"/Users/shervinghazazani/Desktop/Todo list:",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/AudioManagerScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/TileMapScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/FavorWaveScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/FavorEffect.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Enemy Abilities/RockThrowScript.cs",
 		"/Users/shervinghazazani/Desktop/BrutalArena.sublime-project",
 		"/Users/shervinghazazani/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/AbilityScript.cs",
 		"/Users/shervinghazazani/Desktop/EA Letter",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/GUI Scripts/CreateGUIScripts.cs",
 		"/Users/shervinghazazani/Library/Application Support/iPhone Simulator/6.1/Applications/F385DABC-01D6-400A-92B4-3783CC511170/Documents/SmartFunnel1dot6.sqlite",
@@ -325,7 +354,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts",
@@ -341,6 +370,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Sleep",
+			"out int",
+			"out",
+			"public override bool ValidateMove(int expectedStamina, TileScript tile) {",
+			"hoveredTile",
+			"GetRowCountList",
+			"rowCounts",
+			"RowCount",
+			"GetRowCount",
+			"getRowC",
+			"rowCount",
+			"\"rowCount\"",
+			"rowCount",
+			"GetRowCount",
+			"Random",
 			"gui",
 			"GUI",
 			"GetCurrentHoveredTileObject",
@@ -398,11 +442,15 @@
 			"\""
 		],
 		"highlight": true,
-		"in_selection": false,
+		"in_selection": true,
 		"preserve_case": false,
-		"regex": true,
+		"regex": false,
 		"replace_history":
 		[
+			"ref int",
+			"public override bool ValidateMove(out int expectedStamina, TileScript tile) {",
+			"GetRowCounts",
+			"rowCounts",
 			"DecreaseAbilityCost",
 			"CharacterConstants.CharacterType",
 			"CharacterType",
@@ -412,8 +460,8 @@
 			"TileFavorDirection"
 		],
 		"reverse": false,
-		"show_context": true,
-		"use_buffer2": true,
+		"show_context": false,
+		"use_buffer2": false,
 		"whole_word": false,
 		"wrap": true
 	},
@@ -425,18 +473,18 @@
 			[
 				{
 					"buffer": 0,
-					"file": "Assets/Scripts/Model Scripts/TileMapScript.cs",
+					"file": "Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs",
 					"settings":
 					{
-						"buffer_size": 3025,
+						"buffer_size": 3203,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1160,
-								1162
+								0,
+								0
 							]
 						],
 						"settings":
@@ -445,11 +493,16 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 551.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				}
+			]
+		},
+		{
+			"sheets":
+			[
 			]
 		}
 	],
@@ -470,11 +523,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -486,7 +546,11 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 144.0
+		"height": 152.0
+	},
+	"output.find_results":
+	{
+		"height": 353.0
 	},
 	"replace":
 	{
@@ -503,15 +567,83 @@
 				"Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs"
 			],
 			[
+				"sdf",
+				"Assets/Scripts/Ability Scripts/Player Abilities/DefendScript.cs"
+			],
+			[
+				"charac",
+				"Assets/Scripts/Model Scripts/CharacterScript.cs"
+			],
+			[
+				"gnoll",
+				"Assets/Scripts/Enemy Scripts/GnollScript.cs"
+			],
+			[
+				"character",
+				"Assets/Scripts/Model Scripts/CharacterScript.cs"
+			],
+			[
+				"push",
+				"Assets/Scripts/Ability Scripts/Enemy Abilities/PushScript.cs"
+			],
+			[
+				"ability",
+				"Assets/Scripts/Model Scripts/AbilityScript.cs"
+			],
+			[
+				"astar",
+				"Assets/Scripts/Helper Scripts/AStarScript.cs"
+			],
+			[
+				"const",
+				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
+			],
+			[
+				"game",
+				"Assets/Scripts/Model Scripts/GameManagerScript.cs"
+			],
+			[
+				"create",
+				"Assets/Scripts/GUI Scripts/CreateGUIScript.cs"
+			],
+			[
+				"charater",
+				"Assets/Scripts/Model Scripts/CharacterScript.cs"
+			],
+			[
+				"con",
+				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
+			],
+			[
+				"consta",
+				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
+			],
+			[
+				"tilemap",
+				"Assets/Scripts/Model Scripts/TileMapScript.cs"
+			],
+			[
+				"as",
+				"Assets/Scripts/Helper Scripts/AStarScript.cs"
+			],
+			[
+				"favor",
+				"Assets/Scripts/Model Scripts/Favor.cs"
+			],
+			[
+				"tile",
+				"Assets/Scripts/Model Scripts/TileScript.cs"
+			],
+			[
+				"constant",
+				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
+			],
+			[
 				"basi",
 				"Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs"
 			],
 			[
 				"creat",
-				"Assets/Scripts/GUI Scripts/CreateGUIScript.cs"
-			],
-			[
-				"create",
 				"Assets/Scripts/GUI Scripts/CreateGUIScript.cs"
 			],
 			[
@@ -523,22 +655,6 @@
 				"Assets/Scripts/Enemy Scripts/GnollScript.cs"
 			],
 			[
-				"gnoll",
-				"Assets/Scripts/Enemy Scripts/GnollScript.cs"
-			],
-			[
-				"tilemap",
-				"Assets/Scripts/Model Scripts/TileMapScript.cs"
-			],
-			[
-				"constant",
-				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
-			],
-			[
-				"tile",
-				"Assets/Scripts/Model Scripts/TileScript.cs"
-			],
-			[
 				"tilescript",
 				"Assets/Scripts/Model Scripts/TileScript.cs"
 			],
@@ -547,20 +663,8 @@
 				"Assets/Scripts/Model Scripts/CharacterScript.cs"
 			],
 			[
-				"character",
-				"Assets/Scripts/Model Scripts/CharacterScript.cs"
-			],
-			[
 				"fav",
 				"Assets/Scripts/Model Scripts/Favor.cs"
-			],
-			[
-				"astar",
-				"Assets/Scripts/Helper Scripts/AStarScript.cs"
-			],
-			[
-				"game",
-				"Assets/Scripts/Model Scripts/GameManagerScript.cs"
 			],
 			[
 				"constan",
@@ -587,10 +691,6 @@
 				"Assets/Scripts/Enemy Scripts/ArcherScript.cs"
 			],
 			[
-				"const",
-				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
-			],
-			[
 				"bas",
 				"Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs"
 			],
@@ -609,10 +709,6 @@
 			[
 				"cons",
 				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
-			],
-			[
-				"favor",
-				"Assets/Scripts/Model Scripts/Favor.cs"
 			],
 			[
 				"aud",
@@ -696,7 +792,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 186.0,
 	"status_bar_visible": true
 }

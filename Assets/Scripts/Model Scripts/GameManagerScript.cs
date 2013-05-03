@@ -179,6 +179,14 @@ public class GameManagerScript : MonoBehaviour {
 						
 							if(canAttackAtTile) {
 								player.abilityTwo.Execute(currentHoveredTile);
+
+								if(hoveredPath.Count > 0) {
+									foreach(Vector2 tileCoordinate in hoveredPath) {
+										TileScript tile = (TileScript)map.GetTiles()[tileCoordinate];
+										tile.isHighlighted = false;
+										tile.isAttackable = false;
+									}
+								}
 							}
 						}
 						else if(hoveredPath.Count > 2) {
@@ -190,6 +198,13 @@ public class GameManagerScript : MonoBehaviour {
 							if(canMovetoTile && canAttackAtTile) {
 								player.abilityOne.Execute(tile);
 								player.abilityTwo.Execute(currentHoveredTile);
+								if(hoveredPath.Count > 0) {
+									foreach(Vector2 tileCoordinate in hoveredPath) {
+										TileScript hoveredTile = (TileScript)map.GetTiles()[tileCoordinate];
+										hoveredTile.isHighlighted = false;
+										hoveredTile.isAttackable = false;
+									}
+								}
 							}
 						}
 					}
@@ -293,7 +308,7 @@ public class GameManagerScript : MonoBehaviour {
 	public void GenerateNewFavorWave() {
 		System.Random rand = new System.Random();
 		ConstantsScript.TileFavorDirection side = (ConstantsScript.TileFavorDirection)rand.Next(1,6);
-		ConstantsScript.TileFavorEffect effect = (ConstantsScript.TileFavorEffect)rand.Next(1,6);
+		ConstantsScript.TileFavorEffect effect = (ConstantsScript.TileFavorEffect)rand.Next(1,4);
 		ReadOnlyCollection<Vector2> startingTiles = ConstantsScript.GetFavorWaveStartingTiles(side);
 		Vector2 startingTileCoordinate = startingTiles[rand.Next(0,startingTiles.Count - 1)];
 		List<TileScript> adjacentTiles = map.GetAllAdjacentTiles(startingTileCoordinate);

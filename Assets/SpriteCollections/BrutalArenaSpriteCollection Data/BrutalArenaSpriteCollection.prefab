@@ -106,10 +106,17 @@ MonoBehaviour:
     normals: []
     tangents: []
     uvs:
+<<<<<<< Updated upstream
     - {x: .944336414, y: .0512700193}
     - {x: .975585461, y: .0512700193}
     - {x: .944336414, y: .0825190395}
     - {x: .975585461, y: .0825190395}
+=======
+    - {x: .884766579, y: .101562992}
+    - {x: .947264671, y: .101562992}
+    - {x: .884766579, y: .132812008}
+    - {x: .947264671, y: .132812008}
+>>>>>>> Stashed changes
     indices: 000000000300000001000000020000000300000000000000
     material: {fileID: 2100000, guid: 484a8fbc85f324209bebb4e05f60005d, type: 2}
     materialId: 0
@@ -151,10 +158,17 @@ MonoBehaviour:
     normals: []
     tangents: []
     uvs:
+<<<<<<< Updated upstream
     - {x: .944336414, y: .084473148}
     - {x: .975585461, y: .084473148}
     - {x: .944336414, y: .115722165}
     - {x: .975585461, y: .115722165}
+=======
+    - {x: .880860329, y: .134766117}
+    - {x: .943358421, y: .134766117}
+    - {x: .880860329, y: .166015133}
+    - {x: .943358421, y: .166015133}
+>>>>>>> Stashed changes
     indices: 000000000300000001000000020000000300000000000000
     material: {fileID: 2100000, guid: 484a8fbc85f324209bebb4e05f60005d, type: 2}
     materialId: 0
@@ -182,24 +196,31 @@ MonoBehaviour:
     colliderSmoothSphereCollisions: 0
   - name: Character
     boundsData:
-    - {x: 0, y: 0, z: 0}
-    - {x: .200000003, y: .200000003, z: 0}
+    - {x: -.00468750298, y: .00624999404, z: 0}
+    - {x: .309375018, y: .337500006, z: 0}
     untrimmedBoundsData:
     - {x: 0, y: 0, z: 0}
-    - {x: .200000003, y: .200000003, z: 0}
+    - {x: .362500012, y: .400000006, z: 0}
     texelSize: {x: .00312500005, y: .00312500005}
     positions:
-    - {x: -.100000001, y: -.100000001, z: 0}
-    - {x: .100000001, y: -.100000001, z: 0}
-    - {x: -.100000001, y: .100000001, z: 0}
-    - {x: .100000001, y: .100000001, z: 0}
+    - {x: -.159375012, y: -.162500009, z: 0}
+    - {x: .150000006, y: -.162500009, z: 0}
+    - {x: -.159375012, y: .174999997, z: 0}
+    - {x: .150000006, y: .174999997, z: 0}
     normals: []
     tangents: []
     uvs:
+<<<<<<< Updated upstream
     - {x: .944336414, y: .117676273}
     - {x: .975585461, y: .117676273}
     - {x: .944336414, y: .14892529}
     - {x: .975585461, y: .14892529}
+=======
+    - {x: .884766579, y: .000977050746}
+    - {x: .884766579, y: .0493159182}
+    - {x: .990233421, y: .000977050746}
+    - {x: .990233421, y: .0493159182}
+>>>>>>> Stashed changes
     indices: 000000000300000001000000020000000300000000000000
     material: {fileID: 2100000, guid: 484a8fbc85f324209bebb4e05f60005d, type: 2}
     materialId: 0
@@ -209,7 +230,7 @@ MonoBehaviour:
     regionY: 0
     regionW: 0
     regionH: 0
-    flipped: 0
+    flipped: 1
     complexGeometry: 0
     colliderType: 0
     colliderVertices: []
@@ -319,10 +340,17 @@ MonoBehaviour:
     normals: []
     tangents: []
     uvs:
+<<<<<<< Updated upstream
     - {x: .942383289, y: .150879398}
     - {x: .973632336, y: .150879398}
     - {x: .942383289, y: .182128415}
     - {x: .973632336, y: .182128415}
+=======
+    - {x: .880860329, y: .167969242}
+    - {x: .943358421, y: .167969242}
+    - {x: .880860329, y: .199218258}
+    - {x: .943358421, y: .199218258}
+>>>>>>> Stashed changes
     indices: 000000000300000001000000020000000300000000000000
     material: {fileID: 2100000, guid: 484a8fbc85f324209bebb4e05f60005d, type: 2}
     materialId: 0
@@ -356,10 +384,17 @@ MonoBehaviour:
     normals: []
     tangents: []
     uvs:
+<<<<<<< Updated upstream
     - {x: .942383289, y: .184082523}
     - {x: .973632336, y: .184082523}
     - {x: .942383289, y: .21533154}
     - {x: .973632336, y: .21533154}
+=======
+    - {x: .880860329, y: .201172367}
+    - {x: .943358421, y: .201172367}
+    - {x: .880860329, y: .232421383}
+    - {x: .943358421, y: .232421383}
+>>>>>>> Stashed changes
     indices: 000000000300000001000000020000000300000000000000
     material: {fileID: 2100000, guid: 484a8fbc85f324209bebb4e05f60005d, type: 2}
     materialId: 0
@@ -430,10 +465,17 @@ MonoBehaviour:
     normals: []
     tangents: []
     uvs:
+<<<<<<< Updated upstream
     - {x: .942383289, y: .217285648}
     - {x: .973632336, y: .217285648}
     - {x: .942383289, y: .248534665}
     - {x: .973632336, y: .248534665}
+=======
+    - {x: .880860329, y: .234375492}
+    - {x: .943358421, y: .234375492}
+    - {x: .880860329, y: .265624523}
+    - {x: .943358421, y: .265624523}
+>>>>>>> Stashed changes
     indices: 000000000300000001000000020000000300000000000000
     material: {fileID: 2100000, guid: 484a8fbc85f324209bebb4e05f60005d, type: 2}
     materialId: 0
@@ -467,10 +509,17 @@ MonoBehaviour:
     normals: []
     tangents: []
     uvs:
+<<<<<<< Updated upstream
     - {x: .942383289, y: .250488758}
     - {x: .973632336, y: .250488758}
     - {x: .942383289, y: .281737804}
     - {x: .973632336, y: .281737804}
+=======
+    - {x: .755860329, y: .254883289}
+    - {x: .818358421, y: .254883289}
+    - {x: .755860329, y: .286132336}
+    - {x: .818358421, y: .286132336}
+>>>>>>> Stashed changes
     indices: 000000000300000001000000020000000300000000000000
     material: {fileID: 2100000, guid: 484a8fbc85f324209bebb4e05f60005d, type: 2}
     materialId: 0
@@ -541,10 +590,17 @@ MonoBehaviour:
     normals: []
     tangents: []
     uvs:
+<<<<<<< Updated upstream
     - {x: .913086414, y: .283691883}
     - {x: .943847179, y: .283691883}
     - {x: .913086414, y: .314452648}
     - {x: .943847179, y: .314452648}
+=======
+    - {x: .755860329, y: .288086414}
+    - {x: .817381859, y: .288086414}
+    - {x: .755860329, y: .318847179}
+    - {x: .817381859, y: .318847179}
+>>>>>>> Stashed changes
     indices: 000000000300000001000000020000000300000000000000
     material: {fileID: 2100000, guid: 484a8fbc85f324209bebb4e05f60005d, type: 2}
     materialId: 0
@@ -578,10 +634,17 @@ MonoBehaviour:
     normals: []
     tangents: []
     uvs:
+<<<<<<< Updated upstream
     - {x: .879883289, y: .254883289}
     - {x: .911132336, y: .254883289}
     - {x: .879883289, y: .286132336}
     - {x: .911132336, y: .286132336}
+=======
+    - {x: .822266579, y: .267578602}
+    - {x: .884764671, y: .267578602}
+    - {x: .822266579, y: .298827648}
+    - {x: .884764671, y: .298827648}
+>>>>>>> Stashed changes
     indices: 000000000300000001000000020000000300000000000000
     material: {fileID: 2100000, guid: 484a8fbc85f324209bebb4e05f60005d, type: 2}
     materialId: 0
@@ -652,10 +715,17 @@ MonoBehaviour:
     normals: []
     tangents: []
     uvs:
+<<<<<<< Updated upstream
     - {x: .944336414, y: .000977050746}
     - {x: .944336414, y: .0493159182}
     - {x: .997069836, y: .000977050746}
     - {x: .997069836, y: .0493159182}
+=======
+    - {x: .884766579, y: .0512700193}
+    - {x: .884766579, y: .0996088833}
+    - {x: .990233421, y: .0512700193}
+    - {x: .990233421, y: .0996088833}
+>>>>>>> Stashed changes
     indices: 000000000300000001000000020000000300000000000000
     material: {fileID: 2100000, guid: 484a8fbc85f324209bebb4e05f60005d, type: 2}
     materialId: 0
@@ -808,6 +878,80 @@ MonoBehaviour:
     colliderIndicesBack: 
     colliderConvex: 0
     colliderSmoothSphereCollisions: 0
+  - name: orcnew
+    boundsData:
+    - {x: .00156250596, y: -.00156250596, z: 0}
+    - {x: .928125024, y: .828125, z: 0}
+    untrimmedBoundsData:
+    - {x: .00156250596, y: -.00156250596, z: 0}
+    - {x: .928125024, y: .828125, z: 0}
+    texelSize: {x: .00312500005, y: .00312500005}
+    positions:
+    - {x: -.462500006, y: -.415625006, z: 0}
+    - {x: .465625018, y: -.415625006, z: 0}
+    - {x: -.462500006, y: .412499994, z: 0}
+    - {x: .465625018, y: .412499994, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: .351563483, y: .753418446}
+    - {x: .351563483, y: .898437023}
+    - {x: .610350609, y: .753418446}
+    - {x: .610350609, y: .898437023}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: 484a8fbc85f324209bebb4e05f60005d, type: 2}
+    materialId: 0
+    sourceTextureGUID: f23e2d912f5c54d2597cf9d805192faf
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    colliderType: 0
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+  - name: skull
+    boundsData:
+    - {x: .00156250596, y: -.00156250596, z: 0}
+    - {x: .928125024, y: .828125, z: 0}
+    untrimmedBoundsData:
+    - {x: .00156250596, y: -.00156250596, z: 0}
+    - {x: .928125024, y: .828125, z: 0}
+    texelSize: {x: .00312500005, y: .00312500005}
+    positions:
+    - {x: -.462500006, y: -.415625006, z: 0}
+    - {x: .465625018, y: -.415625006, z: 0}
+    - {x: -.462500006, y: .412499994, z: 0}
+    - {x: .465625018, y: .412499994, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: .429688483, y: .502930164}
+    - {x: .429688483, y: .647948742}
+    - {x: .688475609, y: .502930164}
+    - {x: .688475609, y: .647948742}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: 484a8fbc85f324209bebb4e05f60005d, type: 2}
+    materialId: 0
+    sourceTextureGUID: cf66bb1cdf3774c16bbc361c95c1a3f3
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    colliderType: 0
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
   premultipliedAlpha: 0
   material: {fileID: 0}
   materials:
@@ -821,7 +965,11 @@ MonoBehaviour:
   loadable: 0
   invOrthoSize: 1
   halfTargetHeight: 320
+<<<<<<< Updated upstream
   buildKey: 1093040491
+=======
+  buildKey: 276187296
+>>>>>>> Stashed changes
   dataGuid: d00a5c9b650504bb0adc5c5ab785fd42
   managedSpriteCollection: 0
   hasPlatformData: 0

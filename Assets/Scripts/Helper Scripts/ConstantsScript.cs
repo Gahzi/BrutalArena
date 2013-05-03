@@ -21,10 +21,8 @@ namespace BAConstants {
 		public enum TileFavorEffect {
 			IncreaseDamage = 1,
 			DecreaseAbilityCost = 2,
-			IncreaseHitPercentage = 3,
-			DecreaseEnemyDamage = 4,
-			IncreaseEnemyAbilityCost = 5,
-			DecreaseEnemyHitPercentage = 6
+			DecreaseEnemyDamage = 3,
+			IncreaseEnemyAbilityCost = 4
 		};
 
 		public enum TileFavorDirection {
@@ -105,13 +103,11 @@ namespace BAConstants {
 		public static Color baseColor = Color.white;
         public static Color increaseDamageColor = new Color(1.0f,0.75f,0f,1f);
 		public static Color decreaseAbilityCostColor = new Color(1.0f,0f,0.9f,1f);
-		public static Color increaseHitPercentageColor = new Color(0.2f,0.9f,0.15f,1f);
 		public static Color decreaseEnemyDamageColor = new Color(1.0f,0f,0f,1f);
 		public static Color increaseEnemyAbilityCost = new Color(0.5f,1f,0.9f,1f);
-		public static Color decreaseEnemyHitPercentage = new Color(0f,0f,1f,1f);
 		//public static Color baseTileColor = new Color(0.15f, 0.69f, 0.11f, 1f);
         public static Color highlightedMovementColor = new Color(0.2f,0.9f,0.15f,1f);
-		public static Color highlightedAttackColor = new Color(0.5f,0.5f,0.5f,1f);
+		public static Color highlightedAttackColor = new Color(1.0f,0.0f,0.0f,1f);
     
         public static Vector2[] tileNeighbours = { 
         new Vector2(0,-1), 
