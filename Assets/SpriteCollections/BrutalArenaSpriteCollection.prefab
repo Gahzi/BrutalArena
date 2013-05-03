@@ -60,7 +60,7 @@ MonoBehaviour:
   atlasWidth: 2048
   atlasHeight: 2048
   forceSquareAtlas: 0
-  atlasWastage: 48.5795975
+  atlasWastage: 48.4148026
   allowMultipleAtlases: 0
   textureParams:
   - name: Hexagon3
@@ -204,8 +204,8 @@ MonoBehaviour:
     texture: {fileID: 2800000, guid: 6bb6372a1d2a64614af15e7fd70f17b9, type: 3}
     materialId: 0
     anchor: 4
-    anchorX: 32
-    anchorY: 32
+    anchorX: 58
+    anchorY: 64
     overrideMesh: {fileID: 0}
     doubleSidedSprite: 0
     customSpriteGeometry: 0
