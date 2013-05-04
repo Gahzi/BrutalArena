@@ -39,7 +39,7 @@ public class AStarScript {
 	}
 	
 	public int GetRangeBetweenTwoTiles(TileScript origTile, TileScript destTile) {
-		return FindShortestPathBetweenTwoTiles(origTile,destTile).GetWeight();
+		return GetPathBetweenTwoTiles(origTile,destTile).Count - 1;
 	}
 	
 	private AStarTile FindShortestPathBetweenTwoTiles(TileScript origTile, TileScript destTile) {
@@ -75,38 +75,44 @@ public class AStarScript {
 		
 	}
 	
-	private void CalculateNeighbourWeights(AStarTile centerTile) {
+	private void CalculateNeighbourWeights(AStarTile centerATile) {
+		TileScript neighbourTile = null;
 		List<int> rowCounts = map.GetRowCounts();
 
 		foreach(Vector2 relNeighbourCoord in tileNeighbours) {
-			Vector2 neighbourCoord = centerTile.GetTileCoordinate() + relNeighbourCoord;
+			Vector2 neighbourCoord = centerATile.GetTileCoordinate() + relNeighbourCoord;
 
 			if(neighbourCoord.y >= 0 && neighbourCoord.y <= 12) { 
-				int currentRowCount = rowCounts[(int)centerTile.GetTileCoordinate().y];
+				int currentRowCount = rowCounts[(int)centerATile.GetTileCoordinate().y];
 				int destRowCount = rowCounts[(int)neighbourCoord.y];
 				if(currentRowCount < destRowCount && (relNeighbourCoord.y == 1 || relNeighbourCoord.y == -1)) {
 					neighbourCoord.x += 1;
 				}
 			}
-
-			if(map.GetTiles().Contains(neighbourCoord)) {
-				AStarTile neighbourTile = new AStarTile(neighbourCoord);
-				neighbourTile.SetParent(centerTile);
-				neighbourTile.SetWeight(centerTile.GetWeight() + 1);
+			
+			neighbourTile = (TileScript)map.GetTiles()[neighbourCoord];
+			
+			if(neighbourTile != null) {
+				AStarTile neighbourATile = new AStarTile(neighbourCoord);
+				neighbourATile.SetParent(centerATile);
+				neighbourATile.SetWeight(centerATile.GetWeight() + 1);
 				
-				if(closedList.Contains(neighbourTile)) continue;
+				if(closedList.Contains(neighbourATile)) continue;
+				if(neighbourTile.GetTileInhabitant() != null) {
+					neighbourATile.SetWeight(99);
+				}
 				
-				if(openList.Contains(neighbourTile)) {
-					AStarTile previousNeighbourTile = openList[openList.IndexOf(neighbourTile)];
-					int newCost = previousNeighbourTile.GetWeight() - previousNeighbourTile.GetParent().GetWeight() + centerTile.GetWeight() + 1;
-					if(previousNeighbourTile.GetWeight() > newCost) {
-						previousNeighbourTile.SetParent(centerTile);
-						previousNeighbourTile.SetWeight(newCost);
+				if(openList.Contains(neighbourATile)) {
+					AStarTile previousNeighbourATile = openList[openList.IndexOf(neighbourATile)];
+					int newCost = previousNeighbourATile.GetWeight() - previousNeighbourATile.GetParent().GetWeight() + centerATile.GetWeight() + 1;
+					if(previousNeighbourATile.GetWeight() > newCost) {
+						previousNeighbourATile.SetParent(centerATile);
+						previousNeighbourATile.SetWeight(newCost);
 					}
 					
 				}
 				else {
-					openList.Add (neighbourTile);
+					openList.Add (neighbourATile);
 					//TileScript addingTile = (TileScript)map.GetTiles()[neighbourTile.GetTileCoordinate()];
 					//addingTile.gameObject.GetComponent<tk2dSprite>().color = Color.red;
 				}	
@@ -121,7 +127,7 @@ public class AStarScript {
 		return openList[lowestIndex];
 	}
 	
-	public class AStarTile {
+public class AStarTile {
 		Vector2 tileCoordinate;
 		int weight;
 		AStarTile parent;

@@ -69,11 +69,34 @@ public class BasicAttackScript : AbilityScript {
 	}
 	
 	//we wish to see if the player can execute their ability on the given tile coordinate
-	public override bool ValidateMove(ref int expectedStamina, TileScript tile) {
-		CharacterScript enemy = tile.GetTileInhabitant();
-		if(enemy) {
-			if(enemy.characterType != player.characterType && expectedStamina >= staminaCost) {
-				return true;	
+	public override bool ValidateMove(ref int expectedStamina, TileScript expectedTilePosition, TileScript targetTile) {
+		int distance = 99;
+		CharacterScript enemy = targetTile.GetTileInhabitant();
+		
+		switch(player.characterType) {
+			case BAConstants.CharacterConstants.CharacterType.player: {
+				if(enemy.characterType == CharacterConstants.CharacterType.enemy) {
+					distance = player.map.GetAStar().GetRangeBetweenTwoTiles(expectedTilePosition,targetTile);
+					if(distance <= range) {
+						int abilityCostModifier = player.currentTile.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.DecreaseAbilityCost);
+						if(player.stamina >= staminaCost - abilityCostModifier) {
+							return true;
+						}
+					}
+				}
+				break;
+			}
+			case BAConstants.CharacterConstants.CharacterType.enemy: {
+				distance = player.map.GetAStar().GetRangeBetweenTwoTiles(expectedTilePosition,targetTile);
+				if(distance <= range) {
+					if(enemy.characterType == CharacterConstants.CharacterType.player) {
+						int increaseAbilityCostModifier = player.currentTile.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.IncreaseEnemyAbilityCost);
+						if(player.stamina >= staminaCost + increaseAbilityCostModifier) {
+							return true;
+						}
+					}
+				}
+				break;
 			}
 		}
 		return false;

@@ -1,15 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GUI Scripts/CreateGUIScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Model Scripts/GameManagerScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Model Scripts/GameManagerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs" Line="73" Column="54" />
+      <File FileName="Assets/Scripts/Model Scripts/GameManagerScript.cs" Line="388" Column="34" />
       <File FileName="Assets/Scripts/Model Scripts/CharacterScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Helper Scripts/AStarScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Helper Scripts/AStarScript.cs" Line="46" Column="20" />
       <File FileName="Assets/Scripts/Model Scripts/TileMapScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Helper Scripts/ConstantsScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Ability Scripts/Enemy Abilities/PushScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Helper Scripts/ConstantsScript.cs" Line="25" Column="32" />
+      <File FileName="Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs" Line="82" Column="53" />
+      <File FileName="Assets/Scripts/Ability Scripts/Enemy Abilities/PushScript.cs" Line="25" Column="17" />
       <File FileName="Assets/Scripts/Ability Scripts/Enemy Abilities/RockThrowScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Ability Scripts/Player Abilities/CircleAttack.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Ability Scripts/Player Abilities/ComboScript.cs" Line="1" Column="1" />
@@ -17,11 +17,11 @@
       <File FileName="Assets/Scripts/Ability Scripts/Player Abilities/StompScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Enemy Scripts/ArcherScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Player Scripts/FighterScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemy Scripts/GnollScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GUI Scripts/CreateGUIScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Model Scripts/AudioManagerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Model Scripts/Favor.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Model Scripts/TileScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy Scripts/GnollScript.cs" Line="69" Column="1" />
+      <File FileName="Assets/Scripts/GUI Scripts/CreateGUIScript.cs" Line="29" Column="2" />
+      <File FileName="Assets/Scripts/Model Scripts/Favor.cs" Line="147" Column="1" />
+      <File FileName="Assets/Scripts/Model Scripts/TileScript.cs" Line="40" Column="1" />
+      <File FileName="Assets/Scripts/Model Scripts/AbilityScript.cs" Line="38" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -35,11 +35,11 @@
                   <Node name="Player Abilities" expanded="True" />
                 </Node>
                 <Node name="Enemy Scripts" expanded="True" />
-                <Node name="GUI Scripts" expanded="True">
-                  <Node name="CreateGUIScript.cs" selected="True" />
-                </Node>
+                <Node name="GUI Scripts" expanded="True" />
                 <Node name="Helper Scripts" expanded="True" />
-                <Node name="Model Scripts" expanded="True" />
+                <Node name="Model Scripts" expanded="True">
+                  <Node name="GameManagerScript.cs" selected="True" />
+                </Node>
                 <Node name="Player Scripts" expanded="True" />
               </Node>
             </Node>
@@ -49,7 +49,10 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/GameManagerScript.cs" line="181" />
+      <Breakpoint file="/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/GameManagerScript.cs" line="175" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

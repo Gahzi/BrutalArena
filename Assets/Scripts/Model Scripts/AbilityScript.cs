@@ -35,7 +35,7 @@ public class AbilityScript {
 	}
 	
 	// Update is called once per frame
-	public virtual bool ValidateMove(ref int expectedStamina,TileScript tile) {
+	public virtual bool ValidateMove(ref int expectedStamina,TileScript expectedTilePosition, TileScript targetTile) {
 		Debug.Log("Need to override base validate move function");
 		return true;
 	}

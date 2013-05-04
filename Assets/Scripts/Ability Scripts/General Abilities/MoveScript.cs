@@ -50,7 +50,7 @@ public class MoveScript : AbilityScript {
 			
 			case CharacterConstants.CharacterType.enemy: {
 				int distance = player.map.GetAStar().GetRangeBetweenTwoTiles(player.currentTile,tile);
-				if( distance <= range) {
+				if( distance - 1 <= range) {
 					int abilityCostModifier = player.currentTile.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.IncreaseEnemyAbilityCost);
 					if(player.stamina >= (staminaCost + abilityCostModifier)) {
 						player.map.MoveCharacterToTileCoordinate(player,tile);
@@ -64,10 +64,10 @@ public class MoveScript : AbilityScript {
 		return false;
 	}
 	
-	public override bool ValidateMove(ref int expectedStamina, TileScript tile) {
-		CharacterScript enemy = tile.GetTileInhabitant();
+	public override bool ValidateMove(ref int expectedStamina, TileScript expectedTilePosition, TileScript targetTile) {
+		CharacterScript enemy = targetTile.GetTileInhabitant();
 		if(enemy == null) {
-			List<Vector2> pathToTile = player.map.GetAStar().GetPathBetweenTwoTiles(player.currentTile,tile);
+			List<Vector2> pathToTile = player.map.GetAStar().GetPathBetweenTwoTiles(expectedTilePosition,targetTile);
 			if(pathToTile.Count > 0) {
 				//Reduce the count cost by since it includes the movers current position.
 				int totalStaminaCost = staminaCost * (pathToTile.Count-1);

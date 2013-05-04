@@ -33,8 +33,8 @@ public class RockThrowScript : AbilityScript {
 	}
 	
 	//we wish to see if the player can execute their ability on the given tile coordinate
-	public override bool ValidateMove(ref int expectedStamina, TileScript tile) {
-		CharacterScript enemy = tile.GetTileInhabitant();
+	public override bool ValidateMove(ref int expectedStamina, TileScript expectedTilePosition, TileScript targetTile) {
+		CharacterScript enemy = targetTile.GetTileInhabitant();
 		if(enemy) {
 			if(enemy.characterType != player.characterType && expectedStamina >= staminaCost) {
 				return true;	

@@ -175,7 +175,7 @@ public class GameManagerScript : MonoBehaviour {
 						if(hoveredPath.Count == 2) {
 							adjacentTile = hoveredPath[(hoveredPath.Count - 1)];
 							int tempStamina = currentCharacter.stamina;
-							bool canAttackAtTile = player.abilityTwo.ValidateMove(ref tempStamina,currentHoveredTile);
+							bool canAttackAtTile = player.abilityTwo.ValidateMove(ref tempStamina,player.currentTile,currentHoveredTile);
 						
 							if(canAttackAtTile) {
 								player.abilityTwo.Execute(currentHoveredTile);
@@ -190,16 +190,19 @@ public class GameManagerScript : MonoBehaviour {
 							adjacentTile = hoveredPath[(hoveredPath.Count - 2)];
 							TileScript tile = (TileScript)player.map.GetTiles()[adjacentTile];
 							int tempStamina = currentCharacter.stamina;
-							bool canMovetoTile = player.abilityOne.ValidateMove(ref tempStamina,tile);
-							bool canAttackAtTile = player.abilityTwo.ValidateMove(ref tempStamina,currentHoveredTile);
-							if(canMovetoTile && canAttackAtTile) {
-								player.abilityOne.Execute(tile);
-								player.abilityTwo.Execute(currentHoveredTile);
-								foreach(Vector2 tileCoordinate in hoveredPath) {
-									TileScript hoveredTile = (TileScript)map.GetTiles()[tileCoordinate];
-									hoveredTile.isHighlighted = false;
-									hoveredTile.isAttackable = false;
-								}
+							bool canMovetoTile = player.abilityOne.ValidateMove(ref tempStamina,player.currentTile,tile);
+							
+							if(canMovetoTile) {
+								bool canAttackAtTile = player.abilityTwo.ValidateMove(ref tempStamina,tile,currentHoveredTile);
+								if(canAttackAtTile) {
+									player.abilityOne.Execute(tile);
+									player.abilityTwo.Execute(currentHoveredTile);
+									foreach(Vector2 tileCoordinate in hoveredPath) {
+										TileScript hoveredTile = (TileScript)map.GetTiles()[tileCoordinate];
+										hoveredTile.isHighlighted = false;
+										hoveredTile.isAttackable = false;
+									}
+								}	
 							}
 						}
 					}
@@ -338,7 +341,7 @@ public class GameManagerScript : MonoBehaviour {
 				if(hoveredInhabitant.characterType == CharacterConstants.CharacterType.enemy) {
 					hoveredPath = map.GetAStar().GetPathBetweenTwoTiles(currentCharacter.currentTile,hoveredTile);
 					if(hoveredPath.Count == 2) {
-						bool canAttackAtTile = currentCharacter.abilityTwo.ValidateMove(ref tempStamina,hoveredTile);
+						bool canAttackAtTile = currentCharacter.abilityTwo.ValidateMove(ref tempStamina,currentCharacter.currentTile,hoveredTile);
 						if(canAttackAtTile) {
 							foreach(Vector2 tileCoordInPath in hoveredPath) {
 								TileScript tileInPath = (TileScript)map.GetTiles()[tileCoordInPath];
@@ -355,18 +358,19 @@ public class GameManagerScript : MonoBehaviour {
 						Vector2 adjacentTile = hoveredPath[(hoveredPath.Count - 2)];
 						TileScript tile = (TileScript)map.GetTiles()[adjacentTile];
 						//tempStamina = currentCharacter.stamina;
-						bool canMovetoTile = currentCharacter.abilityOne.ValidateMove(ref tempStamina,tile);
-						bool canAttackAtTile = currentCharacter.abilityTwo.ValidateMove(ref tempStamina,hoveredTile);
-						
-						if(canMovetoTile && canAttackAtTile) {
-							foreach(Vector2 tileCoordInPath in hoveredPath) {
-								TileScript tileInPath = (TileScript)map.GetTiles()[tileCoordInPath];
-								
-								if(hoveredPath.IndexOf(tileCoordInPath) == (hoveredPath.Count - 1)) {
-									tileInPath.isAttackable = true;
-								}
-								else {
-									tileInPath.isHighlighted = true;
+						bool canMovetoTile = currentCharacter.abilityOne.ValidateMove(ref tempStamina,currentCharacter.currentTile,tile);
+						if(canMovetoTile) {
+							bool canAttackAtTile = currentCharacter.abilityTwo.ValidateMove(ref tempStamina,tile,hoveredTile);
+							if(canAttackAtTile) {
+								foreach(Vector2 tileCoordInPath in hoveredPath) {
+									TileScript tileInPath = (TileScript)map.GetTiles()[tileCoordInPath];
+									
+									if(hoveredPath.IndexOf(tileCoordInPath) == (hoveredPath.Count - 1)) {
+										tileInPath.isAttackable = true;
+									}
+									else {
+										tileInPath.isHighlighted = true;
+									}
 								}
 							}
 						}
@@ -374,7 +378,7 @@ public class GameManagerScript : MonoBehaviour {
 				}	
 			}
 			else {
-				bool canMoveToHoveredTile = currentCharacter.abilityOne.ValidateMove(ref tempStamina,hoveredTile);
+				bool canMoveToHoveredTile = currentCharacter.abilityOne.ValidateMove(ref tempStamina,currentCharacter.currentTile,hoveredTile);
 				
 				if(canMoveToHoveredTile) {
 					hoveredPath = map.GetAStar().GetPathBetweenTwoTiles(currentCharacter.currentTile,hoveredTile);

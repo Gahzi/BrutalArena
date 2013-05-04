@@ -21,8 +21,8 @@ namespace BAConstants {
 		public enum TileFavorEffect {
 			IncreaseDamage = 1,
 			DecreaseAbilityCost = 2,
-			DecreaseEnemyDamage = 4,
-			IncreaseEnemyAbilityCost = 5
+			DecreaseEnemyDamage = 3,
+			IncreaseEnemyAbilityCost = 4
 		};
 
 		public enum TileFavorDirection {
