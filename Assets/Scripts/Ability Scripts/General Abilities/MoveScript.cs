@@ -42,6 +42,7 @@ public class MoveScript : AbilityScript {
 					if(player.stamina >= (totalStaminaCost - totalAbilityCostModifier)) {
 						player.map.MoveCharacterToTileCoordinate(player,tile);
 						player.stamina -= (totalStaminaCost - totalAbilityCostModifier);
+						//JONATHAN: PLAYER MOVES HERE
 						return true;
 					}
 				}
@@ -55,6 +56,7 @@ public class MoveScript : AbilityScript {
 					if(player.stamina >= (staminaCost + abilityCostModifier)) {
 						player.map.MoveCharacterToTileCoordinate(player,tile);
 						player.stamina -= (staminaCost + abilityCostModifier);
+						//JONATHAN: ENEMY MOVES HERE
 						return true;
 					}
 				}

@@ -109,6 +109,16 @@ public class GameManagerScript : MonoBehaviour {
 
 		if(!enemyFound) {
 			enemySpawnCount += enemySpawnRate;
+			
+			//JONATHAN: NEW ROUND STARTS HERE
+			
+			if(enemySpawnCount == 5) {
+				//JONATHAN: ROUND 5 STARTS HERE	
+			}
+			
+			if(enemySpawnCount == 10) {
+				//JONATHAN: ROUND 10 STARTS HERE
+			}
 
 			if(player) {
 				if(player.health + ((int)(favor * healthGainedPerFavor)) >= player.healthMax) {
@@ -244,8 +254,10 @@ public class GameManagerScript : MonoBehaviour {
 				GenerateNewFavorWave();
 				nextFavorWaveCost += fWaveRequirement;
 			}
+			//JONATHAN: ENEMY DIES HERE	
 		} else if (character.characterType == CharacterConstants.CharacterType.player) {
 			//TODO: Delay for short time
+			//JONATHAN: PLAYER DIES HERE
 			Application.LoadLevel(2);
 		}
 	}
@@ -304,6 +316,7 @@ public class GameManagerScript : MonoBehaviour {
 	}
 
 	public void GenerateNewFavorWave() {
+		//JONATHAN: NEW FAVOR WAVE IS CREATED HERE
 		System.Random rand = new System.Random();
 		ConstantsScript.TileFavorDirection side = (ConstantsScript.TileFavorDirection)rand.Next(1,6);
 		ConstantsScript.TileFavorEffect effect = (ConstantsScript.TileFavorEffect)rand.Next(1,4);

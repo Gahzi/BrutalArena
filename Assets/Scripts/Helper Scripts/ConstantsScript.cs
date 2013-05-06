@@ -118,6 +118,7 @@ namespace BAConstants {
         new Vector2(-1,-1)
         };
     }
+
     /*
     *
     *
@@ -165,7 +166,7 @@ namespace BAConstants {
             MonsterGrowl1,
             MonsterGrowl2,
             SwordHit1,
-            SwordPickup,
+            SwordPickup
         }
 
     }

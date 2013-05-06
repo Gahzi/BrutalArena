@@ -39,6 +39,7 @@ public class BasicAttackScript : AbilityScript {
 							GameManagerScript gm = player.gm;
 							AudioManagerScript am = gm.gameObject.GetComponent<AudioManagerScript>();
 							am.PlayAudioClip(BAConstants.AudioConstants.AudioClipType.SwordHit1);
+							//JONATHAN: PLAYER HITS ENEMY HERE.
 							return true;
 						}
 					}
@@ -56,6 +57,7 @@ public class BasicAttackScript : AbilityScript {
 							GameManagerScript gm = player.gm;
 							AudioManagerScript am = gm.gameObject.GetComponent<AudioManagerScript>();
 							am.PlayAudioClip(BAConstants.AudioConstants.AudioClipType.SwordHit1);
+							//JONATHAN: ENEMY HITS PLAYER HERE.
 							return true;
 						}
 					}
