@@ -254,9 +254,12 @@ public class GameManagerScript : MonoBehaviour {
 				GenerateNewFavorWave();
 				nextFavorWaveCost += fWaveRequirement;
 			}
-			//JONATHAN: ENEMY DIES HERE	
+			AudioManagerScript am = gameObject.GetComponent<AudioManagerScript>();
+							am.PlayAudioClip(BAConstants.AudioConstants.AudioClipType.EnemyDeath);
 		} else if (character.characterType == CharacterConstants.CharacterType.player) {
 			//TODO: Delay for short time
+			AudioManagerScript am = gameObject.GetComponent<AudioManagerScript>();
+							am.PlayAudioClip(BAConstants.AudioConstants.AudioClipType.PlayerDeath);
 			//JONATHAN: PLAYER DIES HERE
 			Application.LoadLevel(2);
 		}

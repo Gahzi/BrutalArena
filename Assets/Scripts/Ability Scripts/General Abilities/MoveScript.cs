@@ -56,6 +56,8 @@ public class MoveScript : AbilityScript {
 					if(player.stamina >= (staminaCost + abilityCostModifier)) {
 						player.map.MoveCharacterToTileCoordinate(player,tile);
 						player.stamina -= (staminaCost + abilityCostModifier);
+						AudioManagerScript am = player.gm.gameObject.GetComponent<AudioManagerScript>();
+						am.PlayAudioClip(BAConstants.AudioConstants.AudioClipType.EnemyWalk);
 						//JONATHAN: ENEMY MOVES HERE
 						return true;
 					}

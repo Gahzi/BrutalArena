@@ -166,7 +166,12 @@ namespace BAConstants {
             MonsterGrowl1,
             MonsterGrowl2,
             SwordHit1,
-            SwordPickup
+            SwordPickup,
+			EnemyAttack,
+			EnemyWalk,
+			EnemyDeath,
+			PlayerDeath,
+			GameOver
         }
 
     }
