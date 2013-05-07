@@ -319,6 +319,8 @@ public class GameManagerScript : MonoBehaviour {
 	}
 
 	public void GenerateNewFavorWave() {
+							AudioManagerScript am = gameObject.GetComponent<AudioManagerScript>();
+							am.PlayAudioClip(BAConstants.AudioConstants.AudioClipType.ShoutCheer);
 		//JONATHAN: NEW FAVOR WAVE IS CREATED HERE
 		System.Random rand = new System.Random();
 		ConstantsScript.TileFavorDirection side = (ConstantsScript.TileFavorDirection)rand.Next(1,6);

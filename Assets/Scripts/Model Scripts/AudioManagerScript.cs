@@ -16,6 +16,7 @@ public class AudioManagerScript : MonoBehaviour {
 	public AudioClip EnemyDeath;
 	public AudioClip PlayerDeath;
 	public AudioClip GameOver;
+	public AudioClip ShoutCheer;
 	
 	
 	// Use this for initialization
@@ -89,6 +90,11 @@ public class AudioManagerScript : MonoBehaviour {
 			
 			case AudioConstants.AudioClipType.GameOver: {
 				audio.clip = GameOver;
+				break;	
+			}
+			
+			case AudioConstants.AudioClipType.ShoutCheer: {
+				audio.clip = ShoutCheer;
 				break;	
 			}
 			

@@ -171,7 +171,8 @@ namespace BAConstants {
 			EnemyWalk,
 			EnemyDeath,
 			PlayerDeath,
-			GameOver
+			GameOver,
+			ShoutCheer
         }
 
     }
