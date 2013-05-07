@@ -53,13 +53,6 @@ public class CharacterScript : MonoBehaviour {
 		//check for death
 		if(health <= 0) {
 			Debug.Log(this.gameObject.name + " has died");
-			
-			if(characterType == CharacterConstants.CharacterType.enemy) {
-				//JONATHAN: ENEMY DIES HERE	
-			}
-			else if(characterType == CharacterConstants.CharacterType.player) {
-				//JONATHAN: PLAYER DIES HERE
-			}
 			gm.KillCharacter(this);
 			this.gameObject.SetActive(false);
 			Destroy(this.gameObject);
