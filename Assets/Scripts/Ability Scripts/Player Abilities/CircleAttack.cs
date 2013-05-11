@@ -35,7 +35,7 @@ public class CircleAttack : AbilityScript {
 				if(player.stamina >= staminaCost ) {
 
 					int damageModifier = tile.GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect.IncreaseDamage);
-					enemy.health -= damage; 
+					enemy.health -= damage + damageModifier; 
 					//+ damageModifier;
 					//- abilityCostModifier
 					player.stamina -= (staminaCost);

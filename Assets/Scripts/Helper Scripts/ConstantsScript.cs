@@ -117,6 +117,46 @@ namespace BAConstants {
         new Vector2(-1,0), 
         new Vector2(-1,-1)
         };
+		
+		public const string TILE_ARROW_TOP_LEFT_PREFAB_NAME = "TopLeftArrow";
+		public const string TILE_ARROW_TOP_RIGHT_PREFAB_NAME = "TopRightArrow";
+		public const string TILE_ARROW_RIGHT_PREFAB_NAME = "RightArrow";
+		public const string TILE_ARROW_BOTTOM_RIGHT_PREFAB_NAME = "BottomRightArrow";
+		public const string TILE_ARROW_BOTTOM_LEFT_PREFAB_NAME = "BottomLeftArrow";
+		public const string TILE_ARROW_LEFT_PREFAB_NAME = "LeftArrow";
+		
+		public static string GetTileArrowPrefabName(BAConstants.ConstantsScript.TileFavorDirection direction) {
+			string prefabName = "";
+			
+			switch(direction) {
+				case ConstantsScript.TileFavorDirection.TopLeft: {
+					prefabName = TILE_ARROW_TOP_LEFT_PREFAB_NAME;
+					break;
+				}
+				case ConstantsScript.TileFavorDirection.TopRight: {
+					prefabName = TILE_ARROW_TOP_RIGHT_PREFAB_NAME;
+					break;
+				}
+				
+				case ConstantsScript.TileFavorDirection.Bottom: {
+					//prefabName = TILE_ARROW_BOTTOM_PREFAB_NAME;
+					break;
+				}
+				case ConstantsScript.TileFavorDirection.BottomRight: {
+					prefabName = TILE_ARROW_BOTTOM_RIGHT_PREFAB_NAME;
+					break;
+				}
+				case ConstantsScript.TileFavorDirection.BottomLeft: {
+					prefabName = TILE_ARROW_BOTTOM_LEFT_PREFAB_NAME;
+					break;
+				}
+				case ConstantsScript.TileFavorDirection.Top: {
+					//prefabName = TILE_ARROW_TOP_PREFAB_NAME;
+					break;
+				}
+			}
+			return prefabName;
+		}
     }
 
     /*

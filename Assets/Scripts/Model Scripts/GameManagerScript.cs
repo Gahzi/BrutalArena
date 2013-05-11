@@ -328,13 +328,23 @@ public class GameManagerScript : MonoBehaviour {
 		ReadOnlyCollection<Vector2> startingTiles = ConstantsScript.GetFavorWaveStartingTiles(side);
 		Vector2 startingTileCoordinate = startingTiles[rand.Next(0,startingTiles.Count - 1)];
 		List<TileScript> adjacentTiles = map.GetAllAdjacentTiles(startingTileCoordinate);
-		Hashtable tiles = map.GetTiles();
-
-		Favor centerFavor = new Favor(this,(TileScript)tiles[startingTileCoordinate],effect,side);
+		Hashtable tiles = map.GetTiles();		
+		TileScript firstTile = (TileScript)tiles[startingTileCoordinate];
+		GameObject centerFavorObject = (GameObject)Instantiate(Resources.Load(BAConstants.TileConstants.GetTileArrowPrefabName(side)),firstTile.gameObject.transform.position,Quaternion.identity);
+		centerFavorObject.transform.parent = firstTile.gameObject.transform;
+		Favor centerFavor = centerFavorObject.GetComponent<Favor>();
+		centerFavor.SetTileFavorDirection(side);
+		centerFavor.SetTileFavorEffect(effect);
+		centerFavor.SetCurrentTile(firstTile);
 		favorList.Add(centerFavor);
 		
 		foreach(TileScript tile in adjacentTiles) {
-			Favor favor = new Favor(this,tile,effect,side);
+			GameObject favorObject = (GameObject)Instantiate(Resources.Load(BAConstants.TileConstants.GetTileArrowPrefabName(side)),tile.gameObject.transform.position,Quaternion.identity);
+			favorObject.transform.parent = tile.gameObject.transform;
+			Favor favor = favorObject.GetComponent<Favor>();
+			favor.SetTileFavorDirection(side);
+			favor.SetTileFavorEffect(effect);
+			favor.SetCurrentTile(tile);
 			favorList.Add(favor);
 		}
 	}

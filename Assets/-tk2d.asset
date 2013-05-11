@@ -376,6 +376,16 @@ MonoBehaviour:
     - HeroHelmetTransparent
     - skullenemy2
     - GameOverScreen
+    - Arrow_Bottom_Left
+    - Arrow_Left
+    - Arrow_Top_Left
+    - Arrow_Right
+    - Arrow_Bottom_Right
+    - Arrow_Top_Right
+    - Goblin
+    - StartScreenColor
+    - Skullington
+    - GameOverColor
     spriteTextureGUIDs:
     - d141efa7805934ea9897545433786b07
     - 735da96872ec045049549d277a767222
@@ -396,6 +406,16 @@ MonoBehaviour:
     - dc75f922f3a534b4fbb80b039c72a023
     - b433890b1b2f0417cab098fc9ba69cd8
     - 908687ec3723c4f53a2204c9567d7c98
+    - 66f3773b93ab44b14b3df6d8696a0fba
+    - 7e8dafc8c249c4caabb47f47f6c27dd8
+    - 9c6a0307647334a3493dba111ea2c7b1
+    - bb945bfa1d9f74d368cb3d1be81f51f0
+    - d0cf253be7064490db0675b882b15ecf
+    - e0c46f08d3c9541b7b06005f2a70db4b
+    - 10355c0f291d543d5a00d9e2740cc7d0
+    - 89daff34f73bf4c4a81eb1dbc9e07b7e
+    - ca45a83e193f74f61ac13a1819cb93ab
+    - d33d2c196684546d3809e22be4fd31d0
     spriteTextureTimeStamps:
     - 1362505145
     - 1362430944
@@ -412,10 +432,20 @@ MonoBehaviour:
     - 1366556610
     - 1366556610
     - 1367282566
-    - 1367588404
+    - 1367944795
     - 1367326442
     - 1367599057
     - 1367224992
+    - 1367945063
+    - 1367945493
+    - 1367945299
+    - 1367945369
+    - 1367945585
+    - 1367945218
+    - 1368041788
+    - 1367935762
+    - 1368193958
+    - 1367938596
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

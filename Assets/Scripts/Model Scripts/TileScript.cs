@@ -13,6 +13,7 @@ public class TileScript : MonoBehaviour {
 	public bool isAttackable = false;
 
 	private List<Favor> favorList;
+	private List<tk2dSprite> favorArrowList;
 	
 	// Use this for initialization
 	void Start () {
@@ -23,6 +24,7 @@ public class TileScript : MonoBehaviour {
 		}
 
 		favorList = new List<Favor>();
+		favorArrowList = new List<tk2dSprite>();
 	}
 	
 	// Update is called once per frame
@@ -39,14 +41,19 @@ public class TileScript : MonoBehaviour {
 			//Change color depending on the type of favor effects on the tile
 			if(favorList.Count == 0) {
 				spriteScript.color = Color.white;
+				
+				
+				//Remove all arrows
 			}
 			else if(favorList.Count == 1) {
-				spriteScript.color = favorList[0].getFavorColor();	
+				spriteScript.color = favorList[0].getFavorColor();
+				//Add the arrow for favorList 1	
 			}
 			else if(favorList.Count > 1) {
 				Color finalColor = Color.white;
 				foreach(Favor favor in favorList) {
 					finalColor = Color.Lerp(finalColor,favor.getFavorColor(),0.5f);
+					//Add the arrow for favorList n
 				}
 				
 				spriteScript.color = finalColor;
@@ -57,7 +64,7 @@ public class TileScript : MonoBehaviour {
 	public int GetNumOfFavorEffectsInTile(ConstantsScript.TileFavorEffect effect) {
 		IEnumerable<Favor> effectFavors = 
 			from favor in favorList
-			where favor.GetFavorEffect() == effect
+			where favor.GetTileFavorEffect() == effect
 			select favor;
 		
 		return effectFavors.Count();
@@ -73,6 +80,10 @@ public class TileScript : MonoBehaviour {
 	
 	public void RemoveFavor(Favor favor) {
 		favorList.Remove(favor);
+		
+		foreach(tk2dSprite sprite in favorArrowList) {
+			
+		}
 	}
 
 	//Set a character to a specific tile

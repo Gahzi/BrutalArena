@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"gui",
+				"gui	GUI.Button(position,content,style)"
+			],
+			[
 				"currentSEle",
 				"currentSelectedTileInhabitant"
 			],
@@ -188,10 +192,18 @@
 	"buffers":
 	[
 		{
-			"file": "Assets/Scripts/GUI Scripts/CreateGUIScript.cs",
+			"file": "Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs",
 			"settings":
 			{
-				"buffer_size": 4337,
+				"buffer_size": 4149,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Scripts/Model Scripts/AudioManagerScript.cs",
+			"settings":
+			{
+				"buffer_size": 1458,
 				"line_ending": "Unix"
 			}
 		},
@@ -199,7 +211,7 @@
 			"file": "Assets/Scripts/Helper Scripts/ConstantsScript.cs",
 			"settings":
 			{
-				"buffer_size": 5340,
+				"buffer_size": 6730,
 				"line_ending": "Unix"
 			}
 		},
@@ -207,7 +219,7 @@
 			"file": "Assets/Scripts/Model Scripts/GameManagerScript.cs",
 			"settings":
 			{
-				"buffer_size": 12888,
+				"buffer_size": 14352,
 				"line_ending": "Unix"
 			}
 		},
@@ -215,7 +227,7 @@
 			"file": "Assets/Scripts/Model Scripts/Favor.cs",
 			"settings":
 			{
-				"buffer_size": 4310,
+				"buffer_size": 4591,
 				"line_ending": "Unix"
 			}
 		},
@@ -223,21 +235,7 @@
 			"file": "Assets/Scripts/Model Scripts/TileScript.cs",
 			"settings":
 			{
-				"buffer_size": 2500,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"settings":
-			{
-				"buffer_size": 0,
+				"buffer_size": 2756,
 				"line_ending": "Unix"
 			}
 		}
@@ -245,16 +243,44 @@
 	"build_system": "Packages/Unity3D Build System/Unity.sublime-build",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 335.0,
 		"selected_items":
 		[
 			[
-				"unity",
-				"Unity Reference: Search from Input"
+				"package control",
+				"Package Control: Install Package"
+			],
+			[
+				"package install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"show",
+				"Show TODOs: Project and open files"
+			],
+			[
+				"package control install",
+				"Package Control: Install Package"
 			],
 			[
 				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"packa in",
 				"Package Control: Install Package"
+			],
+			[
+				"packag",
+				"Package Control: Discover Packages"
+			],
+			[
+				"unity",
+				"Unity Reference: Search from Input"
 			],
 			[
 				"Open",
@@ -301,7 +327,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 449.0
+		"width": 405.0
 	},
 	"console":
 	{
@@ -318,31 +344,33 @@
 	},
 	"file_history":
 	[
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs",
+		"/Users/shervinghazazani/Desktop/DBDump/mob_db59.sql",
+		"/Users/shervinghazazani/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/shervinghazazani/Games/BrutalArena/BrutalArena.sublime-project",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/AudioManagerScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Player Abilities/CircleAttack.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/TileScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/Favor.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/GameManagerScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Helper Scripts/ConstantsScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/GUI Scripts/CreateGUIScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Enemy Abilities/PushScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Enemy Abilities/RockThrowScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/General Abilities/MoveScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Player Abilities/ComboScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Player Abilities/DefendScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Player Abilities/StompScript.cs",
+		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/AbilityScript.cs",
 		"/Users/shervinghazazani/Desktop/Todo list:",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/GnollScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/CharacterScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Helper Scripts/AStarScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Player Abilities/StompScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Player Abilities/DefendScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Player Abilities/ComboScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Player Abilities/CircleAttack.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Enemy Abilities/RockThrowScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/Enemy Abilities/PushScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/Classes 2013",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/GameManagerScript.cs",
 		"/Users/shervinghazazani/Desktop/iossrc/Funtactix Info",
 		"/Users/shervinghazazani/Desktop/WitchballNotes",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/AbilityScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/TileMapScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Helper Scripts/VectorLine.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/TileScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/GUI Scripts/CreateGUIScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Model Scripts/AudioManagerScript.cs",
-		"/Users/shervinghazazani/Games/BrutalArena/BrutalArena.sublime-project",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/ArcherScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Enemy Scripts/TankScript.cs",
 		"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts/Player Scripts/FighterScript.cs",
@@ -391,7 +419,6 @@
 		"/Users/shervinghazazani/Desktop/Chris Bell Questions",
 		"/Users/shervinghazazani/Desktop/Game Design 1 : Sept 10 2012",
 		"/Users/shervinghazazani/Desktop/Game Design Assignment 1:",
-		"/Users/shervinghazazani/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Volumes/Git 1.7.11.3 Snow Leopard Intel Universal/README.txt"
 	],
 	"find":
@@ -400,7 +427,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"/Users/shervinghazazani/Games/BrutalArena/Assets/Scripts",
@@ -416,6 +443,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Instantiate",
+			"Audio",
+			"Play",
+			"ValidateMove(ref int expectedStamina, TileScript tile)",
+			"ValidateMove",
 			"Random",
 			"getFavorColor",
 			"Failed to Find",
@@ -496,6 +528,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"ValidateMove(ref int expectedStamina, TileScript expectedTilePosition, TileScript targetTile)",
 			"ref int",
 			"public override bool ValidateMove(out int expectedStamina, TileScript tile) {",
 			"GetRowCounts",
@@ -517,55 +550,214 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Assets/Scripts/GUI Scripts/CreateGUIScript.cs",
+					"file": "Assets/Scripts/Ability Scripts/General Abilities/BasicAttackScript.cs",
 					"settings":
 					{
-						"buffer_size": 4337,
+						"buffer_size": 4149,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1908,
-								1908
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C#/C#.tmLanguage",
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 261.0,
+						"translation.y": 62.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "Assets/Scripts/Helper Scripts/ConstantsScript.cs",
+					"file": "Assets/Scripts/Model Scripts/AudioManagerScript.cs",
 					"settings":
 					{
-						"buffer_size": 5340,
+						"buffer_size": 1458,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4018,
-								4018
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C#/C#.tmLanguage",
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Assets/Scripts/Helper Scripts/ConstantsScript.cs",
+					"settings":
+					{
+						"buffer_size": 6730,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -576,77 +768,138 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "Assets/Scripts/Model Scripts/GameManagerScript.cs",
 					"settings":
 					{
-						"buffer_size": 12888,
+						"buffer_size": 14352,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6737,
-								6737
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C#/C#.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 19.0,
-						"translation.y": 2379.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "Assets/Scripts/Model Scripts/Favor.cs",
-					"settings":
-					{
-						"buffer_size": 4310,
-						"regions":
-						{
-						},
-						"selection":
-						[
+							"BracketHighlighterBusy": false,
+							"bh_regions":
 							[
-								3989,
-								3989
-							]
-						],
-						"settings":
-						{
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
 							"syntax": "Packages/C#/C#.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3167.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "Assets/Scripts/Model Scripts/TileScript.cs",
+					"file": "Assets/Scripts/Model Scripts/Favor.cs",
 					"settings":
 					{
-						"buffer_size": 2500,
+						"buffer_size": 4591,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								434,
-								437
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
 							"syntax": "Packages/C#/C#.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -658,9 +911,10 @@
 				},
 				{
 					"buffer": 5,
+					"file": "Assets/Scripts/Model Scripts/TileScript.cs",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 2756,
 						"regions":
 						{
 						},
@@ -673,35 +927,55 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
+							"BracketHighlighterBusy": false,
+							"bh_regions":
 							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 250.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -746,7 +1020,7 @@
 	},
 	"output.find_results":
 	{
-		"height": 353.0
+		"height": 129.0
 	},
 	"replace":
 	{
@@ -758,6 +1032,30 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"tile",
+				"Assets/Scripts/Model Scripts/TileScript.cs"
+			],
+			[
+				"fac",
+				"Assets/Scripts/Model Scripts/Favor.cs"
+			],
+			[
+				"const",
+				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
+			],
+			[
+				"audio",
+				"Assets/Scripts/Model Scripts/AudioManagerScript.cs"
+			],
+			[
+				"gameman",
+				"Assets/Scripts/Model Scripts/GameManagerScript.cs"
+			],
+			[
+				"ability",
+				"Assets/Scripts/Model Scripts/AbilityScript.cs"
+			],
 			[
 				"fav",
 				"Assets/Scripts/Model Scripts/Favor.cs"
@@ -807,16 +1105,8 @@
 				"Assets/Scripts/Ability Scripts/Enemy Abilities/PushScript.cs"
 			],
 			[
-				"ability",
-				"Assets/Scripts/Model Scripts/AbilityScript.cs"
-			],
-			[
 				"astar",
 				"Assets/Scripts/Helper Scripts/AStarScript.cs"
-			],
-			[
-				"const",
-				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
 			],
 			[
 				"game",
@@ -845,10 +1135,6 @@
 			[
 				"as",
 				"Assets/Scripts/Helper Scripts/AStarScript.cs"
-			],
-			[
-				"tile",
-				"Assets/Scripts/Model Scripts/TileScript.cs"
 			],
 			[
 				"basi",
@@ -931,10 +1217,6 @@
 				"Assets/Scripts/Helper Scripts/ConstantsScript.cs"
 			],
 			[
-				"audio",
-				"Assets/Scripts/Model Scripts/AudioManagerScript.cs"
-			],
-			[
 				"tilescr",
 				"Assets/Scripts/Model Scripts/TileScript.cs"
 			],
@@ -1000,7 +1282,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 186.0,
 	"status_bar_visible": true
 }

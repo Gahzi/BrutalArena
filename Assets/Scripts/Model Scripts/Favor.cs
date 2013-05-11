@@ -4,30 +4,42 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using BAConstants;
 
-public class Favor {
+public class Favor : MonoBehaviour {
 	ConstantsScript.TileFavorEffect effect;
 	ConstantsScript.TileFavorDirection direction;
-	GameManagerScript gm;
 	TileScript currentTile;
 	
-	public Favor(GameManagerScript manager,TileScript startingTile,ConstantsScript.TileFavorEffect newEffect, ConstantsScript.TileFavorDirection startingDirection) {
-		gm = manager;
-		currentTile = startingTile;
-		currentTile.AddFavor(this);
+	public virtual void Start () {
+	}
+	
+	public virtual void Update () {
+		
+	}
+	
+	public ConstantsScript.TileFavorEffect GetTileFavorEffect() {
+		return effect;	
+	}
+	
+	public void SetTileFavorEffect(ConstantsScript.TileFavorEffect newEffect) {
 		effect = newEffect;
-		direction = startingDirection;
 	}
 	
-	public ConstantsScript.TileFavorEffect GetFavorEffect() {
-		return effect;
+	public ConstantsScript.TileFavorDirection GetTileFavorDirection() {
+		return direction;	
 	}
 	
-	public ConstantsScript.TileFavorDirection GetDirection() {
-		return direction;
+	public void SetTileFavorDirection(ConstantsScript.TileFavorDirection newDirection) {
+		direction = newDirection;
 	}
 	
 	public TileScript GetCurrentTile() {
 		return currentTile;	
+	}
+	
+	public void SetCurrentTile(TileScript newTile) {
+		if(currentTile != null) currentTile.RemoveFavor(this);
+		currentTile = newTile;
+		if(currentTile != null) currentTile.AddFavor(this);
 	}
 	
 	//Move to next tile with the current direction
@@ -131,6 +143,7 @@ public class Favor {
 			TileScript nextTile = (TileScript)tiles[tileCoordinate];
 			nextTile.AddFavor(this);
 			currentTile = nextTile;
+			this.gameObject.transform.position = nextTile.gameObject.transform.position;
 		}
 		else {
 			currentTile = null;	
