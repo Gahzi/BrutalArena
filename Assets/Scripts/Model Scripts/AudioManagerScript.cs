@@ -11,6 +11,13 @@ public class AudioManagerScript : MonoBehaviour {
 	public AudioClip MonsterGrowl2;
 	public AudioClip SwordHit1;
 	public AudioClip SwordPickup;
+	public AudioClip EnemyAttack;
+	public AudioClip EnemyWalk;
+	public AudioClip EnemyDeath;
+	public AudioClip PlayerDeath;
+	public AudioClip GameOver;
+	public AudioClip ShoutCheer;
+	
 	
 	// Use this for initialization
 	void Start () {
@@ -60,8 +67,38 @@ public class AudioManagerScript : MonoBehaviour {
 				audio.clip = SwordPickup;
 				break;
 			}
-		}
-
+			case AudioConstants.AudioClipType.EnemyAttack: {
+				audio.clip = EnemyAttack;
+				break;
+			}
+		
+			case AudioConstants.AudioClipType.EnemyWalk: {
+				audio.clip = EnemyWalk;
+				break;	
+			
+			}
+	
+			case AudioConstants.AudioClipType.EnemyDeath: {
+				audio.clip = EnemyDeath;
+				break;	
+			}
+		
+			case AudioConstants.AudioClipType.PlayerDeath: {
+				audio.clip = PlayerDeath;
+				break;	
+			}	
+			
+			case AudioConstants.AudioClipType.GameOver: {
+				audio.clip = GameOver;
+				break;	
+			}
+			
+			case AudioConstants.AudioClipType.ShoutCheer: {
+				audio.clip = ShoutCheer;
+				break;	
+			}
+			
+			}
 		if(audio.clip != null) {
 			audio.Play();
 		}
