@@ -13,7 +13,6 @@ public class TileScript : MonoBehaviour {
 	public bool isAttackable = false;
 
 	private List<Favor> favorList;
-	private List<tk2dSprite> favorArrowList;
 	
 	// Use this for initialization
 	void Start () {
@@ -24,7 +23,6 @@ public class TileScript : MonoBehaviour {
 		}
 
 		favorList = new List<Favor>();
-		favorArrowList = new List<tk2dSprite>();
 	}
 	
 	// Update is called once per frame
@@ -80,10 +78,6 @@ public class TileScript : MonoBehaviour {
 	
 	public void RemoveFavor(Favor favor) {
 		favorList.Remove(favor);
-		
-		foreach(tk2dSprite sprite in favorArrowList) {
-			
-		}
 	}
 
 	//Set a character to a specific tile

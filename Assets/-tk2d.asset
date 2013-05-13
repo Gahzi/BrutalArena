@@ -386,6 +386,7 @@ MonoBehaviour:
     - StartScreenColor
     - Skullington
     - GameOverColor
+    - Hero
     spriteTextureGUIDs:
     - d141efa7805934ea9897545433786b07
     - 735da96872ec045049549d277a767222
@@ -416,6 +417,7 @@ MonoBehaviour:
     - 89daff34f73bf4c4a81eb1dbc9e07b7e
     - ca45a83e193f74f61ac13a1819cb93ab
     - d33d2c196684546d3809e22be4fd31d0
+    - 7a01e9c534bd84f8689812775fa8d976
     spriteTextureTimeStamps:
     - 1362505145
     - 1362430944
@@ -436,16 +438,17 @@ MonoBehaviour:
     - 1367326442
     - 1367599057
     - 1367224992
-    - 1367945063
-    - 1367945493
-    - 1367945299
-    - 1367945369
-    - 1367945585
-    - 1367945218
+    - 1368398599
+    - 1368398491
+    - 1368398445
+    - 1368406060
+    - 1368399352
+    - 1368406110
     - 1368041788
     - 1367935762
     - 1368193958
     - 1367938596
+    - 1368385081
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

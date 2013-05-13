@@ -146,7 +146,8 @@ public class Favor : MonoBehaviour {
 			this.gameObject.transform.position = nextTile.gameObject.transform.position;
 		}
 		else {
-			currentTile = null;	
+			currentTile = null;
+			Destroy(this);
 		}
 	}
 	

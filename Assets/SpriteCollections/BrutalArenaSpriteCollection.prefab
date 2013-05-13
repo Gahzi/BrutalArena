@@ -60,7 +60,7 @@ MonoBehaviour:
   atlasWidth: 2048
   atlasHeight: 4096
   forceSquareAtlas: 0
-  atlasWastage: 53.3456192
+  atlasWastage: 49.639595
   allowMultipleAtlases: 0
   textureParams:
   - name: Hexagon3
@@ -834,8 +834,8 @@ MonoBehaviour:
     texture: {fileID: 2800000, guid: 66f3773b93ab44b14b3df6d8696a0fba, type: 3}
     materialId: 0
     anchor: 4
-    anchorX: 58
-    anchorY: 64
+    anchorX: 41
+    anchorY: 32
     overrideMesh: {fileID: 0}
     doubleSidedSprite: 0
     customSpriteGeometry: 0
@@ -872,8 +872,8 @@ MonoBehaviour:
     texture: {fileID: 2800000, guid: 7e8dafc8c249c4caabb47f47f6c27dd8, type: 3}
     materialId: 0
     anchor: 4
-    anchorX: 58
-    anchorY: 64
+    anchorX: 41
+    anchorY: 20
     overrideMesh: {fileID: 0}
     doubleSidedSprite: 0
     customSpriteGeometry: 0
@@ -910,8 +910,8 @@ MonoBehaviour:
     texture: {fileID: 2800000, guid: 9c6a0307647334a3493dba111ea2c7b1, type: 3}
     materialId: 0
     anchor: 4
-    anchorX: 58
-    anchorY: 64
+    anchorX: 41
+    anchorY: 30
     overrideMesh: {fileID: 0}
     doubleSidedSprite: 0
     customSpriteGeometry: 0
@@ -948,8 +948,8 @@ MonoBehaviour:
     texture: {fileID: 2800000, guid: bb945bfa1d9f74d368cb3d1be81f51f0, type: 3}
     materialId: 0
     anchor: 4
-    anchorX: 58
-    anchorY: 64
+    anchorX: 41
+    anchorY: 20
     overrideMesh: {fileID: 0}
     doubleSidedSprite: 0
     customSpriteGeometry: 0
@@ -986,8 +986,8 @@ MonoBehaviour:
     texture: {fileID: 2800000, guid: d0cf253be7064490db0675b882b15ecf, type: 3}
     materialId: 0
     anchor: 4
-    anchorX: 58
-    anchorY: 64
+    anchorX: 41
+    anchorY: 32
     overrideMesh: {fileID: 0}
     doubleSidedSprite: 0
     customSpriteGeometry: 0
@@ -1024,8 +1024,8 @@ MonoBehaviour:
     texture: {fileID: 2800000, guid: e0c46f08d3c9541b7b06005f2a70db4b, type: 3}
     materialId: 0
     anchor: 4
-    anchorX: 58
-    anchorY: 64
+    anchorX: 39
+    anchorY: 33
     overrideMesh: {fileID: 0}
     doubleSidedSprite: 0
     customSpriteGeometry: 0
@@ -1178,6 +1178,44 @@ MonoBehaviour:
     anchor: 4
     anchorX: 512
     anchorY: 384
+    overrideMesh: {fileID: 0}
+    doubleSidedSprite: 0
+    customSpriteGeometry: 0
+    geometryIslands: []
+    dice: 0
+    diceUnitX: 64
+    diceUnitY: 0
+    pad: 0
+    extraPadding: 0
+    source: 0
+    fromSpriteSheet: 0
+    hasSpriteSheetId: 0
+    spriteSheetId: 0
+    spriteSheetX: 0
+    spriteSheetY: 0
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    regionId: 0
+    colliderType: 0
+    boxColliderMin: {x: 0, y: 0}
+    boxColliderMax: {x: 0, y: 0}
+    polyColliderIslands: []
+    polyColliderCap: 0
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    colliderColor: 0
+  - name: Hero
+    disableTrimming: 0
+    additive: 0
+    scale: {x: 1, y: 1, z: 1}
+    texture: {fileID: 2800000, guid: 7a01e9c534bd84f8689812775fa8d976, type: 3}
+    materialId: 0
+    anchor: 4
+    anchorX: 230
+    anchorY: 341
     overrideMesh: {fileID: 0}
     doubleSidedSprite: 0
     customSpriteGeometry: 0
