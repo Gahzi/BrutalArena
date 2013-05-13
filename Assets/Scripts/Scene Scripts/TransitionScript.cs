@@ -10,7 +10,8 @@ public class TransitionScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnGUI () {
-		if (GUI.Button(new Rect(100, 100, 100, 100), "Game Start")) {
+		Event e = Event.current;
+		if (e.button == 0 && e.isMouse) {
 			Application.LoadLevel(1);
 		}
 			
