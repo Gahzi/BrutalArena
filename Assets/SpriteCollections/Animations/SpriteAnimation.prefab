@@ -49,7 +49,28 @@ MonoBehaviour:
       eventFloat: 0
     - spriteCollection: {fileID: 11400000, guid: d00a5c9b650504bb0adc5c5ab785fd42,
         type: 2}
+      spriteId: 1
+      triggerEvent: 0
+      eventInfo: 
+      eventInt: 0
+      eventFloat: 0
+    - spriteCollection: {fileID: 11400000, guid: d00a5c9b650504bb0adc5c5ab785fd42,
+        type: 2}
       spriteId: 0
+      triggerEvent: 0
+      eventInfo: 
+      eventInt: 0
+      eventFloat: 0
+    - spriteCollection: {fileID: 11400000, guid: d00a5c9b650504bb0adc5c5ab785fd42,
+        type: 2}
+      spriteId: 0
+      triggerEvent: 0
+      eventInfo: 
+      eventInt: 0
+      eventFloat: 0
+    - spriteCollection: {fileID: 11400000, guid: d00a5c9b650504bb0adc5c5ab785fd42,
+        type: 2}
+      spriteId: 2
       triggerEvent: 0
       eventInfo: 
       eventInt: 0
