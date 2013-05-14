@@ -147,7 +147,8 @@ public class Favor : MonoBehaviour {
 		}
 		else {
 			currentTile = null;
-			Destroy(this);
+			this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+			Destroy(this.gameObject);
 		}
 	}
 	

@@ -12,18 +12,27 @@ public class CreateGUIScript : MonoBehaviour {
 	private int previousSelected = -1;
 	public GUIContent[] buttons = new GUIContent[5];
 	public bool isNewButtonSelected = false;
+	public Font defaultFont = null;
 	
 	// Use this for initialization
 	void Start () {
 		selected = -1;
+		
+		if(defaultFont == null) {
+			Debug.Log("Set a font!");	
+		}
 	}
 	
 	void OnGUI() {
 		//Set label text color to be black
 		GUI.contentColor = Color.black;
+
+		GUISkin activeSkin = GUI.skin;
+		activeSkin.font = defaultFont;
+		
 		if(attachedCharacter != null) {
 			GUI.Label(new Rect(100,125,200,30), "Character: " + attachedCharacter.characterName);
-			GUI.Label(new Rect(100,145,100,30), "Health Points: " + attachedCharacter.health.ToString());	
+			GUI.Label(new Rect(100,145,100,30), "Health: " + attachedCharacter.health.ToString());	
 			GUI.Label(new Rect(100,165,100,30), "Stamina: " + attachedCharacter.stamina.ToString());
 			
 			if(attachedCharacter.characterType == CharacterConstants.CharacterType.player) {
@@ -81,8 +90,8 @@ public class CreateGUIScript : MonoBehaviour {
 				GUI.contentColor = Color.black;
 				
 				GUI.Label(new Rect(Screen.width - 125,195,200,30),tileInhabitant.name);
-				GUI.Label(new Rect(Screen.width - 125,235,200,30),"Health: " + tileInhabitant.health.ToString());
-				GUI.Label(new Rect(Screen.width - 125,215,200,30),"Stamina: " + tileInhabitant.staminaMax.ToString());
+				GUI.Label(new Rect(Screen.width - 125,215,200,30),"Health: " + tileInhabitant.health.ToString());
+				GUI.Label(new Rect(Screen.width - 125,235,200,30),"Stamina: " + tileInhabitant.staminaMax.ToString());
 			}
 		}
 	}

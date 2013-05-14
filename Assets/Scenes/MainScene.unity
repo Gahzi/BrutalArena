@@ -17749,6 +17749,7 @@ MonoBehaviour:
     m_Image: {fileID: 0}
     m_Tooltip: 
   isNewButtonSelected: 0
+  defaultFont: {fileID: 12800000, guid: 95dfe111d349e404cbda2c75732b3851, type: 3}
 --- !u!1 &1102975302
 GameObject:
   m_ObjectHideFlags: 0

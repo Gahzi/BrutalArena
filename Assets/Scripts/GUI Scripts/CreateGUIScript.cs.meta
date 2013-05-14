@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: 31054dfa86e314b84876bb3430459030
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - attachedCharacter: {instanceID: 0}
+  - attachedTile: {instanceID: 0}
+  - defaultFont: {fileID: 12800000, guid: 95dfe111d349e404cbda2c75732b3851, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

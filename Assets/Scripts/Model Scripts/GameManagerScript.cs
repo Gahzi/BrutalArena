@@ -72,7 +72,10 @@ public class GameManagerScript : MonoBehaviour {
 			}
 			
 			foreach(Favor favor in favorsToDelete) {
-				favorList.Remove(favor);	
+				favorList.Remove(favor);
+				//TODO:Fix Null Pointer here.
+				//favor.gameObject.GetComponent<MeshRenderer>().enabled = false;
+				//Destroy(favor.gameObject);
 			}
 
 			StartNewFullTurn();
