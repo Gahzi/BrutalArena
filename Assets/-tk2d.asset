@@ -20,6 +20,10 @@ MonoBehaviour:
     dataGUID: 
     managed: 0
     loadable: 0
+  - assetGUID: c3b0a7e1fbd87464381c6eab257924a6
+    dataGUID: 
+    managed: 0
+    loadable: 0
   fontIndex:
   - assetGUID: 063b15d80dbb4604d890600a64c79cf8
     dataGUID: e7a6b09a73c6b2b4f8060096ddbd3b5e
@@ -357,25 +361,25 @@ MonoBehaviour:
     spriteCollectionGUID: af61ce21f0b334ddfb699af9aa90bd01
     spriteCollectionDataGUID: d00a5c9b650504bb0adc5c5ab785fd42
     spriteNames:
-    - Hexagon3
-    - Player
-    - Enemy
-    - Character
-    - Hexagon4
-    - DamageIconProto
-    - EnemyCrudeGnoll
-    - EnemySkullKid
-    - HealthIconProto
-    - PlayerType2
-    - PlayerTypeFist
-    - ArenaFloor
-    - HeroIcon
-    - EnemySkullBloody
+    - SwordSwing
+    - SwordStart
+    - SwordHit
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
     - Background
     - SingleHexTransparent
-    - HeroHelmetTransparent
-    - skullenemy2
-    - GameOverScreen
+    - 
+    - 
+    - 
     - Arrow_Bottom_Left
     - Arrow_Left
     - Arrow_Top_Left
@@ -385,28 +389,28 @@ MonoBehaviour:
     - Goblin
     - StartScreenColor
     - Skullington
-    - GameOverColor
+    - 
     - Hero
     spriteTextureGUIDs:
-    - d141efa7805934ea9897545433786b07
-    - 735da96872ec045049549d277a767222
-    - fd258879fa7ad4564a2f0afaaa19f8f0
-    - 6bb6372a1d2a64614af15e7fd70f17b9
-    - 38a343800ae1c4c85b7405ef07d58bd6
-    - 315a03242ba2a49a1856526aadfd41f0
-    - e180ff0d7d9bb4066a28c44a7add37d7
-    - c6fcff5d05824449195f5cd4f403d9bf
-    - 243f6eec81be34613905d2698743c04d
-    - 6d6c6f7636d6e4f6cadb31a4caa9541c
-    - 08b54903450b3481eaa31477700d6efa
-    - 15f35ad177cc442b9b880720e1b1da7d
-    - 291183a07ea744e8abc2ff6fadb0588f
-    - 5e78269cc97a44126ac6186c02d15a73
+    - 530f29bc6b19d4efe8426386147774e7
+    - be59a0fc1b8fe405b80159fe3c02bd4e
+    - d552487500bb04fed9912ad720248162
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
     - 3bf40bec0b79a40f58123cb1384c81eb
     - 502e31418b7ee402bb97511398b908b1
-    - dc75f922f3a534b4fbb80b039c72a023
-    - b433890b1b2f0417cab098fc9ba69cd8
-    - 908687ec3723c4f53a2204c9567d7c98
+    - 
+    - 
+    - 
     - 66f3773b93ab44b14b3df6d8696a0fba
     - 7e8dafc8c249c4caabb47f47f6c27dd8
     - 9c6a0307647334a3493dba111ea2c7b1
@@ -416,28 +420,28 @@ MonoBehaviour:
     - 10355c0f291d543d5a00d9e2740cc7d0
     - 89daff34f73bf4c4a81eb1dbc9e07b7e
     - ca45a83e193f74f61ac13a1819cb93ab
-    - d33d2c196684546d3809e22be4fd31d0
+    - 
     - 7a01e9c534bd84f8689812775fa8d976
     spriteTextureTimeStamps:
-    - 1362505145
-    - 1362430944
-    - 1366150864
-    - 1367588404
-    - 1367588404
-    - 1366216439
-    - 1366216439
-    - 1366216439
-    - 1366216439
-    - 1366216439
-    - 1366216439
-    - 1366382550
-    - 1366556610
-    - 1366556610
+    - 1368457086
+    - 1368457086
+    - 1368457084
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
     - 1367282566
     - 1367944795
-    - 1367326442
-    - 1367599057
-    - 1367224992
+    - 0
+    - 0
+    - 0
     - 1368398599
     - 1368398491
     - 1368398445
@@ -447,7 +451,7 @@ MonoBehaviour:
     - 1368041788
     - 1367935762
     - 1368193958
-    - 1367938596
+    - 0
     - 1368385081
     managedSpriteCollection: 0
     loadable: 0

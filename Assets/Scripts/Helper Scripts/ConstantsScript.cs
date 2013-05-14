@@ -216,5 +216,11 @@ namespace BAConstants {
         }
 
     }
+	
+	public class AnimationConstants {
+		
+		public const string ATTACK_ANIMATION_NAME = "AttackAnimation";
+		public const string ATTACK_PREFAB_NAME = "AttackAnimationSprite";
+	}
 }
 

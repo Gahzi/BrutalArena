@@ -38,8 +38,7 @@ public class BasicAttackScript : AbilityScript {
 							Debug.Log("Hitting Enemy for " + damage + " damage to " + enemy.health + " health");
 							GameManagerScript gm = player.gm;
 							AudioManagerScript am = gm.gameObject.GetComponent<AudioManagerScript>();
-							am.PlayAudioClip(BAConstants.AudioConstants.AudioClipType.SwordHit1);
-							//JONATHAN: PLAYER HITS ENEMY HERE.
+							am.PlayAudioClip(BAConstants.AudioConstants.AudioClipType.SwordHit1);							
 							return true;
 						}
 					}

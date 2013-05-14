@@ -63,6 +63,10 @@ public class GnollScript : CharacterScript {
 							if(!abilityTwo.Execute(targetPlayer.currentTile)) {
 								EndTurn();
 							}
+							else {
+								Vector3 animationPosition = new Vector3(targetPlayer.currentTile.transform.position.x,targetPlayer.currentTile.transform.position.y,-1);
+								GameObject animationObject = (GameObject)Instantiate(Resources.Load(BAConstants.AnimationConstants.ATTACK_PREFAB_NAME),animationPosition,Quaternion.identity);							
+							}
 						}
 						else {
 							List<Vector2> movePath = map.GetAStar().GetPathBetweenTwoTiles(currentTile,targetPlayer.currentTile);

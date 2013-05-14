@@ -46,7 +46,9 @@ public class CreateGUIScript : MonoBehaviour {
 				
 				selected = GUI.SelectionGrid(new Rect(25,95,110,150),selected,buttons,1);
 				*/
-				if(GUI.Button(new Rect(50,260,110,30),"End Turn")) {
+				
+				
+				if(GUI.Button(new Rect(100,260,110,30),"End Turn")) {
 					attachedCharacter.EndTurn();		
 				}
 				

@@ -191,6 +191,8 @@ public class GameManagerScript : MonoBehaviour {
 							bool canAttackAtTile = player.abilityTwo.ValidateMove(ref tempStamina,player.currentTile,currentHoveredTile);
 						
 							if(canAttackAtTile) {
+								Vector3 animationPosition = new Vector3(currentHoveredTile.transform.position.x,currentHoveredTile.transform.position.y,-1);
+								GameObject animationObject = (GameObject)Instantiate(Resources.Load(BAConstants.AnimationConstants.ATTACK_PREFAB_NAME),animationPosition,Quaternion.identity);							
 								player.abilityTwo.Execute(currentHoveredTile);
 								foreach(Vector2 tileCoordinate in hoveredPath) {
 									TileScript hoveredTile = (TileScript)map.GetTiles()[tileCoordinate];
@@ -210,6 +212,8 @@ public class GameManagerScript : MonoBehaviour {
 								if(canAttackAtTile) {
 									player.abilityOne.Execute(tile);
 									player.abilityTwo.Execute(currentHoveredTile);
+									Vector3 animationPosition = new Vector3(currentHoveredTile.transform.position.x,currentHoveredTile.transform.position.y,-1);
+									GameObject animationObject = (GameObject)Instantiate(Resources.Load(BAConstants.AnimationConstants.ATTACK_PREFAB_NAME),animationPosition,Quaternion.identity);							
 									foreach(Vector2 tileCoordinate in hoveredPath) {
 										TileScript hoveredTile = (TileScript)map.GetTiles()[tileCoordinate];
 										hoveredTile.isHighlighted = false;
