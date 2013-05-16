@@ -35,9 +35,15 @@ public class GameManagerScript : MonoBehaviour {
 		
 		//TODO: Change this to check for character class.
 		GameObject[] chars = GameObject.FindGameObjectsWithTag(ConstantsScript.characterTag);
+		CharacterScript player = null;
 		
 		foreach(GameObject character in chars) {
 			characterList.Add(character);
+			CharacterScript cScript = character.GetComponent<CharacterScript>();
+			
+			if(cScript.characterType == CharacterConstants.CharacterType.player) {
+				player = cScript;	
+			}
 		}
 		
 		favor = 0;
@@ -51,6 +57,8 @@ public class GameManagerScript : MonoBehaviour {
 		
 		turnOrderList.AddRange(characterList);
 		SortTurnOrderListByStamina();
+		
+		gui.attachedCharacter = player;
 	}
 	
 	// Update is called once per frame
@@ -88,7 +96,7 @@ public class GameManagerScript : MonoBehaviour {
 			if(currentCharacter != nextCharacter) {
 				currentCharacter = nextCharacter;
 				currentCharacter.StartTurn();
-				gui.SetAttachedCharacter(currentCharacter);
+				//gui.SetAttachedCharacter(currentCharacter);
 				//Set GUI elements to character 
 			}
 		}
